@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.misc/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.utils.pyarrow/">
       
       
-        <link rel="prev" href="../fsspeckit.helpers.logging/">
+        <link rel="prev" href="../fsspeckit.utils.polars/">
       
       
-        <link rel="next" href="../fsspeckit.helpers.polars/">
+        <link rel="next" href="../fsspeckit.utils.sql/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>fsspeckit.helpers.misc - fsspeckit</title>
+        <title>fsspeckit.utils.pyarrow - fsspeckit</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fsspeckithelpersmisc-api-reference" class="md-skip">
+        <a href="#fsspeckitutilspyarrow-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fsspeckit.helpers.misc
+              fsspeckit.utils.pyarrow
             
           </span>
         </div>
@@ -320,13 +320,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../helpers/" class="md-tabs__link">
+      <a href="../../utils/" class="md-tabs__link">
         
   
   
     
   
-  Helpers Module
+  Utils Module
 
       </a>
     </li>
@@ -576,12 +576,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../helpers/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Helpers Module
+    Utils Module
     
   </span>
   
@@ -1007,7 +1007,7 @@
   
   
   <span class="md-ellipsis">
-    Helpers
+    Utils
     
   </span>
   
@@ -1018,7 +1018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Helpers
+            Utils
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1029,12 +1029,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.datetime/" class="md-nav__link">
+      <a href="../fsspeckit.utils.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
+    fsspeckit.utils.datetime
     
   </span>
   
@@ -1052,12 +1052,58 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
+      <a href="../fsspeckit.utils.logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.logging
+    fsspeckit.utils.logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.polars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.polars
     
   </span>
   
@@ -1089,7 +1135,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.misc
+    fsspeckit.utils.pyarrow
     
   </span>
   
@@ -1102,7 +1148,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.misc
+    fsspeckit.utils.pyarrow
     
   </span>
   
@@ -1125,36 +1171,63 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#run_parallel" class="md-nav__link">
+  <a href="#dominant_timezone_per_column" class="md-nav__link">
     <span class="md-ellipsis">
-      run_parallel()
+      dominant_timezone_per_column()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_partitions_from_path" class="md-nav__link">
+  <a href="#standardize_schema_timezones_by_majority" class="md-nav__link">
     <span class="md-ellipsis">
-      get_partitions_from_path()
+      standardize_schema_timezones_by_majority()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#path_to_glob" class="md-nav__link">
+  <a href="#standardize_schema_timezones" class="md-nav__link">
     <span class="md-ellipsis">
-      path_to_glob()
+      standardize_schema_timezones()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#check_optional_dependency" class="md-nav__link">
+  <a href="#unify_schemas" class="md-nav__link">
     <span class="md-ellipsis">
-      check_optional_dependency()
+      unify_schemas()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cast_schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      cast_schema()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convert_large_types_to_normal" class="md-nav__link">
+    <span class="md-ellipsis">
+      convert_large_types_to_normal()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#opt_dtype" class="md-nav__link">
+    <span class="md-ellipsis">
+      opt_dtype()
     </span>
   </a>
   
@@ -1176,12 +1249,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
+      <a href="../fsspeckit.utils.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.polars
+    fsspeckit.utils.sql
     
   </span>
   
@@ -1199,58 +1272,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
+      <a href="../fsspeckit.utils.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.pyarrow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.sql
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.types
     
   </span>
   
@@ -1295,10 +1322,10 @@
   
 
 
-<h1 id="fsspeckithelpersmisc-api-reference"><code>fsspeckit.helpers.misc</code> API Reference<a class="headerlink" href="#fsspeckithelpersmisc-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="run_parallel"><code>run_parallel()</code><a class="headerlink" href="#run_parallel" title="Permanent link">&para;</a></h2>
-<p>Run a function for a list of parameters in parallel.</p>
-<p>Provides parallel execution with progress tracking and flexible argument handling.</p>
+<h1 id="fsspeckitutilspyarrow-api-reference"><code>fsspeckit.utils.pyarrow</code> API Reference<a class="headerlink" href="#fsspeckitutilspyarrow-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="dominant_timezone_per_column"><code>dominant_timezone_per_column()</code><a class="headerlink" href="#dominant_timezone_per_column" title="Permanent link">&para;</a></h2>
+<p>For each timestamp column (by name) across all schemas, detect the most frequent timezone (including None).</p>
+<p>If None and a timezone are tied, prefer the timezone. Returns a dict: {column_name: dominant_timezone}</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1310,46 +1337,13 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>func</code></td>
-<td style="text-align: left;"><code>Callable</code></td>
-<td style="text-align: left;">The function to be executed in parallel.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>*args</code></td>
-<td style="text-align: left;"><code>Any</code></td>
-<td style="text-align: left;">Positional arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>n_jobs</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;">The number of CPU cores to use. -1 means all available cores.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>backend</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The backend to use for parallel processing. Options include 'loky', 'threading', 'multiprocessing', and 'sequential'.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>verbose</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, a progress bar will be displayed during execution.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>**kwargs</code></td>
-<td style="text-align: left;"><code>Any</code></td>
-<td style="text-align: left;">Keyword arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
+<td style="text-align: left;"><code>schemas</code></td>
+<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
+<td style="text-align: left;">A list of PyArrow schemas to analyze.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>list</code>: List of function outputs in the same order as inputs.</li>
-</ul>
-<p><strong>Raises:</strong></p>
-<ul>
-<li><code>ValueError</code>: If no iterable arguments provided or length mismatch.</li>
-</ul>
-<p><strong>Examples:</strong>
+<p><strong>Example:</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1359,20 +1353,25 @@
 <span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Single iterable argument</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">])</span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.utils.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">dominant_timezone_per_column</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Multiple iterables in args and kwargs</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">offset</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">run_parallel</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">))])</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">schema3</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">))])</span> <span class="c1"># naive</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">,</span> <span class="n">schema3</span><span class="p">]</span>
 <a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># Fixed and iterable arguments</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">exp</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="get_partitions_from_path"><code>get_partitions_from_path()</code><a class="headerlink" href="#get_partitions_from_path" title="Permanent link">&para;</a></h2>
-<p>Extract dataset partitions from a file path.</p>
-<p>Parses file paths to extract partition information based on different partitioning schemes.</p>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">dominant_tz</span> <span class="o">=</span> <span class="n">dominant_timezone_per_column</span><span class="p">(</span><span class="n">schemas</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">dominant_tz</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1"># Expected: {&#39;ts&#39;: &#39;UTC&#39;} (or &#39;Europe/Berlin&#39; depending on logic)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>dict</code>: {column_name: dominant_timezone}</li>
+</ul>
+<h2 id="standardize_schema_timezones_by_majority"><code>standardize_schema_timezones_by_majority()</code><a class="headerlink" href="#standardize_schema_timezones_by_majority" title="Permanent link">&para;</a></h2>
+<p>For each timestamp column (by name) across all schemas, set the timezone to the most frequent (with tie-breaking).</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1384,41 +1383,41 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>path</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The file path from which to extract partition information.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>partitioning</code></td>
-<td style="text-align: left;"><code>str</code> or <code>list[str]</code> or <code>None</code></td>
-<td style="text-align: left;">The partitioning scheme to use. Can be "hive" for Hive-style, a string for a single partition column, a list of strings for multiple partition columns, or None for no specific partitioning.</td>
+<td style="text-align: left;"><code>schemas</code></td>
+<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
+<td style="text-align: left;">A list of PyArrow schemas to standardize.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>list[tuple[str, str]]</code>: List of tuples containing (column, value) pairs.</li>
-</ul>
-<p><strong>Examples:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Hive-style partitioning</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/year=2023/month=01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;hive&quot;</span><span class="p">)</span>
+<p><strong>Example:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.utils.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardize_schema_timezones_by_majority</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Single partition column</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># Multiple partition columns</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="path_to_glob"><code>path_to_glob()</code><a class="headerlink" href="#path_to_glob" title="Permanent link">&para;</a></h2>
-<p>Convert a path to a glob pattern for file matching.</p>
-<p>Intelligently converts paths to glob patterns that match files of the specified format, handling various directory and wildcard patterns.</p>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">))])</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">]</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">standardized_schemas</span> <span class="o">=</span> <span class="n">standardize_schema_timezones_by_majority</span><span class="p">(</span><span class="n">schemas</span><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">standardized_schemas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">standardized_schemas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># Expected: timestamp[ns, tz=Europe/Berlin] (or UTC, depending on tie-breaking)</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>list[pyarrow.Schema]</code>: A new list of schemas with updated timestamp timezones.</li>
+</ul>
+<h2 id="standardize_schema_timezones"><code>standardize_schema_timezones()</code><a class="headerlink" href="#standardize_schema_timezones" title="Permanent link">&para;</a></h2>
+<p>Standardize timezone info for all timestamp columns in a list of PyArrow schemas.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1430,40 +1429,94 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>path</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The file or directory path to convert into a glob pattern.</td>
+<td style="text-align: left;"><code>schemas</code></td>
+<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
+<td style="text-align: left;">The list of PyArrow schemas to process.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>format</code></td>
+<td style="text-align: left;"><code>timezone</code></td>
 <td style="text-align: left;"><code>str</code> or <code>None</code></td>
-<td style="text-align: left;">The desired file format or extension to match (e.g., "parquet", "csv", "json"). If None, the format is inferred from the path.</td>
+<td style="text-align: left;">The target timezone to apply to timestamp columns. If None, timezones are removed. If "auto", the most frequent timezone across schemas is used.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.utils.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardize_schema_timezones</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">))])</span> <span class="c1"># naive</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">]</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># Remove timezones</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">new_schemas_naive</span> <span class="o">=</span> <span class="n">standardize_schema_timezones</span><span class="p">(</span><span class="n">schemas</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">new_schemas_naive</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># Expected: timestamp[ns]</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># Set a specific timezone</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">new_schemas_berlin</span> <span class="o">=</span> <span class="n">standardize_schema_timezones</span><span class="p">(</span><span class="n">schemas</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">new_schemas_berlin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1"># Expected: timestamp[ns, tz=Europe/Berlin]</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>list[pyarrow.Schema]</code>: New schemas with standardized timezone info.</li>
+</ul>
+<h2 id="unify_schemas"><code>unify_schemas()</code><a class="headerlink" href="#unify_schemas" title="Permanent link">&para;</a></h2>
+<p>Unify a list of PyArrow schemas into a single schema.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>schemas</code></td>
+<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
+<td style="text-align: left;">List of PyArrow schemas to unify.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>use_large_dtypes</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">If True, keep large types like large_string.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>timezone</code></td>
+<td style="text-align: left;"><code>str</code> or <code>None</code></td>
+<td style="text-align: left;">If specified, standardize all timestamp columns to this timezone. If "auto", use the most frequent timezone across schemas. If None, remove timezone from all timestamp columns.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>standardize_timezones</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">If True, standardize all timestamp columns to the most frequent timezone.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>str</code>: Glob pattern for matching files</li>
+<li><code>pyarrow.Schema</code>: A unified PyArrow schema.</li>
 </ul>
-<p><strong>Example:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Directory to parquet files glob</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">,</span> <span class="s2">&quot;parquet&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Already a glob pattern</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/*.csv&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># Specific file</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/file.json&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="check_optional_dependency"><code>check_optional_dependency()</code><a class="headerlink" href="#check_optional_dependency" title="Permanent link">&para;</a></h2>
-<p>Check if an optional dependency is available.</p>
+<h2 id="cast_schema"><code>cast_schema()</code><a class="headerlink" href="#cast_schema" title="Permanent link">&para;</a></h2>
+<p>Cast a PyArrow table to a given schema, updating the schema to match the table's columns.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1475,20 +1528,106 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>package_name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The name of the optional package to check for availability.</td>
+<td style="text-align: left;"><code>table</code></td>
+<td style="text-align: left;"><code>pyarrow.Table</code></td>
+<td style="text-align: left;">The PyArrow table to cast.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>feature_name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">A descriptive name of the feature that requires this package.</td>
+<td style="text-align: left;"><code>schema</code></td>
+<td style="text-align: left;"><code>pyarrow.Schema</code></td>
+<td style="text-align: left;">The target schema to cast the table to.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Raises:</strong></p>
+<p><strong>Returns:</strong></p>
 <ul>
-<li><code>ImportError</code>: If the package is not available</li>
+<li><code>pyarrow.Table</code>: A new PyArrow table with the specified schema.</li>
+</ul>
+<h2 id="convert_large_types_to_normal"><code>convert_large_types_to_normal()</code><a class="headerlink" href="#convert_large_types_to_normal" title="Permanent link">&para;</a></h2>
+<p>Convert large types in a PyArrow schema to their standard types.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>schema</code></td>
+<td style="text-align: left;"><code>pyarrow.Schema</code></td>
+<td style="text-align: left;">The PyArrow schema to convert.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>pyarrow.Schema</code>: A new PyArrow schema with large types converted to standard types.</li>
+</ul>
+<h2 id="opt_dtype"><code>opt_dtype()</code><a class="headerlink" href="#opt_dtype" title="Permanent link">&para;</a></h2>
+<p>Optimize data types of a PyArrow Table for performance and memory efficiency.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>table</code></td>
+<td style="text-align: left;"><code>pyarrow.Table</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>include</code></td>
+<td style="text-align: left;"><code>list[str]</code>, optional</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>exclude</code></td>
+<td style="text-align: left;"><code>list[str]</code>, optional</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>time_zone</code></td>
+<td style="text-align: left;"><code>str</code>, optional</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>shrink_numerics</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>allow_unsigned</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>use_large_dtypes</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>strict</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>allow_null</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">If False, columns that only hold null-like values will not be converted to pyarrow.null().</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>pyarrow.Table</code>: A new table casted to the optimal schema.</li>
 </ul>
 
 

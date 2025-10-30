@@ -10,11 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.types/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.utils.logging/">
       
       
-        <link rel="prev" href="../fsspeckit.helpers.sql/">
+        <link rel="prev" href="../fsspeckit.utils.datetime/">
       
+      
+        <link rel="next" href="../fsspeckit.utils.misc/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +24,7 @@
     
     
       
-        <title>fsspeckit.helpers.types - fsspeckit</title>
+        <title>fsspeckit.utils.logging - fsspeckit</title>
       
     
     
@@ -76,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fsspeckithelperstypes-api-reference" class="md-skip">
+        <a href="#fsspeckitutilslogging-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fsspeckit.helpers.types
+              fsspeckit.utils.logging
             
           </span>
         </div>
@@ -318,13 +320,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../helpers/" class="md-tabs__link">
+      <a href="../../utils/" class="md-tabs__link">
         
   
   
     
   
-  Helpers Module
+  Utils Module
 
       </a>
     </li>
@@ -574,12 +576,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../helpers/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Helpers Module
+    Utils Module
     
   </span>
   
@@ -1005,7 +1007,7 @@
   
   
   <span class="md-ellipsis">
-    Helpers
+    Utils
     
   </span>
   
@@ -1016,7 +1018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Helpers
+            Utils
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1027,127 +1029,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.datetime/" class="md-nav__link">
+      <a href="../fsspeckit.utils.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.logging
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.misc
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.polars
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.pyarrow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.sql
+    fsspeckit.utils.datetime
     
   </span>
   
@@ -1179,7 +1066,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.logging
     
   </span>
   
@@ -1192,7 +1079,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.logging
     
   </span>
   
@@ -1215,18 +1102,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#dict_to_dataframe" class="md-nav__link">
+  <a href="#setup_logging" class="md-nav__link">
     <span class="md-ellipsis">
-      dict_to_dataframe()
+      setup_logging()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#to_pyarrow_table" class="md-nav__link">
+  <a href="#get_logger" class="md-nav__link">
     <span class="md-ellipsis">
-      to_pyarrow_table()
+      get_logger()
     </span>
   </a>
   
@@ -1236,6 +1123,121 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.polars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.polars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.pyarrow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.pyarrow
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.sql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.sql
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.types/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.types
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1275,10 +1277,10 @@
   
 
 
-<h1 id="fsspeckithelperstypes-api-reference"><code>fsspeckit.helpers.types</code> API Reference<a class="headerlink" href="#fsspeckithelperstypes-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="dict_to_dataframe"><code>dict_to_dataframe()</code><a class="headerlink" href="#dict_to_dataframe" title="Permanent link">&para;</a></h2>
-<p>Convert a dictionary or list of dictionaries to a Polars DataFrame.</p>
-<p>Handles various input formats: - Single dict with list values -&gt; DataFrame rows - Single dict with scalar values -&gt; Single row DataFrame - List of dicts with scalar values -&gt; Multi-row DataFrame - List of dicts with list values -&gt; DataFrame with list columns</p>
+<h1 id="fsspeckitutilslogging-api-reference"><code>fsspeckit.utils.logging</code> API Reference<a class="headerlink" href="#fsspeckitutilslogging-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="setup_logging"><code>setup_logging()</code><a class="headerlink" href="#setup_logging" title="Permanent link">&para;</a></h2>
+<p>Configure the Loguru logger for fsspec-utils.</p>
+<p>Removes the default handler and adds a new one targeting stderr with customizable level and format.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1290,111 +1292,70 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>data</code></td>
-<td style="text-align: left;"><code>dict</code> or <code>list[dict]</code></td>
-<td style="text-align: left;">The input data, either a dictionary or a list of dictionaries.</td>
+<td style="text-align: left;"><code>level</code></td>
+<td style="text-align: left;"><code>str</code>, optional</td>
+<td style="text-align: left;">Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses fsspeckit_LOG_LEVEL environment variable or defaults to "INFO".</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>unique</code></td>
+<td style="text-align: left;"><code>disable</code></td>
 <td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, duplicate rows will be removed from the resulting DataFrame.</td>
+<td style="text-align: left;">Whether to disable logging for fsspec-utils package.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>format_string</code></td>
+<td style="text-align: left;"><code>str</code>, optional</td>
+<td style="text-align: left;">Custom format string for log messages. If None, uses a default comprehensive format.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>polars.DataFrame</code>: Polars DataFrame containing the converted data.</li>
-</ul>
-<p><strong>Examples:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Single dict with list values</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]}</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">dict_to_dataframe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># Single dict with scalar values</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">}</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">dict_to_dataframe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># List of dicts with scalar values</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;a&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">}]</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="n">dict_to_dataframe</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="to_pyarrow_table"><code>to_pyarrow_table()</code><a class="headerlink" href="#to_pyarrow_table" title="Permanent link">&para;</a></h2>
-<p>Convert various data formats to PyArrow Table.</p>
-<p>Handles conversion from Polars DataFrames, Pandas DataFrames, dictionaries, and lists of these types to PyArrow Tables.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>data</code></td>
-<td style="text-align: left;"><code>Any</code></td>
-<td style="text-align: left;">Input data to convert.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>concat</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">Whether to concatenate multiple inputs into single table.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>unique</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, duplicate rows will be removed from the resulting Table.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Example:</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.types</span><span class="w"> </span><span class="kn">import</span> <span class="n">to_pyarrow_table</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="c1"># Convert Polars DataFrame to PyArrow Table</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">table</span> <span class="o">=</span> <span class="n">to_pyarrow_table</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="c1"># Convert list of dicts to PyArrow Table</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">data</span> <span class="o">=</span> <span class="p">[{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">},</span> <span class="p">{</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">}]</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">table_from_dict</span> <span class="o">=</span> <span class="n">to_pyarrow_table</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="nb">print</span><span class="p">(</span><span class="n">table_from_dict</span><span class="o">.</span><span class="n">to_pydf</span><span class="p">())</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>pyarrow.Table</code>: PyArrow Table containing the converted data.</li>
+<li><code>None</code></li>
 </ul>
 <p><strong>Example:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;a&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]})</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">table</span> <span class="o">=</span> <span class="n">to_pyarrow_table</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">schema</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Basic setup</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">setup_logging</span><span class="p">()</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Custom level and format</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">setup_logging</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="n">format_string</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{time}</span><span class="s2"> | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1"># Disable logging</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">setup_logging</span><span class="p">(</span><span class="n">disable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="get_logger"><code>get_logger()</code><a class="headerlink" href="#get_logger" title="Permanent link">&para;</a></h2>
+<p>Get a logger instance for the given name.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">Logger name, typically the module name.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>Logger</code>: Configured logger instance.</li>
+</ul>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is a log message&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div></p>
 
 

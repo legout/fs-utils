@@ -322,13 +322,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../helpers/" class="md-tabs__link">
+      <a href="../utils/" class="md-tabs__link">
         
   
   
     
   
-  Helpers Module
+  Utils Module
 
       </a>
     </li>
@@ -619,9 +619,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#helpers" class="md-nav__link">
+  <a href="#utils" class="md-nav__link">
     <span class="md-ellipsis">
-      helpers
+      utils
     </span>
   </a>
   
@@ -678,12 +678,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../helpers/" class="md-nav__link">
+      <a href="../utils/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Helpers Module
+    Utils Module
     
   </span>
   
@@ -1093,7 +1093,7 @@
   
   
   <span class="md-ellipsis">
-    Helpers
+    Utils
     
   </span>
   
@@ -1104,7 +1104,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Helpers
+            Utils
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1115,12 +1115,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.datetime/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
+    fsspeckit.utils.datetime
     
   </span>
   
@@ -1138,12 +1138,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.logging/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.logging
+    fsspeckit.utils.logging
     
   </span>
   
@@ -1161,12 +1161,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.misc/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.misc
+    fsspeckit.utils.misc
     
   </span>
   
@@ -1184,12 +1184,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.polars/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.polars
+    fsspeckit.utils.polars
     
   </span>
   
@@ -1207,12 +1207,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.pyarrow/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.pyarrow
+    fsspeckit.utils.pyarrow
     
   </span>
   
@@ -1230,12 +1230,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.sql/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.sql
+    fsspeckit.utils.sql
     
   </span>
   
@@ -1253,12 +1253,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fsspeckit.helpers.types/" class="md-nav__link">
+      <a href="../api/fsspeckit.utils.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.types
     
   </span>
   
@@ -1318,8 +1318,8 @@
 <p>This module contains the fundamental extensions to <code>fsspec</code>. It includes the <code>filesystem</code> function, which acts as a central factory for creating <code>fsspec</code> compatible filesystem objects, potentially with enhanced features like caching and extended I/O. The <code>DirFileSystem</code> class is also part of this module, providing specialized handling for directory-based filesystems.</p>
 <h3 id="storage_options"><code>storage_options</code><a class="headerlink" href="#storage_options" title="Permanent link">&para;</a></h3>
 <p>This module is dedicated to managing storage configurations for different backends. It defines various <code>StorageOptions</code> classes (e.g., <code>AwsStorageOptions</code>, <code>GcsStorageOptions</code>, <code>AzureStorageOptions</code>, <code>GitHubStorageOptions</code>, <code>GitLabStorageOptions</code>) that encapsulate the necessary parameters for connecting to specific storage services. It also includes utility functions for inferring protocols from URIs and merging storage options.</p>
-<h3 id="helpers"><code>helpers</code><a class="headerlink" href="#helpers" title="Permanent link">&para;</a></h3>
-<p>The <code>helpers</code> module provides a collection of general-purpose utility functions that support various operations within <code>fsspeckit</code>. These include:</p>
+<h3 id="utils"><code>utils</code><a class="headerlink" href="#utils" title="Permanent link">&para;</a></h3>
+<p>The <code>utils</code> module provides a collection of general-purpose utility functions that support various operations within <code>fsspeckit</code>. These include:</p>
 <ul>
 <li><strong>Parallel Processing</strong>: Functions like <code>run_parallel</code> for executing tasks concurrently.</li>
 <li><strong>Type Conversion</strong>: Utilities such as <code>dict_to_dataframe</code> and <code>to_pyarrow_table</code> for data manipulation.</li>
@@ -1332,7 +1332,7 @@
 <pre class="mermaid"><code>graph TD
     A[fsspeckit] --&gt; B(Core Module)
     A --&gt; C(Storage Options Module)
-    A --&gt; D(Helpers Module)
+    A --&gt; D(Utils Module)
     B --&gt; E[Extends fsspec]
     C --&gt; F{Cloud Providers}
     C --&gt; G{Git Platforms}

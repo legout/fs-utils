@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.datetime/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.utils.misc/">
       
       
-        <link rel="prev" href="../fsspeckit.storage_options.git/">
+        <link rel="prev" href="../fsspeckit.utils.logging/">
       
       
-        <link rel="next" href="../fsspeckit.helpers.logging/">
+        <link rel="next" href="../fsspeckit.utils.polars/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>fsspeckit.helpers.datetime - fsspeckit</title>
+        <title>fsspeckit.utils.misc - fsspeckit</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fsspeckithelpersdatetime-api-reference" class="md-skip">
+        <a href="#fsspeckitutilsmisc-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fsspeckit.helpers.datetime
+              fsspeckit.utils.misc
             
           </span>
         </div>
@@ -320,13 +320,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../helpers/" class="md-tabs__link">
+      <a href="../../utils/" class="md-tabs__link">
         
   
   
     
   
-  Helpers Module
+  Utils Module
 
       </a>
     </li>
@@ -576,12 +576,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../helpers/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Helpers Module
+    Utils Module
     
   </span>
   
@@ -1007,7 +1007,7 @@
   
   
   <span class="md-ellipsis">
-    Helpers
+    Utils
     
   </span>
   
@@ -1018,9 +1018,55 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Helpers
+            Utils
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.datetime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.datetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1043,7 +1089,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
+    fsspeckit.utils.misc
     
   </span>
   
@@ -1056,7 +1102,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
+    fsspeckit.utils.misc
     
   </span>
   
@@ -1079,27 +1125,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#get_timestamp_column" class="md-nav__link">
+  <a href="#run_parallel" class="md-nav__link">
     <span class="md-ellipsis">
-      get_timestamp_column()
+      run_parallel()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_timedelta_str" class="md-nav__link">
+  <a href="#get_partitions_from_path" class="md-nav__link">
     <span class="md-ellipsis">
-      get_timedelta_str()
+      get_partitions_from_path()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#timestamp_from_string" class="md-nav__link">
+  <a href="#path_to_glob" class="md-nav__link">
     <span class="md-ellipsis">
-      timestamp_from_string()
+      path_to_glob()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#check_optional_dependency" class="md-nav__link">
+    <span class="md-ellipsis">
+      check_optional_dependency()
     </span>
   </a>
   
@@ -1121,12 +1176,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
+      <a href="../fsspeckit.utils.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.logging
+    fsspeckit.utils.polars
     
   </span>
   
@@ -1144,12 +1199,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
+      <a href="../fsspeckit.utils.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.misc
+    fsspeckit.utils.pyarrow
     
   </span>
   
@@ -1167,12 +1222,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
+      <a href="../fsspeckit.utils.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.polars
+    fsspeckit.utils.sql
     
   </span>
   
@@ -1190,58 +1245,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
+      <a href="../fsspeckit.utils.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.pyarrow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.sql
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.types
     
   </span>
   
@@ -1286,8 +1295,10 @@
   
 
 
-<h1 id="fsspeckithelpersdatetime-api-reference"><code>fsspeckit.helpers.datetime</code> API Reference<a class="headerlink" href="#fsspeckithelpersdatetime-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="get_timestamp_column"><code>get_timestamp_column()</code><a class="headerlink" href="#get_timestamp_column" title="Permanent link">&para;</a></h2>
+<h1 id="fsspeckitutilsmisc-api-reference"><code>fsspeckit.utils.misc</code> API Reference<a class="headerlink" href="#fsspeckitutilsmisc-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="run_parallel"><code>run_parallel()</code><a class="headerlink" href="#run_parallel" title="Permanent link">&para;</a></h2>
+<p>Run a function for a list of parameters in parallel.</p>
+<p>Provides parallel execution with progress tracking and flexible argument handling.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1299,13 +1310,46 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>df</code></td>
-<td style="text-align: left;"><code>polars.DataFrame</code></td>
-<td style="text-align: left;">Input DataFrame.</td>
+<td style="text-align: left;"><code>func</code></td>
+<td style="text-align: left;"><code>Callable</code></td>
+<td style="text-align: left;">The function to be executed in parallel.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>*args</code></td>
+<td style="text-align: left;"><code>Any</code></td>
+<td style="text-align: left;">Positional arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>n_jobs</code></td>
+<td style="text-align: left;"><code>int</code></td>
+<td style="text-align: left;">The number of CPU cores to use. -1 means all available cores.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>backend</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The backend to use for parallel processing. Options include 'loky', 'threading', 'multiprocessing', and 'sequential'.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>verbose</code></td>
+<td style="text-align: left;"><code>bool</code></td>
+<td style="text-align: left;">If True, a progress bar will be displayed during execution.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>**kwargs</code></td>
+<td style="text-align: left;"><code>Any</code></td>
+<td style="text-align: left;">Keyword arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>list</code>: List of function outputs in the same order as inputs.</li>
+</ul>
+<p><strong>Raises:</strong></p>
+<ul>
+<li><code>ValueError</code>: If no iterable arguments provided or length mismatch.</li>
+</ul>
+<p><strong>Examples:</strong>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1315,22 +1359,20 @@
 <span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_timestamp_column</span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Single iterable argument</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">])</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="s2">&quot;timestamp_col&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1678886400</span><span class="p">,</span> <span class="mi">1678972800</span><span class="p">],</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">})</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">col_name</span> <span class="o">=</span> <span class="n">get_timestamp_column</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">col_name</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1"># &quot;timestamp_col&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>None</code></li>
-</ul>
-<h2 id="get_timedelta_str"><code>get_timedelta_str()</code><a class="headerlink" href="#get_timedelta_str" title="Permanent link">&para;</a></h2>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Multiple iterables in args and kwargs</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">offset</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">run_parallel</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># Fixed and iterable arguments</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">exp</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="get_partitions_from_path"><code>get_partitions_from_path()</code><a class="headerlink" href="#get_partitions_from_path" title="Permanent link">&para;</a></h2>
+<p>Extract dataset partitions from a file path.</p>
+<p>Parses file paths to extract partition information based on different partitioning schemes.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1342,43 +1384,41 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>timedelta_string</code></td>
+<td style="text-align: left;"><code>path</code></td>
 <td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">Timedelta string (e.g., "1h", "2d", "3w").</td>
+<td style="text-align: left;">The file path from which to extract partition information.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>partitioning</code></td>
+<td style="text-align: left;"><code>str</code> or <code>list[str]</code> or <code>None</code></td>
+<td style="text-align: left;">The partitioning scheme to use. Can be "hive" for Hive-style, a string for a single partition column, a list of strings for multiple partition columns, or None for no specific partitioning.</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Example:</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_timedelta_str</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># Convert to Polars duration string</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">polars_duration</span> <span class="o">=</span> <span class="n">get_timedelta_str</span><span class="p">(</span><span class="s2">&quot;1h&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">polars_duration</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1"># &quot;1h&quot;</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1"># Convert to Pandas timedelta string</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">pandas_timedelta</span> <span class="o">=</span> <span class="n">get_timedelta_str</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;pandas&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">pandas_timedelta</span><span class="p">)</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># &quot;2 days&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p>| <code>to</code> | <code>str</code> | Defaults to 'polars' |</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>None</code></li>
+<li><code>list[tuple[str, str]]</code>: List of tuples containing (column, value) pairs.</li>
 </ul>
-<h2 id="timestamp_from_string"><code>timestamp_from_string()</code><a class="headerlink" href="#timestamp_from_string" title="Permanent link">&para;</a></h2>
-<p>Converts a timestamp string (ISO 8601 format) into a datetime, date, or time object</p>
-<p>using only standard Python libraries. Handles strings with or without timezone information (e.g., '2023-01-01T10:00:00+02:00', '2023-01-01', '10:00:00'). Supports timezone offsets like '+HH:MM' or '+HHMM'. For named timezones (e.g., 'Europe/Paris'), requires Python 3.9+ and the 'tzdata' package to be installed.</p>
+<p><strong>Examples:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Hive-style partitioning</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/year=2023/month=01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;hive&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Single partition column</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># Multiple partition columns</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="path_to_glob"><code>path_to_glob()</code><a class="headerlink" href="#path_to_glob" title="Permanent link">&para;</a></h2>
+<p>Convert a path to a glob pattern for file matching.</p>
+<p>Intelligently converts paths to glob patterns that match files of the specified format, handling various directory and wildcard patterns.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1390,72 +1430,65 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>timestamp_str</code></td>
+<td style="text-align: left;"><code>path</code></td>
 <td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The string representation of the timestamp (ISO 8601 format).</td>
+<td style="text-align: left;">The file or directory path to convert into a glob pattern.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>tz</code></td>
-<td style="text-align: left;"><code>str</code>, optional</td>
-<td style="text-align: left;">Target timezone identifier (e.g., 'UTC', '+02:00', 'Europe/Paris'). If provided, the output datetime/time will be localized or converted to this timezone. Defaults to None.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>naive</code></td>
-<td style="text-align: left;"><code>bool</code>, optional</td>
-<td style="text-align: left;">If True, return a naive datetime/time (no timezone info), even if the input string or <code>tz</code> parameter specifies one. Defaults to False.</td>
+<td style="text-align: left;"><code>format</code></td>
+<td style="text-align: left;"><code>str</code> or <code>None</code></td>
+<td style="text-align: left;">The desired file format or extension to match (e.g., "parquet", "csv", "json"). If None, the format is inferred from the path.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>Union[dt.datetime, dt.date, dt.time]</code>: The parsed datetime, date, or time object.</li>
+<li><code>str</code>: Glob pattern for matching files</li>
 </ul>
-<p><strong>Example:</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timestamp_from_string</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># Parse a timestamp string with timezone</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">dt_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01T10:00:00+02:00&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">dt_obj</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># 2023-01-01 10:00:00+02:00</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># Parse a date string</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">date_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">date_obj</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># 2023-01-01</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># Parse a time string and localize to UTC</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">time_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;15:30:00&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">time_obj</span><span class="p">)</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1"># 15:30:00+00:00</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1"># Parse a timestamp and return as naive datetime</span>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="n">naive_dt_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01T10:00:00+02:00&quot;</span><span class="p">,</span> <span class="n">naive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">naive_dt_obj</span><span class="p">)</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="c1"># 2023-01-01 10:00:00</span>
-</code></pre></div></td></tr></table></div>
+<p><strong>Example:</strong>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Directory to parquet files glob</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">,</span> <span class="s2">&quot;parquet&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Already a glob pattern</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/*.csv&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># Specific file</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/file.json&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div></p>
+<h2 id="check_optional_dependency"><code>check_optional_dependency()</code><a class="headerlink" href="#check_optional_dependency" title="Permanent link">&para;</a></h2>
+<p>Check if an optional dependency is available.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>package_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The name of the optional package to check for availability.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>feature_name</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">A descriptive name of the feature that requires this package.</td>
+</tr>
+</tbody>
+</table>
 <p><strong>Raises:</strong></p>
 <ul>
-<li><code>ValueError</code>: If the timestamp string format is invalid or the timezone is invalid/unsupported.</li>
+<li><code>ImportError</code>: If the package is not available</li>
 </ul>
 
 

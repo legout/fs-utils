@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.logging/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.utils.sql/">
       
       
-        <link rel="prev" href="../fsspeckit.helpers.datetime/">
+        <link rel="prev" href="../fsspeckit.utils.pyarrow/">
       
       
-        <link rel="next" href="../fsspeckit.helpers.misc/">
+        <link rel="next" href="../fsspeckit.utils.types/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>fsspeckit.helpers.logging - fsspeckit</title>
+        <title>fsspeckit.utils.sql - fsspeckit</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fsspeckithelperslogging-api-reference" class="md-skip">
+        <a href="#fsspeckitutilssql-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fsspeckit.helpers.logging
+              fsspeckit.utils.sql
             
           </span>
         </div>
@@ -320,13 +320,13 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../helpers/" class="md-tabs__link">
+      <a href="../../utils/" class="md-tabs__link">
         
   
   
     
   
-  Helpers Module
+  Utils Module
 
       </a>
     </li>
@@ -576,12 +576,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../../helpers/" class="md-nav__link">
+      <a href="../../utils/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Helpers Module
+    Utils Module
     
   </span>
   
@@ -1007,7 +1007,7 @@
   
   
   <span class="md-ellipsis">
-    Helpers
+    Utils
     
   </span>
   
@@ -1018,7 +1018,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Helpers
+            Utils
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1029,12 +1029,104 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.datetime/" class="md-nav__link">
+      <a href="../fsspeckit.utils.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.datetime
+    fsspeckit.utils.datetime
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.logging
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.misc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.misc
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.polars/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.polars
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.utils.pyarrow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.utils.pyarrow
     
   </span>
   
@@ -1066,7 +1158,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.logging
+    fsspeckit.utils.sql
     
   </span>
   
@@ -1079,7 +1171,7 @@
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.logging
+    fsspeckit.utils.sql
     
   </span>
   
@@ -1102,18 +1194,27 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#setup_logging" class="md-nav__link">
+  <a href="#sql2pyarrow_filter" class="md-nav__link">
     <span class="md-ellipsis">
-      setup_logging()
+      sql2pyarrow_filter()
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#get_logger" class="md-nav__link">
+  <a href="#sql2polars_filter" class="md-nav__link">
     <span class="md-ellipsis">
-      get_logger()
+      sql2polars_filter()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_table_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table_names()
     </span>
   </a>
   
@@ -1135,104 +1236,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
+      <a href="../fsspeckit.utils.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspeckit.helpers.misc
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.polars
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.pyarrow
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.sql
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fsspeckit.helpers.types
+    fsspeckit.utils.types
     
   </span>
   
@@ -1277,10 +1286,9 @@
   
 
 
-<h1 id="fsspeckithelperslogging-api-reference"><code>fsspeckit.helpers.logging</code> API Reference<a class="headerlink" href="#fsspeckithelperslogging-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="setup_logging"><code>setup_logging()</code><a class="headerlink" href="#setup_logging" title="Permanent link">&para;</a></h2>
-<p>Configure the Loguru logger for fsspec-helpers.</p>
-<p>Removes the default handler and adds a new one targeting stderr with customizable level and format.</p>
+<h1 id="fsspeckitutilssql-api-reference"><code>fsspeckit.utils.sql</code> API Reference<a class="headerlink" href="#fsspeckitutilssql-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="sql2pyarrow_filter"><code>sql2pyarrow_filter()</code><a class="headerlink" href="#sql2pyarrow_filter" title="Permanent link">&para;</a></h2>
+<p>Generates a filter expression for PyArrow based on a given string and schema.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1292,71 +1300,99 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>level</code></td>
-<td style="text-align: left;"><code>str</code>, optional</td>
-<td style="text-align: left;">Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses fsspeckit_LOG_LEVEL environment variable or defaults to "INFO".</td>
+<td style="text-align: left;"><code>string</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The string containing the filter expression.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>disable</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">Whether to disable logging for fsspec-utils package.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>format_string</code></td>
-<td style="text-align: left;"><code>str</code>, optional</td>
-<td style="text-align: left;">Custom format string for log messages. If None, uses a default comprehensive format.</td>
+<td style="text-align: left;"><code>schema</code></td>
+<td style="text-align: left;"><code>pyarrow.Schema</code></td>
+<td style="text-align: left;">The PyArrow schema used to validate the filter expression.</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>pyarrow.compute.Expression</code>: The generated filter expression.</li>
+</ul>
+<p><strong>Raises:</strong></p>
+<ul>
+<li><code>ValueError</code>: If the input string is invalid or contains unsupported operations.</li>
+</ul>
+<h2 id="sql2polars_filter"><code>sql2polars_filter()</code><a class="headerlink" href="#sql2polars_filter" title="Permanent link">&para;</a></h2>
+<p>Generates a filter expression for Polars based on a given string and schema.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| <code>string</code> | <code>str</code> | The string containing the filter expression. |
+| <code>schema</code> | <code>polars.Schema</code> | The Polars schema used to validate the filter expression. |</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>polars.Expr</code>: The generated filter expression.</li>
+</ul>
+<p><strong>Raises:</strong></p>
+<ul>
+<li><code>ValueError</code>: If the input string is invalid or contains unsupported operations.</li>
+</ul>
+<h2 id="get_table_names"><code>get_table_names()</code><a class="headerlink" href="#get_table_names" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sql_query</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The SQL query string to parse.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.utils.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_table_names</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT a FROM my_table WHERE b &gt; 10&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">tables</span> <span class="o">=</span> <span class="n">get_table_names</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1"># Expected: [&#39;my_table&#39;]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">query_join</span> <span class="o">=</span> <span class="s2">&quot;SELECT t1.a, t2.b FROM table1 AS t1 JOIN table2 AS t2 ON t1.id = t2.id&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">tables_join</span> <span class="o">=</span> <span class="n">get_table_names</span><span class="p">(</span><span class="n">query_join</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">tables_join</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1"># Expected: [&#39;table1&#39;, &#39;table2&#39;]</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Returns:</strong></p>
 <ul>
 <li><code>None</code></li>
 </ul>
-<p><strong>Example:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Basic setup</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">setup_logging</span><span class="p">()</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Custom level and format</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">setup_logging</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s2">&quot;DEBUG&quot;</span><span class="p">,</span> <span class="n">format_string</span><span class="o">=</span><span class="s2">&quot;</span><span class="si">{time}</span><span class="s2"> | </span><span class="si">{level}</span><span class="s2"> | </span><span class="si">{message}</span><span class="s2">&quot;</span><span class="p">)</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="c1"># Disable logging</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">setup_logging</span><span class="p">(</span><span class="n">disable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="get_logger"><code>get_logger()</code><a class="headerlink" href="#get_logger" title="Permanent link">&para;</a></h2>
-<p>Get a logger instance for the given name.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">Logger name, typically the module name.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>Logger</code>: Configured logger instance.</li>
-</ul>
-<p><strong>Example:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">logger</span> <span class="o">=</span> <span class="n">get_logger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;This is a log message&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
 
 
 
