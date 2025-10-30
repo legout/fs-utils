@@ -3,9 +3,9 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "fs-utils"
+name = "fsspeckit"
 version = "0.3.1"
-description = "Enhanced utilities and extensions for fsspec, storate_options and obstore with multi-format I/O support."
+description = "Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support."
 readme = "README.md"
 license = "MIT"
 authors = [{ name = "legout", email = "ligno.blades@gmail.com" }]
@@ -59,16 +59,16 @@ azure = ["adlfs>=2024.12.0"]
 
 
 [project.urls]
-Homepage = "https://github.com/legout/fs-utils"
-Documentation = "https://legout.github.io/fs-utils"
-Repository = "https://github.com/legout/fs-utils.git"
-Issues = "https://github.com/legout/fs-utils/issues"
+Homepage = "https://github.com/legout/fsspeckit"
+Documentation = "https://legout.github.io/fsspeckit"
+Repository = "https://github.com/legout/fsspeckit.git"
+Issues = "https://github.com/legout/fsspeckit/issues"
 
 [tool.hatch.version]
-path = "src/fs_utils/__init__.py"
+path = "src/fsspeckit/__init__.py"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/fs_utils"]
+packages = ["src/fsspeckit"]
 
 
 [tool.pytest.ini_options]
@@ -79,7 +79,7 @@ python_functions = ["test_*"]
 addopts = [
     "--strict-markers",
     "--strict-config",
-    "--cov=fs_utils",
+    "--cov=fsspeckit",
     "--cov-report=term-missing",
     "--cov-report=html",
     "--cov-report=xml",
@@ -87,7 +87,7 @@ addopts = [
 ]
 
 [tool.coverage.run]
-source = ["src/fs_utils"]
+source = ["src/fsspeckit"]
 omit = ["*/tests/*", "*/test_*"]
 
 [tool.coverage.report]

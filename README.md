@@ -1,31 +1,31 @@
-# fs-utils
+# fsspeckit
 
 Enhanced utilities and extensions for fsspec filesystems with multi-format I/O support.
 
 ## Overview
 
-`fs-utils` is a comprehensive toolkit that extends [fsspec](https://filesystem-spec.readthedocs.io/) with:
+`fsspeckit` is a comprehensive toolkit that extends [fsspec](https://filesystem-spec.readthedocs.io/) with:
 
 - **Multi-cloud storage configuration** - Easy setup for AWS S3, Google Cloud Storage, Azure Storage, GitHub, and GitLab
 - **Enhanced caching** - Improved caching filesystem with monitoring and path preservation  
 - **Extended I/O operations** - Read/write operations for JSON, CSV, Parquet with Polars/PyArrow integration
 - **Utility functions** - Type conversion, parallel processing, and data transformation helpers
 
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/legout/fs-utils)
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/legout/fsspeckit)
 
 ## Installation
 
 ```bash
 # Basic installation
-pip install fs-utils
+pip install fsspeckit
 
 # Specific cloud providers
-pip install "fs-utils[aws]"     # AWS S3 support
-pip install "fs-utils[gcp]"     # Google Cloud Storage
-pip install "fs-utils[azure]"   # Azure Storage
+pip install "fsspeckit[aws]"     # AWS S3 support
+pip install "fsspeckit[gcp]"     # Google Cloud Storage
+pip install "fsspeckit[azure]"   # Azure Storage
 
 # Multiple cloud providers
-pip install "fs-utils[aws,gcp,azure]"
+pip install "fsspeckit[aws,gcp,azure]"
 ```
 
 ## Quick Start
@@ -33,7 +33,7 @@ pip install "fs-utils[aws,gcp,azure]"
 ### Basic Filesystem Operations
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Local filesystem
 fs = filesystem("file")
@@ -47,7 +47,7 @@ data = fs.cat("data/file.txt")
 ### Storage Configuration
 
 ```python
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit.storage_options import AwsStorageOptions
 
 # Configure S3 access
 options = AwsStorageOptions(
@@ -62,7 +62,7 @@ fs = filesystem("s3", storage_options=options, cached=True)
 ### Environment-based Configuration
 
 ```python
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit.storage_options import AwsStorageOptions
 
 # Load from environment variables
 options = AwsStorageOptions.from_env()
@@ -72,7 +72,7 @@ fs = filesystem("s3", storage_options=options)
 ### Multiple Cloud Providers
 
 ```python
-from fs_utils.storage_options import (
+from fsspeckit.storage_options import (
     AwsStorageOptions, 
     GcsStorageOptions,
     GitHubStorageOptions
@@ -97,7 +97,7 @@ github_fs = filesystem("github", storage_options=GitHubStorageOptions(
 ### AWS S3
 
 ```python
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit.storage_options import AwsStorageOptions
 
 # Basic credentials
 options = AwsStorageOptions(
@@ -121,7 +121,7 @@ options = AwsStorageOptions(
 ### Google Cloud Storage
 
 ```python
-from fs_utils.storage_options import GcsStorageOptions
+from fsspeckit.storage_options import GcsStorageOptions
 
 # Service account
 options = GcsStorageOptions(
@@ -136,7 +136,7 @@ options = GcsStorageOptions.from_env()
 ### Azure Storage
 
 ```python
-from fs_utils.storage_options import AzureStorageOptions
+from fsspeckit.storage_options import AzureStorageOptions
 
 # Account key
 options = AzureStorageOptions(
@@ -155,7 +155,7 @@ options = AzureStorageOptions(
 ### GitHub
 
 ```python
-from fs_utils.storage_options import GitHubStorageOptions
+from fsspeckit.storage_options import GitHubStorageOptions
 
 # Public repository
 options = GitHubStorageOptions(
@@ -176,7 +176,7 @@ options = GitHubStorageOptions(
 ### GitLab
 
 ```python
-from fs_utils.storage_options import GitLabStorageOptions
+from fsspeckit.storage_options import GitLabStorageOptions
 
 # Public project
 options = GitLabStorageOptions(
@@ -195,7 +195,7 @@ options = GitLabStorageOptions(
 ## Enhanced Caching
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Enable caching with monitoring
 fs = filesystem(
@@ -215,7 +215,7 @@ data = fs.cat("deep/nested/path/file.txt")
 ### Parallel Processing
 
 ```python
-from fs_utils.helpers import run_parallel
+from fsspeckit.helpers import run_parallel
 
 # Run function in parallel
 def process_file(path, multiplier=1):
@@ -233,7 +233,7 @@ results = run_parallel(
 ### Type Conversion
 
 ```python
-from fs_utils.helpers import dict_to_dataframe, to_pyarrow_table
+from fsspeckit.helpers import dict_to_dataframe, to_pyarrow_table
 
 # Convert dict to DataFrame
 data = {"col1": [1, 2, 3], "col2": [4, 5, 6]}
@@ -246,7 +246,7 @@ table = to_pyarrow_table(df)
 ### Logging
 
 ```python
-from fs_utils.helpers import setup_logging
+from fsspeckit.helpers import setup_logging
 
 # Configure logging
 setup_logging(level="DEBUG", format_string="{time} | {level} | {message}")

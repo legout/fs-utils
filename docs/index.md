@@ -1,10 +1,10 @@
-# Welcome to fs-utils!
+# Welcome to fsspeckit!
 
-`fs-utils` is a powerful library designed to enhance `fsspec` (Filesystem Spec) with advanced utilities and extensions, making multi-format I/O, cloud storage configuration, caching, monitoring, and batch processing more streamlined and efficient.
+`fsspeckit` is a powerful library designed to enhance `fsspec` (Filesystem Spec) with advanced utilities and extensions, making multi-format I/O, cloud storage configuration, caching, monitoring, and batch processing more streamlined and efficient.
 
 ## Purpose
 
-This library aims to simplify complex data operations across various file systems, providing a unified and extended interface for handling diverse data formats and storage solutions. Whether you're working with local files, cloud storage like AWS S3, Azure Blob Storage, or Google Cloud Storage, `fs-utils` provides the tools to manage your data effectively.
+This library aims to simplify complex data operations across various file systems, providing a unified and extended interface for handling diverse data formats and storage solutions. Whether you're working with local files, cloud storage like AWS S3, Azure Blob Storage, or Google Cloud Storage, `fsspeckit` provides the tools to manage your data effectively.
 
 ## Key Features
 
@@ -16,9 +16,9 @@ This library aims to simplify complex data operations across various file system
 
 ## Get Started
 
-Ready to dive in? Check out our [Quickstart Guide](quickstart.md) to begin using `fs-utils` in your projects.
+Ready to dive in? Check out our [Quickstart Guide](quickstart.md) to begin using `fsspeckit` in your projects.
 
 ## Badges
 
-[![GitHub](https://img.shields.io/badge/GitHub-fs--utils-blue?logo=github)](https://github.com/legout/fs-utils)
-[![PyPI](https://img.shields.io/badge/PyPI-fs--utils-blue?logo=pypi)](https://pypi.org/project/fs-utils)
+[![GitHub](https://img.shields.io/badge/GitHub-fs--utils-blue?logo=github)](https://github.com/legout/fsspeckit)
+[![PyPI](https://img.shields.io/badge/PyPI-fsspeckit-blue?logo=pypi)](https://pypi.org/project/fsspeckit)

@@ -1,10 +1,10 @@
 # Architecture Overview
 
-`fs-utils` is designed to extend and enhance the capabilities of `fsspec`, providing a robust and flexible framework for interacting with various filesystems and data formats. Its architecture is modular, built around core components that abstract away complexities and offer specialized functionalities.
+`fsspeckit` is designed to extend and enhance the capabilities of `fsspec`, providing a robust and flexible framework for interacting with various filesystems and data formats. Its architecture is modular, built around core components that abstract away complexities and offer specialized functionalities.
 
 ## Extending `fsspec`
 
-At its core, `fs-utils` builds upon the `fsspec` (Filesystem Spec) library, which provides a unified Pythonic interface to various storage backends. `fs-utils` extends this functionality by:
+At its core, `fsspeckit` builds upon the `fsspec` (Filesystem Spec) library, which provides a unified Pythonic interface to various storage backends. `fsspeckit` extends this functionality by:
 
 - **Simplifying Storage Configuration**: It offers `StorageOptions` classes for various cloud providers (AWS S3, Google Cloud Storage, Azure Storage) and Git platforms (GitHub, GitLab), allowing for easier and more consistent configuration of filesystem access.
 - **Enhancing I/O Operations**: It provides extended read/write capabilities for common data formats like JSON, CSV, and Parquet, with integrations for high-performance libraries like Polars and PyArrow.
@@ -12,7 +12,7 @@ At its core, `fs-utils` builds upon the `fsspec` (Filesystem Spec) library, whic
 
 ## Core Components
 
-The `fs-utils` library is organized into several key modules:
+The `fsspeckit` library is organized into several key modules:
 
 ### `core`
 
@@ -24,7 +24,7 @@ This module is dedicated to managing storage configurations for different backen
 
 ### `helpers`
 
-The `helpers` module provides a collection of general-purpose utility functions that support various operations within `fs-utils`. These include:
+The `helpers` module provides a collection of general-purpose utility functions that support various operations within `fsspeckit`. These include:
 
 - **Parallel Processing**: Functions like `run_parallel` for executing tasks concurrently.
 - **Type Conversion**: Utilities such as `dict_to_dataframe` and `to_pyarrow_table` for data manipulation.
@@ -38,7 +38,7 @@ The `helpers` module provides a collection of general-purpose utility functions 
 
 ```mermaid
 graph TD
-    A[fs-utils] --> B(Core Module)
+    A[fsspeckit] --> B(Core Module)
     A --> C(Storage Options Module)
     A --> D(Helpers Module)
     B --> E[Extends fsspec]

@@ -1,6 +1,6 @@
 # Examples Guide
 
-This page provides an overview of the available examples in the `fs-utils` repository. Each example is designed to be runnable and demonstrates real-world usage patterns.
+This page provides an overview of the available examples in the `fsspeckit` repository. Each example is designed to be runnable and demonstrates real-world usage patterns.
 
 ## Available Examples
 
@@ -11,7 +11,7 @@ This page provides an overview of the available examples in the `fs-utils` repos
 Demonstrates how to create and use storage option objects for different cloud providers:
 
 ```python
-from fs_utils.storage_options import (
+from fsspeckit.storage_options import (
     LocalStorageOptions,
     AwsStorageOptions,
     GcsStorageOptions,
@@ -44,7 +44,7 @@ fs = aws.to_filesystem()
 Shows how to use DirFileSystem for treating directories as files:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Create DirFileSystem for a directory
 fs = filesystem("/data/", dirfs=True)
@@ -66,7 +66,7 @@ data = fs.cat("subdir/file.txt")
 Demonstrates how to improve performance using the enhanced caching mechanism:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Enable caching for S3 operations
 fs = filesystem(
@@ -96,7 +96,7 @@ data2 = fs.read_json("data.json")
 Shows how to process large numbers of files in batches:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 fs = filesystem(".")
 
@@ -118,7 +118,7 @@ for batch_df in fs.read_csv("data/*.csv", batch_size=10):
 Demonstrates reading multiple files in various formats from a directory:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 fs = filesystem("/data/")
 
@@ -144,8 +144,8 @@ for df in fs.read_csv("**/*.csv", batch_size=5):
 Shows how to work with partitioned datasets on object storage:
 
 ```python
-from fs_utils import filesystem
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit import filesystem
+from fsspeckit.storage_options import AwsStorageOptions
 
 # Configure for S3, Cloudflare R2, or MinIO
 options = AwsStorageOptions(
@@ -178,14 +178,14 @@ Demonstrates integration with Delta Lake:
 
 ```python
 from deltalake import DeltaTable
-from fs_utils.storage_options import LocalStorageOptions
+from fsspeckit.storage_options import LocalStorageOptions
 import polars as pl
 
 # Create sample Delta table
 data = pl.DataFrame({"id": [1, 2, 3], "value": ["A", "B", "C"]})
 data.write_delta("/path/to/delta_table")
 
-# Access with fs-utils storage options
+# Access with fsspeckit storage options
 local_opts = LocalStorageOptions()
 dt = DeltaTable(
     "/path/to/delta_table",
@@ -209,7 +209,7 @@ table = dt.to_pyarrow_table()
 Shows how to work with Pydala datasets:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 fs = filesystem(".")
 
@@ -230,10 +230,10 @@ polars_df = dataset.to_polars()
 
 ### Prerequisites
 
-Install fs-utils with all optional dependencies:
+Install fsspeckit with all optional dependencies:
 
 ```bash
-pip install "fs-utils[aws,gcp,azure]"
+pip install "fsspeckit[aws,gcp,azure]"
 ```
 
 For Delta Lake examples:
@@ -297,7 +297,7 @@ To contribute a new example:
 
 ## Troubleshooting Examples
 
-**Missing dependencies:** Install with `pip install "fs-utils[aws,gcp,azure]"`
+**Missing dependencies:** Install with `pip install "fsspeckit[aws,gcp,azure]"`
 
 **Cloud credentials not found:** Set environment variables or update examples with credentials
 

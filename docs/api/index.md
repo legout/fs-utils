@@ -1,35 +1,35 @@
-# `fs-utils` API Reference
+# `fsspeckit` API Reference
 
-Welcome to the `fs-utils` API reference documentation. This section provides detailed information on the various modules, classes, and functions available in the library.
+Welcome to the `fsspeckit` API reference documentation. This section provides detailed information on the various modules, classes, and functions available in the library.
 
 ## Core Modules
 
-*   [`fs_utils.core.base`](fs_utils.core.base.md)
+*   [`fsspeckit.core.base`](fsspeckit.core.base.md)
 
-*   [`fs_utils.core.ext`](fs_utils.core.ext.md)
+*   [`fsspeckit.core.ext`](fsspeckit.core.ext.md)
 
 ## Storage Options
 
-*   [`fs_utils.storage_options.base`](fs_utils.storage_options.base.md)
+*   [`fsspeckit.storage_options.base`](fsspeckit.storage_options.base.md)
 
-*   [`fs_utils.storage_options.cloud`](fs_utils.storage_options.cloud.md)
+*   [`fsspeckit.storage_options.cloud`](fsspeckit.storage_options.cloud.md)
 
-*   [`fs_utils.storage_options.core`](fs_utils.storage_options.core.md)
+*   [`fsspeckit.storage_options.core`](fsspeckit.storage_options.core.md)
 
-*   [`fs_utils.storage_options.git`](fs_utils.storage_options.git.md)
+*   [`fsspeckit.storage_options.git`](fsspeckit.storage_options.git.md)
 
 ## Helpers
 
-*   [`fs_utils.helpers.datetime`](fs_utils.helpers.datetime.md)
+*   [`fsspeckit.helpers.datetime`](fsspeckit.helpers.datetime.md)
 
-*   [`fs_utils.helpers.logging`](fs_utils.helpers.logging.md)
+*   [`fsspeckit.helpers.logging`](fsspeckit.helpers.logging.md)
 
-*   [`fs_utils.helpers.misc`](fs_utils.helpers.misc.md)
+*   [`fsspeckit.helpers.misc`](fsspeckit.helpers.misc.md)
 
-*   [`fs_utils.helpers.polars`](fs_utils.helpers.polars.md)
+*   [`fsspeckit.helpers.polars`](fsspeckit.helpers.polars.md)
 
-*   [`fs_utils.helpers.pyarrow`](fs_utils.helpers.pyarrow.md)
+*   [`fsspeckit.helpers.pyarrow`](fsspeckit.helpers.pyarrow.md)
 
-*   [`fs_utils.helpers.sql`](fs_utils.helpers.sql.md)
+*   [`fsspeckit.helpers.sql`](fsspeckit.helpers.sql.md)
 
-*   [`fs_utils.helpers.types`](fs_utils.helpers.types.md)
+*   [`fsspeckit.helpers.types`](fsspeckit.helpers.types.md)

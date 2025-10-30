@@ -1,4 +1,4 @@
-# `fs_utils.storage_options.core` API Reference
+# `fsspeckit.storage_options.core` API Reference
 
 ## `LocalStorageOptions`
 

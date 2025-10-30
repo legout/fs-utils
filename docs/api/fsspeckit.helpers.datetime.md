@@ -1,4 +1,4 @@
-# `fs_utils.helpers.datetime` API Reference
+# `fsspeckit.helpers.datetime` API Reference
 
 ## `get_timestamp_column()`
 
@@ -12,7 +12,7 @@
 
 ```python
 import polars as pl
-from fs_utils.helpers.datetime import get_timestamp_column
+from fsspeckit.helpers.datetime import get_timestamp_column
 
 df = pl.DataFrame({
     "timestamp_col": [1678886400, 1678972800],
@@ -38,7 +38,7 @@ print(col_name)
 **Example:**
 
 ```python
-from fs_utils.helpers.datetime import get_timedelta_str
+from fsspeckit.helpers.datetime import get_timedelta_str
 
 # Convert to Polars duration string
 polars_duration = get_timedelta_str("1h")
@@ -78,7 +78,7 @@ using only standard Python libraries. Handles strings with or without timezone i
 **Example:**
 
 ```python
-from fs_utils.helpers.datetime import timestamp_from_string
+from fsspeckit.helpers.datetime import timestamp_from_string
 
 # Parse a timestamp string with timezone
 dt_obj = timestamp_from_string("2023-01-01T10:00:00+02:00")

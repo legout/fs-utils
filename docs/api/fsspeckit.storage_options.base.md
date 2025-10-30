@@ -1,4 +1,4 @@
-# `fs_utils.storage_options.base` API Documentation
+# `fsspeckit.storage_options.base` API Documentation
 
 This module defines the base class for filesystem storage configuration options.
 
@@ -22,7 +22,7 @@ Provides common functionality for all storage option classes including:
 **Example:**
 
 ```python
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 
 # Create and save options
 options = BaseStorageOptions(protocol="s3")
@@ -49,7 +49,7 @@ Convert storage options to dictionary.
 **Example:**
 
 ```python
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 
 options = BaseStorageOptions(protocol="s3")
 print(options.to_dict())
@@ -75,7 +75,7 @@ Load storage options from YAML file.
 
 ```python
 # Load from local file
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 from fsspec.implementations.local import LocalFileSystem
 
 # Assuming 'config.yml' exists and contains valid YAML for BaseStorageOptions
@@ -106,7 +106,7 @@ Save storage options to YAML file.
 **Example:**
 
 ```python
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 from fsspec.implementations.local import LocalFileSystem
 
 options = BaseStorageOptions(protocol="s3")
@@ -125,7 +125,7 @@ Create fsspec filesystem instance from options.
 **Example:**
 
 ```python
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 
 options = BaseStorageOptions(protocol="file")
 fs = options.to_filesystem()
@@ -157,7 +157,7 @@ Update storage options with new values.
 **Example:**
 
 ```python
-from fs_utils.storage_options.base import BaseStorageOptions
+from fsspeckit.storage_options.base import BaseStorageOptions
 
 options = BaseStorageOptions(protocol="s3")
 options = options.update(region="us-east-1")

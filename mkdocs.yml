@@ -1,9 +1,9 @@
-site_name: fs-utils
-site_description: Enhanced utilities and extensions for fsspec, storate_options and obstore with multi-format I/O support.
-site_url: https://legout.github.com/fs-utils
-repo_name: legout/fs-utils
-repo_url: https://github.com/legout/fs-utils
-pypi_url: https://pypi.org/project/fs-utils/
+site_name: fsspeckit
+site_description: Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support.
+site_url: https://legout.github.io/fsspeckit
+repo_name: legout/fsspeckit
+repo_url: https://github.com/legout/fsspeckit
+pypi_url: https://pypi.org/project/fsspeckit
 
 nav:
   - Home: index.md
@@ -18,21 +18,21 @@ nav:
   - API Reference:
       - api/index.md
       - Core:
-          - fs_utils.core.base: api/fs_utils.core.base.md
-          - fs_utils.core.ext: api/fs_utils.core.ext.md
+          - fsspeckit.core.base: api/fsspeckit.core.base.md
+          - fsspeckit.core.ext: api/fsspeckit.core.ext.md
       - Storage Options:
-          - fs_utils.storage_options.base: api/fs_utils.storage_options.base.md
-          - fs_utils.storage_options.cloud: api/fs_utils.storage_options.cloud.md
-          - fs_utils.storage_options.core: api/fs_utils.storage_options.core.md
-          - fs_utils.storage_options.git: api/fs_utils.storage_options.git.md
+          - fsspeckit.storage_options.base: api/fsspeckit.storage_options.base.md
+          - fsspeckit.storage_options.cloud: api/fsspeckit.storage_options.cloud.md
+          - fsspeckit.storage_options.core: api/fsspeckit.storage_options.core.md
+          - fsspeckit.storage_options.git: api/fsspeckit.storage_options.git.md
       - Helpers:
-          - fs_utils.helpers.datetime: api/fs_utils.helpers.datetime.md
-          - fs_utils.helpers.logging: api/fs_utils.helpers.logging.md
-          - fs_utils.helpers.misc: api/fs_utils.helpers.misc.md
-          - fs_utils.helpers.polars: api/fs_utils.helpers.polars.md
-          - fs_utils.helpers.pyarrow: api/fs_utils.helpers.pyarrow.md
-          - fs_utils.helpers.sql: api/fs_utils.helpers.sql.md
-          - fs_utils.helpers.types: api/fs_utils.helpers.types.md
+          - fsspeckit.helpers.datetime: api/fsspeckit.helpers.datetime.md
+          - fsspeckit.helpers.logging: api/fsspeckit.helpers.logging.md
+          - fsspeckit.helpers.misc: api/fsspeckit.helpers.misc.md
+          - fsspeckit.helpers.polars: api/fsspeckit.helpers.polars.md
+          - fsspeckit.helpers.pyarrow: api/fsspeckit.helpers.pyarrow.md
+          - fsspeckit.helpers.sql: api/fsspeckit.helpers.sql.md
+          - fsspeckit.helpers.types: api/fsspeckit.helpers.types.md
 
 theme:
   name: material

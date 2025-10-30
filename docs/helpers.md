@@ -1,6 +1,6 @@
 # Helpers Module
 
-The `fs_utils.helpers` module provides a collection of utility functions that simplify common tasks such as logging, parallel processing, data type conversions, and schema transformations.
+The `fsspeckit.helpers` module provides a collection of utility functions that simplify common tasks such as logging, parallel processing, data type conversions, and schema transformations.
 
 ## Logging
 
@@ -9,7 +9,7 @@ The `fs_utils.helpers` module provides a collection of utility functions that si
 Configure logging throughout your application with loguru:
 
 ```python
-from fs_utils.helpers import setup_logging
+from fsspeckit.helpers import setup_logging
 
 # Basic setup
 setup_logging()
@@ -31,7 +31,7 @@ setup_logging(level="DEBUG", format_string="{time} | {level} | {message}")
 Execute a function across multiple inputs using parallel threads with optional progress bar:
 
 ```python
-from fs_utils.helpers import run_parallel
+from fsspeckit.helpers import run_parallel
 
 def process_file(path, multiplier=1):
     return len(path) * multiplier
@@ -61,7 +61,7 @@ results = run_parallel(
 Synchronize files from source to destination, supporting efficient server-side copy when both paths are on the same filesystem:
 
 ```python
-from fs_utils.helpers import sync_files
+from fsspeckit.helpers import sync_files
 
 # Copy files with optional filtering
 synced = sync_files(
@@ -78,7 +78,7 @@ synced = sync_files(
 Recursively sync directories between filesystems:
 
 ```python
-from fs_utils.helpers import sync_dir
+from fsspeckit.helpers import sync_dir
 
 # Sync entire directory
 sync_dir(
@@ -100,7 +100,7 @@ sync_dir(
 Extract partition information from a file path in Hive-style partition format:
 
 ```python
-from fs_utils.helpers import get_partitions_from_path
+from fsspeckit.helpers import get_partitions_from_path
 
 # Extract partitions from path like "year=2023/month=10/day=15/data.parquet"
 partitions = get_partitions_from_path("/data/year=2023/month=10/day=15/data.parquet")
@@ -112,7 +112,7 @@ partitions = get_partitions_from_path("/data/year=2023/month=10/day=15/data.parq
 Convert a path with partition placeholders to a glob pattern:
 
 ```python
-from fs_utils.helpers import path_to_glob
+from fsspeckit.helpers import path_to_glob
 
 # Convert partition path to glob pattern
 pattern = path_to_glob("/data/year=*/month=*/day=*/data.parquet")
@@ -126,7 +126,7 @@ pattern = path_to_glob("/data/year=*/month=*/day=*/data.parquet")
 Convert dictionaries or lists of dictionaries to Polars DataFrame:
 
 ```python
-from fs_utils.helpers import dict_to_dataframe
+from fsspeckit.helpers import dict_to_dataframe
 
 # Single dict
 data = {"col1": [1, 2, 3], "col2": [4, 5, 6]}
@@ -145,7 +145,7 @@ df = dict_to_dataframe(records)
 Convert various data types to PyArrow Table:
 
 ```python
-from fs_utils.helpers import to_pyarrow_table
+from fsspeckit.helpers import to_pyarrow_table
 
 # From Polars DataFrame
 table = to_pyarrow_table(polars_df)
@@ -169,7 +169,7 @@ table = to_pyarrow_table(records)
 Parse timestamp strings using standard library (zoneinfo-aware):
 
 ```python
-from fs_utils.helpers import timestamp_from_string
+from fsspeckit.helpers import timestamp_from_string
 from datetime import datetime
 
 # Parse ISO format
@@ -186,7 +186,7 @@ ts = timestamp_from_string("2023-10-15T10:30:00+02:00")
 Get a human-readable time difference string:
 
 ```python
-from fs_utils.helpers import get_timedelta_str
+from fsspeckit.helpers import get_timedelta_str
 from datetime import datetime
 
 start = datetime(2023, 1, 1)
@@ -205,7 +205,7 @@ diff_str = get_timedelta_str(start, end)
 Automatically optimize Polars column data types to reduce memory usage:
 
 ```python
-from fs_utils.helpers import opt_dtype_pl
+from fsspeckit.helpers import opt_dtype_pl
 import polars as pl
 
 # Optimize a single column
@@ -227,7 +227,7 @@ df_opt = df.opt_dtype  # Custom extension method
 PyArrow equivalent for type optimization:
 
 ```python
-from fs_utils.helpers import opt_dtype_pa
+from fsspeckit.helpers import opt_dtype_pa
 
 # Optimize PyArrow table
 table = pa.table({"id": [1, 2, 3], "count": [100, 200, 300]})
@@ -241,7 +241,7 @@ optimized = opt_dtype_pa(table)
 Unify schemas across multiple tables/dataframes:
 
 ```python
-from fs_utils.helpers import cast_schema
+from fsspeckit.helpers import cast_schema
 
 # Cast one schema to match another
 target_schema = table1.schema
@@ -253,7 +253,7 @@ cast_table2 = cast_schema(table2, target_schema)
 Convert large_string/large_binary to normal string/binary types:
 
 ```python
-from fs_utils.helpers import convert_large_types_to_normal
+from fsspeckit.helpers import convert_large_types_to_normal
 
 # Convert large types in PyArrow table
 table = convert_large_types_to_normal(table)
@@ -268,7 +268,7 @@ table = convert_large_types_to_normal(table)
 Convert SQL WHERE clause to PyArrow filter expression:
 
 ```python
-from fs_utils.helpers import sql2pyarrow_filter
+from fsspeckit.helpers import sql2pyarrow_filter
 import pyarrow as pa
 
 # Define schema
@@ -293,7 +293,7 @@ filtered = dataset.to_table(filter=expr)
 Convert SQL WHERE clause to Polars filter expression:
 
 ```python
-from fs_utils.helpers import sql2polars_filter
+from fsspeckit.helpers import sql2polars_filter
 
 # Create filter expression
 expr = sql2polars_filter("age > 25 AND status = 'active'")
@@ -316,7 +316,7 @@ filtered_df = df.filter(expr)
 Verify that optional dependencies are installed:
 
 ```python
-from fs_utils.helpers import check_optional_dependency
+from fsspeckit.helpers import check_optional_dependency
 
 # Check for a dependency
 try:
@@ -332,7 +332,7 @@ except ImportError as e:
 Compare two filesystems to verify they contain identical data:
 
 ```python
-from fs_utils.helpers import check_fs_identical
+from fsspeckit.helpers import check_fs_identical
 
 # Compare local directories
 fs1 = filesystem("/path1")
@@ -343,11 +343,11 @@ identical = check_fs_identical(fs1, "/data", fs2, "/data")
 
 ## Polars DataFrame Extensions
 
-When using fs-utils with Polars, additional methods are automatically added to DataFrames:
+When using fsspeckit with Polars, additional methods are automatically added to DataFrames:
 
 ```python
 import polars as pl
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 df = pl.DataFrame({
     "date": ["2023-01-01", "2023-02-15"],

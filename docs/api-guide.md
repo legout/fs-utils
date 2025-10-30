@@ -1,6 +1,6 @@
 # API Guide
 
-This guide provides a comprehensive overview of the fs-utils public API and how to use its main components.
+This guide provides a comprehensive overview of the fsspeckit public API and how to use its main components.
 
 ## Core Filesystem Factory
 
@@ -9,7 +9,7 @@ This guide provides a comprehensive overview of the fs-utils public API and how 
 The main entry point for creating configured filesystems:
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Basic local filesystem
 fs = filesystem("file")
@@ -41,7 +41,7 @@ fs = filesystem("/data", dirfs=True, base_fs=parent_fs)
 Storage options provide structured configuration for different providers:
 
 ```python
-from fs_utils.storage_options import (
+from fsspeckit.storage_options import (
     AwsStorageOptions,
     GcsStorageOptions,
     AzureStorageOptions,
@@ -97,7 +97,7 @@ fs = local.to_filesystem()
 Create storage options from various sources:
 
 ```python
-from fs_utils.storage_options import (
+from fsspeckit.storage_options import (
     from_dict,
     from_env,
     merge_storage_options,
@@ -123,14 +123,14 @@ opts = storage_options_from_uri("s3://my-bucket/data")
 
 ## Extended I/O Operations
 
-fs-utils adds rich I/O methods to all fsspec filesystems through monkey-patching.
+fsspeckit adds rich I/O methods to all fsspec filesystems through monkey-patching.
 
 ### Reading Operations
 
 #### JSON Operations
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 fs = filesystem(".")
 
@@ -308,7 +308,7 @@ fs.sync_cache()
 ### Parallel Processing
 
 ```python
-from fs_utils.helpers import run_parallel
+from fsspeckit.helpers import run_parallel
 
 def process(item):
     return len(item)
@@ -324,7 +324,7 @@ results = run_parallel(
 ### Type Conversions
 
 ```python
-from fs_utils.helpers import (
+from fsspeckit.helpers import (
     dict_to_dataframe,
     to_pyarrow_table
 )
@@ -340,7 +340,7 @@ table = to_pyarrow_table(df)
 
 ```python
 import polars as pl
-from fs_utils.helpers import opt_dtype_pl
+from fsspeckit.helpers import opt_dtype_pl
 
 # Optimize DataFrame
 df = pl.read_csv("data.csv")
@@ -353,7 +353,7 @@ df_opt = df.opt_dtype
 ### SQL Filtering
 
 ```python
-from fs_utils.helpers import sql2pyarrow_filter
+from fsspeckit.helpers import sql2pyarrow_filter
 import pyarrow as pa
 
 schema = pa.schema([("age", pa.int32()), ("name", pa.string())])
@@ -364,7 +364,7 @@ filtered_table = dataset.to_table(filter=expr)
 ### File Synchronization
 
 ```python
-from fs_utils.helpers import sync_dir
+from fsspeckit.helpers import sync_dir
 
 # Sync directories
 sync_dir(
@@ -383,7 +383,7 @@ sync_dir(
 Read-only filesystem for GitLab repositories:
 
 ```python
-from fs_utils.core import filesystem
+from fsspeckit.core import filesystem
 
 fs = filesystem(
     "gitlab",
@@ -417,7 +417,7 @@ size = fs.get_cache_size()
 ## Working with DirFileSystem
 
 ```python
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # Create DirFileSystem wrapper
 fs = filesystem("/data", dirfs=True)
@@ -465,8 +465,8 @@ opts = AwsStorageOptions.from_env()
 ## Error Handling
 
 ```python
-from fs_utils import filesystem
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit import filesystem
+from fsspeckit.storage_options import AwsStorageOptions
 
 try:
     fs = filesystem("s3", storage_options={"region": "invalid"})
@@ -475,7 +475,7 @@ except Exception as e:
     print(f"Error: {e}")
 
 # Check optional dependencies
-from fs_utils.helpers import check_optional_dependency
+from fsspeckit.helpers import check_optional_dependency
 try:
     check_optional_dependency("deltalake")
 except ImportError:

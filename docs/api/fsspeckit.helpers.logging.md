@@ -1,4 +1,4 @@
-# `fs_utils.helpers.logging` API Reference
+# `fsspeckit.helpers.logging` API Reference
 
 ## `setup_logging()`
 
@@ -10,7 +10,7 @@ Removes the default handler and adds a new one targeting stderr with customizabl
 
 | Name            | Type            | Description                                                                                                                     |
 | :-------------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------ |
-| `level`         | `str`, optional | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses fs_utils_LOG_LEVEL environment variable or defaults to "INFO". |
+| `level`         | `str`, optional | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses fsspeckit_LOG_LEVEL environment variable or defaults to "INFO". |
 | `disable`       | `bool`          | Whether to disable logging for fsspec-utils package.                                                                            |
 | `format_string` | `str`, optional | Custom format string for log messages. If None, uses a default comprehensive format.                                            |
 
