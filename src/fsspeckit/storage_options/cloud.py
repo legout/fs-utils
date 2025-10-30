@@ -92,9 +92,7 @@ class AzureStorageOptions(BaseStorageOptions):
     def __post_init__(self) -> None:
         protocol = (self.protocol or "az").lower()
         if protocol not in {"az", "abfs", "adl"}:
-            raise ValueError(
-                "Azure protocol must be one of 'az', 'abfs', or 'adl'"
-            )
+            raise ValueError("Azure protocol must be one of 'az', 'abfs', or 'adl'")
         object.__setattr__(self, "protocol", protocol)
 
     @classmethod
@@ -605,9 +603,7 @@ class AwsStorageOptions(BaseStorageOptions):
             if self.allow_invalid_certificates is None
             else not self.allow_invalid_certificates
         )
-        use_ssl_value = (
-            None if self.allow_http is None else not self.allow_http
-        )
+        use_ssl_value = None if self.allow_http is None else not self.allow_http
 
         client_kwargs = {
             "region_name": self.region,
@@ -730,8 +726,10 @@ class AwsStorageOptions(BaseStorageOptions):
             ),
         )
 
-    def to_obstore(self) -> S3Store:
-        return S3Store(**self.to_obstore_kwargs())
+    def to_obstore(
+        self, bucket: str | None = None, prefix: str | None = None
+    ) -> S3Store:
+        return S3Store(bucket=bucket, prefix=prefix, **self.to_obstore_kwargs())
 
     def to_obstore_fsspec(self) -> FsspecStore:
         kwargs = self.to_obstore_kwargs()
