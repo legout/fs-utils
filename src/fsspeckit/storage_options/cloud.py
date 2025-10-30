@@ -729,7 +729,7 @@ class AwsStorageOptions(BaseStorageOptions):
     def to_obstore(
         self, bucket: str | None = None, prefix: str | None = None
     ) -> S3Store:
-        return S3Store(bucket=bucket, prefix=prefix, **self.to_obstore_kwargs())
+        return S3Store(**self.to_obstore_kwargs(bucket=bucket, prefix=prefix))
 
     def to_obstore_fsspec(self) -> FsspecStore:
         kwargs = self.to_obstore_kwargs()
