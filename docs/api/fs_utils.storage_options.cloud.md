@@ -1,4 +1,4 @@
-# `fs_helpers.storage_options.cloud` API Documentation
+# `fs_utils.storage_options.cloud` API Documentation
 
 This module defines storage option classes for various cloud providers, including Azure, Google Cloud Storage (GCS), and Amazon Web Services (AWS) S3. These classes provide structured ways to configure access to cloud storage, supporting different authentication methods and specific cloud service parameters.
 
@@ -36,7 +36,7 @@ Supports multiple authentication methods:
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import AzureStorageOptions
+from fs_utils.storage_options.cloud import AzureStorageOptions
 
 # Blob Storage with account key
 options = AzureStorageOptions(
@@ -84,7 +84,7 @@ Reads standard Azure environment variables:
 
 ```python
 # With environment variables set:
-from fs_helpers.storage_options.cloud import AzureStorageOptions
+from fs_utils.storage_options.cloud import AzureStorageOptions
 import os
 
 # Set environment variables for testing (replace with actual values if needed)
@@ -109,7 +109,7 @@ Sets standard Azure environment variables.
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import AzureStorageOptions
+from fs_utils.storage_options.cloud import AzureStorageOptions
 import os
 
 options = AzureStorageOptions(
@@ -152,7 +152,7 @@ Provides configuration for GCS access with support for:
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import GcsStorageOptions
+from fs_utils.storage_options.cloud import GcsStorageOptions
 
 # Service account auth
 options = GcsStorageOptions(
@@ -194,7 +194,7 @@ Reads standard GCP environment variables:
 
 ```python
 # With environment variables set:
-from fs_helpers.storage_options.cloud import GcsStorageOptions
+from fs_utils.storage_options.cloud import GcsStorageOptions
 import os
 
 # Set environment variables for testing (replace with actual values if needed)
@@ -217,7 +217,7 @@ Sets standard GCP environment variables.
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import GcsStorageOptions
+from fs_utils.storage_options.cloud import GcsStorageOptions
 import os
 
 options = GcsStorageOptions(
@@ -244,8 +244,8 @@ Convert options to fsspec filesystem arguments.
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import GcsStorageOptions
-from fs_helpers.core.base import filesystem
+from fs_utils.storage_options.cloud import GcsStorageOptions
+from fs_utils.core.base import filesystem
 
 options = GcsStorageOptions(
     protocol="gs",
@@ -379,7 +379,7 @@ Reads standard AWS environment variables:
 
 ```python
 # Load from environment
-from fs_helpers.storage_options.cloud import AwsStorageOptions
+from fs_utils.storage_options.cloud import AwsStorageOptions
 import os
 
 # Set environment variables for testing (replace with actual values if needed)
@@ -428,7 +428,7 @@ Convert options to object store arguments.
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import AwsStorageOptions
+from fs_utils.storage_options.cloud import AwsStorageOptions
 # Assuming ObjectStore is a hypothetical client for demonstration
 # from some_object_store_library import ObjectStore
 
@@ -449,7 +449,7 @@ Sets standard AWS environment variables.
 **Example:**
 
 ```python
-from fs_helpers.storage_options.cloud import AwsStorageOptions
+from fs_utils.storage_options.cloud import AwsStorageOptions
 import os
 
 options = AwsStorageOptions(

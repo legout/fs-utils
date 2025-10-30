@@ -1,4 +1,4 @@
-# `fs_helpers.helpers.misc` API Reference
+# `fs_utils.helpers.misc` API Reference
 
 ## `run_parallel()`
 

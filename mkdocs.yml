@@ -1,9 +1,9 @@
-site_name: fsspec-utils
-site_description: Enhanced utilities and extensions for fsspec filesystems.
-site_url: https://legout.github.com/fsspec-utils
-repo_name: legout/fsspec-utils
-repo_url: https://github.com/legout/fsspec-utils
-pypi_url: https://pypi.org/project/fsspec-utils/
+site_name: fs-utils
+site_description: Enhanced utilities and extensions for fsspec, storate_options and obstore with multi-format I/O support.
+site_url: https://legout.github.com/fs-utils
+repo_name: legout/fs-utils
+repo_url: https://github.com/legout/fs-utils
+pypi_url: https://pypi.org/project/fs-utils/
 
 nav:
   - Home: index.md
@@ -11,6 +11,9 @@ nav:
   - Quickstart: quickstart.md
   - Architecture: architecture.md
   - Advanced Usage: advanced.md
+  - Helpers Module: helpers.md
+  - Examples: examples.md
+  - API Guide: api-guide.md
   - Contributing: contributing.md
   - API Reference:
       - api/index.md
@@ -22,14 +25,14 @@ nav:
           - fs_utils.storage_options.cloud: api/fs_utils.storage_options.cloud.md
           - fs_utils.storage_options.core: api/fs_utils.storage_options.core.md
           - fs_utils.storage_options.git: api/fs_utils.storage_options.git.md
-      - Utilities:
-          - fs_utils.utils.datetime: api/fs_utils.utils.datetime.md
-          - fs_utils.utils.logging: api/fs_utils.utils.logging.md
-          - fs_utils.utils.misc: api/fs_utils.utils.misc.md
-          - fs_utils.utils.polars: api/fs_utils.utils.polars.md
-          - fs_utils.utils.pyarrow: api/fs_utils.utils.pyarrow.md
-          - fs_utils.utils.sql: api/fs_utils.utils.sql.md
-          - fs_utils.utils.types: api/fs_utils.utils.types.md
+      - Helpers:
+          - fs_utils.helpers.datetime: api/fs_utils.helpers.datetime.md
+          - fs_utils.helpers.logging: api/fs_utils.helpers.logging.md
+          - fs_utils.helpers.misc: api/fs_utils.helpers.misc.md
+          - fs_utils.helpers.polars: api/fs_utils.helpers.polars.md
+          - fs_utils.helpers.pyarrow: api/fs_utils.helpers.pyarrow.md
+          - fs_utils.helpers.sql: api/fs_utils.helpers.sql.md
+          - fs_utils.helpers.types: api/fs_utils.helpers.types.md
 
 theme:
   name: material

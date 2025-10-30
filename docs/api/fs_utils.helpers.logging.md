@@ -1,4 +1,4 @@
-# `fs_helpers.helpers.logging` API Reference
+# `fs_utils.helpers.logging` API Reference
 
 ## `setup_logging()`
 

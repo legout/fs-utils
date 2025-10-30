@@ -4,32 +4,32 @@ Welcome to the `fs-utils` API reference documentation. This section provides det
 
 ## Core Modules
 
-*   [`fs_helpers.core.base`](fs_helpers.core.base.md)
+*   [`fs_utils.core.base`](fs_utils.core.base.md)
 
-*   [`fs_helpers.core.ext`](fs_helpers.core.ext.md)
+*   [`fs_utils.core.ext`](fs_utils.core.ext.md)
 
 ## Storage Options
 
-*   [`fs_helpers.storage_options.base`](fs_helpers.storage_options.base.md)
+*   [`fs_utils.storage_options.base`](fs_utils.storage_options.base.md)
 
-*   [`fs_helpers.storage_options.cloud`](fs_helpers.storage_options.cloud.md)
+*   [`fs_utils.storage_options.cloud`](fs_utils.storage_options.cloud.md)
 
-*   [`fs_helpers.storage_options.core`](fs_helpers.storage_options.core.md)
+*   [`fs_utils.storage_options.core`](fs_utils.storage_options.core.md)
 
-*   [`fs_helpers.storage_options.git`](fs_helpers.storage_options.git.md)
+*   [`fs_utils.storage_options.git`](fs_utils.storage_options.git.md)
 
 ## Helpers
 
-*   [`fs_helpers.helpers.datetime`](fs_helpers.helpers.datetime.md)
+*   [`fs_utils.helpers.datetime`](fs_utils.helpers.datetime.md)
 
-*   [`fs_helpers.helpers.logging`](fs_helpers.helpers.logging.md)
+*   [`fs_utils.helpers.logging`](fs_utils.helpers.logging.md)
 
-*   [`fs_helpers.helpers.misc`](fs_helpers.helpers.misc.md)
+*   [`fs_utils.helpers.misc`](fs_utils.helpers.misc.md)
 
-*   [`fs_helpers.helpers.polars`](fs_helpers.helpers.polars.md)
+*   [`fs_utils.helpers.polars`](fs_utils.helpers.polars.md)
 
-*   [`fs_helpers.helpers.pyarrow`](fs_helpers.helpers.pyarrow.md)
+*   [`fs_utils.helpers.pyarrow`](fs_utils.helpers.pyarrow.md)
 
-*   [`fs_helpers.helpers.sql`](fs_helpers.helpers.sql.md)
+*   [`fs_utils.helpers.sql`](fs_utils.helpers.sql.md)
 
-*   [`fs_helpers.helpers.types`](fs_helpers.helpers.types.md)
+*   [`fs_utils.helpers.types`](fs_utils.helpers.types.md)

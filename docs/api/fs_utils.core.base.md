@@ -1,4 +1,4 @@
-# `fs_helpers.core.base` API Documentation
+# `fs_utils.core.base` API Documentation
 
 This module provides core filesystem functionalities and utilities, including custom cache mappers, enhanced cached filesystems, and a GitLab filesystem implementation.
 
@@ -17,7 +17,7 @@ This cache mapper maintains the original file path structure in the cache direct
 **Example:**
 
 ```python
-from fs_helpers.core.base import FileNameCacheMapper
+from fs_utils.core.base import FileNameCacheMapper
 
 # Create cache mapper for S3 files
 mapper = FileNameCacheMapper("/tmp/cache")
@@ -52,7 +52,7 @@ Creates necessary subdirectories in the cache directory to maintain the original
 **Example:**
 
 ```python
-from fs_helpers.core.base import FileNameCacheMapper
+from fs_utils.core.base import FileNameCacheMapper
 
 mapper = FileNameCacheMapper("/tmp/cache")
 # Maps maintain directory structure
@@ -83,7 +83,7 @@ This filesystem extends `SimpleCacheFileSystem` to provide:
 
 ```python
 from fsspec import filesystem
-from fs_helpers.core.base import MonitoredSimpleCacheFileSystem
+from fs_utils.core.base import MonitoredSimpleCacheFileSystem
 
 s3_fs = filesystem("s3")
 cached_fs = MonitoredSimpleCacheFileSystem(
@@ -133,7 +133,7 @@ Check if file exists in cache and return cache path if found.
 **Example:**
 
 ```python
-from fs_helpers.core.base import MonitoredSimpleCacheFileSystem
+from fs_utils.core.base import MonitoredSimpleCacheFileSystem
 from fsspec import filesystem
 
 cached_fs = MonitoredSimpleCacheFileSystem(fs=filesystem("s3"), cache_storage="/tmp/cache")
@@ -160,7 +160,7 @@ Ensure file is in cache, downloading if necessary.
 **Example:**
 
 ```python
-from fs_helpers.core.base import MonitoredSimpleCacheFileSystem
+from fs_utils.core.base import MonitoredSimpleCacheFileSystem
 from fsspec import filesystem
 
 cached_fs = MonitoredSimpleCacheFileSystem(fs=filesystem("s3"), cache_storage="/tmp/cache")
@@ -233,7 +233,7 @@ Initialize GitLab filesystem.
 **Example:**
 
 ```python
-from fs_helpers.core.base import GitLabFileSystem
+from fs_utils.core.base import GitLabFileSystem
 
 # Access a public repository
 fs_public = GitLabFileSystem(
@@ -266,7 +266,7 @@ Get file content from GitLab API.
 **Example:**
 
 ```python
-from fs_helpers.core.base import GitLabFileSystem
+from fs_utils.core.base import GitLabFileSystem
 
 fs = GitLabFileSystem(project_name="gitlab-org/gitlab")
 content = fs.cat("README.md")
@@ -385,7 +385,7 @@ Creates filesystem instances with support for storage options classes, intellige
 fs = filesystem("file")
 
 # S3 with storage options
-from fs_helpers.storage_options.cloud import AwsStorageOptions
+from fs_utils.storage_options.cloud import AwsStorageOptions
 opts = AwsStorageOptions(region="us-west-2")
 fs = filesystem("s3", storage_options=opts, cached=True)
 
@@ -430,7 +430,7 @@ Creates filesystem instances with support for storage options classes, intellige
 fs = get_filesystem("file")
 
 # S3 with storage options
-from fs_helpers.storage_options.cloud import AwsStorageOptions
+from fs_utils.storage_options.cloud import AwsStorageOptions
 opts = AwsStorageOptions(region="us-west-2")
 fs = get_filesystem("s3", storage_options=opts, cached=True)
 
