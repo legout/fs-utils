@@ -14,7 +14,7 @@ def __():
     import json
 
     # Import fsspec-utils filesystem function
-    from fs_utils import filesystem
+    from fsspeckit import filesystem
 
     return filesystem, json, os, tempfile, time
 

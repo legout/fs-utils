@@ -16,7 +16,7 @@ import tempfile
 from pathlib import Path
 
 # Import the storage options classes
-from fs_utils.storage_options import (
+from fsspeckit.storage_options import (
     LocalStorageOptions,
     AwsStorageOptions,
     AzureStorageOptions,

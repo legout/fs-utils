@@ -12,8 +12,8 @@ def __():
     import shutil
     from pathlib import Path
     import polars as pl
-    from fs_utils import filesystem
-    from fs_utils.storage_options import LocalStorageOptions
+    from fsspeckit import filesystem
+    from fsspeckit.storage_options import LocalStorageOptions
 
     return LocalStorageOptions, Path, filesystem, mo, pl, shutil, tempfile
 

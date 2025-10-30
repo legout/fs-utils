@@ -6,7 +6,7 @@ import os
 from unittest.mock import patch
 from pathlib import Path
 
-from fs_utils.helpers.logging import setup_logging, get_logger
+from fsspeckit.helpers.logging import setup_logging, get_logger
 
 
 class TestSetupLogging:

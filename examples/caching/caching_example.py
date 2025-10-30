@@ -17,7 +17,7 @@ import os
 import json
 
 # Import fsspec-utils filesystem function
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 
 def main():

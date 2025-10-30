@@ -16,8 +16,8 @@ from pathlib import Path
 
 # Import required libraries
 import polars as pl
-from fs_utils import filesystem
-from fs_utils.storage_options import LocalStorageOptions
+from fsspeckit import filesystem
+from fsspeckit.storage_options import LocalStorageOptions
 
 
 def main():

@@ -1,5 +1,5 @@
 from deltalake import DeltaTable
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit.storage_options import AwsStorageOptions
 import marimo
 
 # Create a StorageOptions object for S3 with a profile and allow_invalid_certificates

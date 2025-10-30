@@ -6,7 +6,7 @@ import pyarrow as pa
 import pandas as pd
 from datetime import datetime
 
-from fs_utils.helpers.types import dict_to_dataframe, to_pyarrow_table
+from fsspeckit.helpers.types import dict_to_dataframe, to_pyarrow_table
 
 
 class TestDictToDataFrame:

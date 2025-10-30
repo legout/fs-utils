@@ -3,7 +3,7 @@
 import pytest
 import pyarrow as pa
 import pyarrow.compute as pc
-from fs_utils.helpers.sql import sql2pyarrow_filter, sql2polars_filter
+from fsspeckit.helpers.sql import sql2pyarrow_filter, sql2polars_filter
 
 
 @pytest.fixture

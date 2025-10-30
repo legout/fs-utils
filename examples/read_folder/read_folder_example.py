@@ -20,7 +20,7 @@ import pyarrow.parquet as pq
 import json
 
 # Import fsspec-utils
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 
 def create_sample_data(temp_dir):

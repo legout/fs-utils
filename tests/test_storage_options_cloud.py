@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-from fs_utils.storage_options.cloud import (
+from fsspeckit.storage_options.cloud import (
     AwsStorageOptions,
     AzureStorageOptions,
     GcsStorageOptions,

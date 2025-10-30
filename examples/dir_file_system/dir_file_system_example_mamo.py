@@ -1,4 +1,4 @@
-from fs_utils import filesystem
+from fsspeckit import filesystem
 
 # --- DirFileSystem for S3 ---
 

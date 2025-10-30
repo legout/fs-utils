@@ -15,8 +15,8 @@ The example shows:
 import pyarrow as pa
 import pyarrow.dataset as pds
 
-from fs_utils import filesystem
-from fs_utils.storage_options import AwsStorageOptions
+from fsspeckit import filesystem
+from fsspeckit.storage_options import AwsStorageOptions
 
 
 def main():
