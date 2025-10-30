@@ -13,23 +13,23 @@ nav:
   - Advanced Usage: advanced.md
   - Contributing: contributing.md
   - API Reference:
-    - api/index.md
-    - Core:
-      - fsspec_utils.core.base: api/fsspec_utils.core.base.md
-      - fsspec_utils.core.ext: api/fsspec_utils.core.ext.md
-    - Storage Options:
-      - fsspec_utils.storage_options.base: api/fsspec_utils.storage_options.base.md
-      - fsspec_utils.storage_options.cloud: api/fsspec_utils.storage_options.cloud.md
-      - fsspec_utils.storage_options.core: api/fsspec_utils.storage_options.core.md
-      - fsspec_utils.storage_options.git: api/fsspec_utils.storage_options.git.md
-    - Utilities:
-      - fsspec_utils.utils.datetime: api/fsspec_utils.utils.datetime.md
-      - fsspec_utils.utils.logging: api/fsspec_utils.utils.logging.md
-      - fsspec_utils.utils.misc: api/fsspec_utils.utils.misc.md
-      - fsspec_utils.utils.polars: api/fsspec_utils.utils.polars.md
-      - fsspec_utils.utils.pyarrow: api/fsspec_utils.utils.pyarrow.md
-      - fsspec_utils.utils.sql: api/fsspec_utils.utils.sql.md
-      - fsspec_utils.utils.types: api/fsspec_utils.utils.types.md
+      - api/index.md
+      - Core:
+          - fs_utils.core.base: api/fs_utils.core.base.md
+          - fs_utils.core.ext: api/fs_utils.core.ext.md
+      - Storage Options:
+          - fs_utils.storage_options.base: api/fs_utils.storage_options.base.md
+          - fs_utils.storage_options.cloud: api/fs_utils.storage_options.cloud.md
+          - fs_utils.storage_options.core: api/fs_utils.storage_options.core.md
+          - fs_utils.storage_options.git: api/fs_utils.storage_options.git.md
+      - Utilities:
+          - fs_utils.utils.datetime: api/fs_utils.utils.datetime.md
+          - fs_utils.utils.logging: api/fs_utils.utils.logging.md
+          - fs_utils.utils.misc: api/fs_utils.utils.misc.md
+          - fs_utils.utils.polars: api/fs_utils.utils.polars.md
+          - fs_utils.utils.pyarrow: api/fs_utils.utils.pyarrow.md
+          - fs_utils.utils.sql: api/fs_utils.utils.sql.md
+          - fs_utils.utils.types: api/fs_utils.utils.types.md
 
 theme:
   name: material

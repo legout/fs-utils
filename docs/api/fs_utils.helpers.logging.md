@@ -8,11 +8,11 @@ Removes the default handler and adds a new one targeting stderr with customizabl
 
 **Parameters:**
 
-| Name | Type | Description |
-|:---|:---|:---|
-| `level` | `str`, optional | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses FSSPEC_UTILS_LOG_LEVEL environment variable or defaults to "INFO". |
-| `disable` | `bool` | Whether to disable logging for fsspec-utils package. |
-| `format_string` | `str`, optional | Custom format string for log messages. If None, uses a default comprehensive format. |
+| Name            | Type            | Description                                                                                                                     |
+| :-------------- | :-------------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| `level`         | `str`, optional | Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL). If None, uses fs_utils_LOG_LEVEL environment variable or defaults to "INFO". |
+| `disable`       | `bool`          | Whether to disable logging for fsspec-utils package.                                                                            |
+| `format_string` | `str`, optional | Custom format string for log messages. If None, uses a default comprehensive format.                                            |
 
 **Returns:**
 
@@ -36,8 +36,8 @@ Get a logger instance for the given name.
 
 **Parameters:**
 
-| Name | Type | Description |
-|:---|:---|:---|
+| Name   | Type  | Description                             |
+| :----- | :---- | :-------------------------------------- |
 | `name` | `str` | Logger name, typically the module name. |
 
 **Returns:**
