@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Enhanced utilities and extensions for fsspec filesystems.">
+        <meta name="description" content="Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support.">
       
       
       
-        <link rel="canonical" href="https://legout.github.com/fsspec-utils/api/fs_utils.helpers.pyarrow/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.datetime/">
       
       
+        <link rel="prev" href="../fsspeckit.storage_options.git/">
+      
+      
+        <link rel="next" href="../fsspeckit.helpers.logging/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>fs_helpers.helpers.pyarrow API Reference - fsspec-utils</title>
+        <title>fsspeckit.helpers.datetime - fsspeckit</title>
       
     
     
@@ -74,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fs_helpershelperspyarrow-api-reference" class="md-skip">
+        <a href="#fsspeckithelpersdatetime-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="fsspec-utils" class="md-header__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-header__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            fsspec-utils
+            fsspeckit
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fs_helpers.helpers.pyarrow API Reference
+              fsspeckit.helpers.datetime
             
           </span>
         </div>
@@ -190,13 +194,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
       </div>
@@ -316,6 +320,63 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../helpers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Helpers Module
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../contributing/" class="md-tabs__link">
         
   
@@ -333,10 +394,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -373,23 +436,23 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="fsspec-utils" class="md-nav__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-nav__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    fsspec-utils
+    fsspeckit
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
     </div>
@@ -513,6 +576,72 @@
   
   
     <li class="md-nav__item">
+      <a href="../../helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helpers Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
         
   
@@ -532,26 +661,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -564,8 +698,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             API Reference
           </label>
@@ -583,7 +717,7 @@
   
   
   <span class="md-ellipsis">
-    fs-utils API Reference
+    fsspeckit API Reference
     
   </span>
   
@@ -607,17 +741,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="">
             
   
   
@@ -630,8 +767,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             Core
           </label>
@@ -644,12 +781,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.core.base/" class="md-nav__link">
+      <a href="../fsspeckit.core.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.base
+    fsspeckit.core.base
     
   </span>
   
@@ -667,12 +804,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.core.ext/" class="md-nav__link">
+      <a href="../fsspeckit.core.ext/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.ext
+    fsspeckit.core.ext
     
   </span>
   
@@ -704,17 +841,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="">
             
   
   
@@ -727,8 +867,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             Storage Options
           </label>
@@ -741,12 +881,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.base/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.base
+    fsspeckit.storage_options.base
     
   </span>
   
@@ -764,12 +904,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.cloud/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.cloud/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.cloud
+    fsspeckit.storage_options.cloud
     
   </span>
   
@@ -787,12 +927,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.core/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.core/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.core
+    fsspeckit.storage_options.core
     
   </span>
   
@@ -810,12 +950,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.git/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.git
+    fsspeckit.storage_options.git
     
   </span>
   
@@ -838,31 +978,36 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Utilities
+    Helpers
     
   </span>
   
@@ -870,10 +1015,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Utilities
+            Helpers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -881,15 +1026,107 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../fs_utils.utils.datetime.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.helpers.datetime
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.datetime
+    fsspeckit.helpers.datetime
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#get_timestamp_column" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_timestamp_column()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_timedelta_str" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_timedelta_str()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#timestamp_from_string" class="md-nav__link">
+    <span class="md-ellipsis">
+      timestamp_from_string()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.helpers.logging
     
   </span>
   
@@ -907,12 +1144,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.logging.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.logging
+    fsspeckit.helpers.misc
     
   </span>
   
@@ -930,12 +1167,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.misc.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.misc
+    fsspeckit.helpers.polars
     
   </span>
   
@@ -953,12 +1190,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.polars.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.polars
+    fsspeckit.helpers.pyarrow
     
   </span>
   
@@ -976,12 +1213,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.pyarrow.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.pyarrow
+    fsspeckit.helpers.sql
     
   </span>
   
@@ -999,35 +1236,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.sql.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.sql
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../fs_utils.utils.types.md" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    fs_utils.utils.types
+    fsspeckit.helpers.types
     
   </span>
   
@@ -1072,10 +1286,8 @@
   
 
 
-<h1 id="fs_helpershelperspyarrow-api-reference"><code>fs_helpers.helpers.pyarrow</code> API Reference<a class="headerlink" href="#fs_helpershelperspyarrow-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="dominant_timezone_per_column"><code>dominant_timezone_per_column()</code><a class="headerlink" href="#dominant_timezone_per_column" title="Permanent link">&para;</a></h2>
-<p>For each timestamp column (by name) across all schemas, detect the most frequent timezone (including None).</p>
-<p>If None and a timezone are tied, prefer the timezone. Returns a dict: {column_name: dominant_timezone}</p>
+<h1 id="fsspeckithelpersdatetime-api-reference"><code>fsspeckit.helpers.datetime</code> API Reference<a class="headerlink" href="#fsspeckithelpersdatetime-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="get_timestamp_column"><code>get_timestamp_column()</code><a class="headerlink" href="#get_timestamp_column" title="Permanent link">&para;</a></h2>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1087,9 +1299,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>schemas</code></td>
-<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
-<td style="text-align: left;">A list of PyArrow schemas to analyze.</td>
+<td style="text-align: left;"><code>df</code></td>
+<td style="text-align: left;"><code>polars.DataFrame</code></td>
+<td style="text-align: left;">Input DataFrame.</td>
 </tr>
 </tbody>
 </table>
@@ -1103,25 +1315,22 @@
 <span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.helpers.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">dominant_timezone_per_column</span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_timestamp_column</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">))])</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">schema3</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">))])</span> <span class="c1"># naive</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">,</span> <span class="n">schema3</span><span class="p">]</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">dominant_tz</span> <span class="o">=</span> <span class="n">dominant_timezone_per_column</span><span class="p">(</span><span class="n">schemas</span><span class="p">)</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">dominant_tz</span><span class="p">)</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1"># Expected: {&#39;ts&#39;: &#39;UTC&#39;} (or &#39;Europe/Berlin&#39; depending on logic)</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">df</span> <span class="o">=</span> <span class="n">pl</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="s2">&quot;timestamp_col&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1678886400</span><span class="p">,</span> <span class="mi">1678972800</span><span class="p">],</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="p">})</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">col_name</span> <span class="o">=</span> <span class="n">get_timestamp_column</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">col_name</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="c1"># &quot;timestamp_col&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>dict</code>: {column_name: dominant_timezone}</li>
+<li><code>None</code></li>
 </ul>
-<h2 id="standardize_schema_timezones_by_majority"><code>standardize_schema_timezones_by_majority()</code><a class="headerlink" href="#standardize_schema_timezones_by_majority" title="Permanent link">&para;</a></h2>
-<p>For each timestamp column (by name) across all schemas, set the timezone to the most frequent (with tie-breaking).</p>
+<h2 id="get_timedelta_str"><code>get_timedelta_str()</code><a class="headerlink" href="#get_timedelta_str" title="Permanent link">&para;</a></h2>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1133,9 +1342,9 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>schemas</code></td>
-<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
-<td style="text-align: left;">A list of PyArrow schemas to standardize.</td>
+<td style="text-align: left;"><code>timedelta_string</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">Timedelta string (e.g., "1h", "2d", "3w").</td>
 </tr>
 </tbody>
 </table>
@@ -1150,24 +1359,26 @@
 <span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.helpers.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardize_schema_timezones_by_majority</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">))])</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_timedelta_str</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="c1"># Convert to Polars duration string</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">polars_duration</span> <span class="o">=</span> <span class="n">get_timedelta_str</span><span class="p">(</span><span class="s2">&quot;1h&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">polars_duration</span><span class="p">)</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1"># &quot;1h&quot;</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">standardized_schemas</span> <span class="o">=</span> <span class="n">standardize_schema_timezones_by_majority</span><span class="p">(</span><span class="n">schemas</span><span class="p">)</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="nb">print</span><span class="p">(</span><span class="n">standardized_schemas</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">standardized_schemas</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># Expected: timestamp[ns, tz=Europe/Berlin] (or UTC, depending on tie-breaking)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="c1"># Convert to Pandas timedelta string</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="n">pandas_timedelta</span> <span class="o">=</span> <span class="n">get_timedelta_str</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="s2">&quot;pandas&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">pandas_timedelta</span><span class="p">)</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1"># &quot;2 days&quot;</span>
 </code></pre></div></td></tr></table></div>
+<p>| <code>to</code> | <code>str</code> | Defaults to 'polars' |</p>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>list[pyarrow.Schema]</code>: A new list of schemas with updated timestamp timezones.</li>
+<li><code>None</code></li>
 </ul>
-<h2 id="standardize_schema_timezones"><code>standardize_schema_timezones()</code><a class="headerlink" href="#standardize_schema_timezones" title="Permanent link">&para;</a></h2>
-<p>Standardize timezone info for all timestamp columns in a list of PyArrow schemas.</p>
+<h2 id="timestamp_from_string"><code>timestamp_from_string()</code><a class="headerlink" href="#timestamp_from_string" title="Permanent link">&para;</a></h2>
+<p>Converts a timestamp string (ISO 8601 format) into a datetime, date, or time object</p>
+<p>using only standard Python libraries. Handles strings with or without timezone information (e.g., '2023-01-01T10:00:00+02:00', '2023-01-01', '10:00:00'). Supports timezone offsets like '+HH:MM' or '+HHMM'. For named timezones (e.g., 'Europe/Paris'), requires Python 3.9+ and the 'tzdata' package to be installed.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1179,17 +1390,26 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>schemas</code></td>
-<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
-<td style="text-align: left;">The list of PyArrow schemas to process.</td>
+<td style="text-align: left;"><code>timestamp_str</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The string representation of the timestamp (ISO 8601 format).</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>timezone</code></td>
-<td style="text-align: left;"><code>str</code> or <code>None</code></td>
-<td style="text-align: left;">The target timezone to apply to timestamp columns. If None, timezones are removed. If "auto", the most frequent timezone across schemas is used.</td>
+<td style="text-align: left;"><code>tz</code></td>
+<td style="text-align: left;"><code>str</code>, optional</td>
+<td style="text-align: left;">Target timezone identifier (e.g., 'UTC', '+02:00', 'Europe/Paris'). If provided, the output datetime/time will be localized or converted to this timezone. Defaults to None.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>naive</code></td>
+<td style="text-align: left;"><code>bool</code>, optional</td>
+<td style="text-align: left;">If True, return a naive datetime/time (no timezone info), even if the input string or <code>tz</code> parameter specifies one. Defaults to False.</td>
 </tr>
 </tbody>
 </table>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>Union[dt.datetime, dt.date, dt.time]</code>: The parsed datetime, date, or time object.</li>
+</ul>
 <p><strong>Example:</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
@@ -1206,178 +1426,36 @@
 <span class="normal"><a href="#__codelineno-2-13">13</a></span>
 <span class="normal"><a href="#__codelineno-2-14">14</a></span>
 <span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">pyarrow</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pa</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.helpers.pyarrow</span><span class="w"> </span><span class="kn">import</span> <span class="n">standardize_schema_timezones</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">schema1</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">))])</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">schema2</span> <span class="o">=</span> <span class="n">pa</span><span class="o">.</span><span class="n">schema</span><span class="p">([(</span><span class="s2">&quot;ts&quot;</span><span class="p">,</span> <span class="n">pa</span><span class="o">.</span><span class="n">timestamp</span><span class="p">(</span><span class="s2">&quot;ns&quot;</span><span class="p">))])</span> <span class="c1"># naive</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">schemas</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema1</span><span class="p">,</span> <span class="n">schema2</span><span class="p">]</span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">timestamp_from_string</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="c1"># Parse a timestamp string with timezone</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">dt_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01T10:00:00+02:00&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">dt_obj</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># 2023-01-01 10:00:00+02:00</span>
 <a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># Remove timezones</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">new_schemas_naive</span> <span class="o">=</span> <span class="n">standardize_schema_timezones</span><span class="p">(</span><span class="n">schemas</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">new_schemas_naive</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># Expected: timestamp[ns]</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1"># Parse a date string</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="n">date_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">date_obj</span><span class="p">)</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1"># 2023-01-01</span>
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># Set a specific timezone</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">new_schemas_berlin</span> <span class="o">=</span> <span class="n">standardize_schema_timezones</span><span class="p">(</span><span class="n">schemas</span><span class="p">,</span> <span class="n">timezone</span><span class="o">=</span><span class="s2">&quot;Europe/Berlin&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">new_schemas_berlin</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">field</span><span class="p">(</span><span class="s2">&quot;ts&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">type</span><span class="p">)</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1"># Expected: timestamp[ns, tz=Europe/Berlin]</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="c1"># Parse a time string and localize to UTC</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="n">time_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;15:30:00&quot;</span><span class="p">,</span> <span class="n">tz</span><span class="o">=</span><span class="s2">&quot;UTC&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="nb">print</span><span class="p">(</span><span class="n">time_obj</span><span class="p">)</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1"># 15:30:00+00:00</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="c1"># Parse a timestamp and return as naive datetime</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="n">naive_dt_obj</span> <span class="o">=</span> <span class="n">timestamp_from_string</span><span class="p">(</span><span class="s2">&quot;2023-01-01T10:00:00+02:00&quot;</span><span class="p">,</span> <span class="n">naive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="nb">print</span><span class="p">(</span><span class="n">naive_dt_obj</span><span class="p">)</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="c1"># 2023-01-01 10:00:00</span>
 </code></pre></div></td></tr></table></div>
-<p><strong>Returns:</strong></p>
+<p><strong>Raises:</strong></p>
 <ul>
-<li><code>list[pyarrow.Schema]</code>: New schemas with standardized timezone info.</li>
-</ul>
-<h2 id="unify_schemas"><code>unify_schemas()</code><a class="headerlink" href="#unify_schemas" title="Permanent link">&para;</a></h2>
-<p>Unify a list of PyArrow schemas into a single schema.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>schemas</code></td>
-<td style="text-align: left;"><code>list[pyarrow.Schema]</code></td>
-<td style="text-align: left;">List of PyArrow schemas to unify.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>use_large_dtypes</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, keep large types like large_string.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>timezone</code></td>
-<td style="text-align: left;"><code>str</code> or <code>None</code></td>
-<td style="text-align: left;">If specified, standardize all timestamp columns to this timezone. If "auto", use the most frequent timezone across schemas. If None, remove timezone from all timestamp columns.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>standardize_timezones</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, standardize all timestamp columns to the most frequent timezone.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>pyarrow.Schema</code>: A unified PyArrow schema.</li>
-</ul>
-<h2 id="cast_schema"><code>cast_schema()</code><a class="headerlink" href="#cast_schema" title="Permanent link">&para;</a></h2>
-<p>Cast a PyArrow table to a given schema, updating the schema to match the table's columns.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>table</code></td>
-<td style="text-align: left;"><code>pyarrow.Table</code></td>
-<td style="text-align: left;">The PyArrow table to cast.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>schema</code></td>
-<td style="text-align: left;"><code>pyarrow.Schema</code></td>
-<td style="text-align: left;">The target schema to cast the table to.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>pyarrow.Table</code>: A new PyArrow table with the specified schema.</li>
-</ul>
-<h2 id="convert_large_types_to_normal"><code>convert_large_types_to_normal()</code><a class="headerlink" href="#convert_large_types_to_normal" title="Permanent link">&para;</a></h2>
-<p>Convert large types in a PyArrow schema to their standard types.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>schema</code></td>
-<td style="text-align: left;"><code>pyarrow.Schema</code></td>
-<td style="text-align: left;">The PyArrow schema to convert.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>pyarrow.Schema</code>: A new PyArrow schema with large types converted to standard types.</li>
-</ul>
-<h2 id="opt_dtype"><code>opt_dtype()</code><a class="headerlink" href="#opt_dtype" title="Permanent link">&para;</a></h2>
-<p>Optimize data types of a PyArrow Table for performance and memory efficiency.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>table</code></td>
-<td style="text-align: left;"><code>pyarrow.Table</code></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>include</code></td>
-<td style="text-align: left;"><code>list[str]</code>, optional</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>exclude</code></td>
-<td style="text-align: left;"><code>list[str]</code>, optional</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>time_zone</code></td>
-<td style="text-align: left;"><code>str</code>, optional</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>shrink_numerics</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>allow_unsigned</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>use_large_dtypes</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>strict</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;"></td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>allow_null</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If False, columns that only hold null-like values will not be converted to pyarrow.null().</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>pyarrow.Table</code>: A new table casted to the optimal schema.</li>
+<li><code>ValueError</code>: If the timestamp string format is invalid or the timezone is invalid/unsupported.</li>
 </ul>
 
 

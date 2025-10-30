@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Enhanced utilities and extensions for fsspec filesystems.">
+        <meta name="description" content="Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support.">
       
       
       
-        <link rel="canonical" href="https://legout.github.com/fsspec-utils/advanced/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/advanced/">
       
       
         <link rel="prev" href="../architecture/">
       
       
-        <link rel="next" href="../contributing/">
+        <link rel="next" href="../helpers/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Advanced Usage - fsspec-utils</title>
+        <title>Advanced Usage - fsspeckit</title>
       
     
     
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="fsspec-utils" class="md-header__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href=".." title="fsspeckit" class="md-header__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,7 +106,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            fsspec-utils
+            fsspeckit
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -194,13 +194,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
       </div>
@@ -322,6 +322,63 @@
   
   
     <li class="md-tabs__item">
+      <a href="../helpers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Helpers Module
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../api-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../contributing/" class="md-tabs__link">
         
   
@@ -379,23 +436,23 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="fsspec-utils" class="md-nav__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href=".." title="fsspeckit" class="md-nav__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    fsspec-utils
+    fsspeckit
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
     </div>
@@ -837,6 +894,72 @@
   
   
     <li class="md-nav__item">
+      <a href="../helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helpers Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../contributing/" class="md-nav__link">
         
   
@@ -872,10 +995,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
             
   
   
@@ -888,8 +1011,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             API Reference
           </label>
@@ -907,7 +1030,7 @@
   
   
   <span class="md-ellipsis">
-    fs-utils API Reference
+    fsspeckit API Reference
     
   </span>
   
@@ -938,10 +1061,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="0">
             
   
   
@@ -954,8 +1077,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             Core
           </label>
@@ -968,12 +1091,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.core.base/" class="md-nav__link">
+      <a href="../api/fsspeckit.core.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.base
+    fsspeckit.core.base
     
   </span>
   
@@ -991,12 +1114,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.core.ext/" class="md-nav__link">
+      <a href="../api/fsspeckit.core.ext/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.ext
+    fsspeckit.core.ext
     
   </span>
   
@@ -1035,10 +1158,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="0">
             
   
   
@@ -1051,8 +1174,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             Storage Options
           </label>
@@ -1065,12 +1188,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.storage_options.base/" class="md-nav__link">
+      <a href="../api/fsspeckit.storage_options.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.base
+    fsspeckit.storage_options.base
     
   </span>
   
@@ -1088,12 +1211,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.storage_options.cloud/" class="md-nav__link">
+      <a href="../api/fsspeckit.storage_options.cloud/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.cloud
+    fsspeckit.storage_options.cloud
     
   </span>
   
@@ -1111,12 +1234,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.storage_options.core/" class="md-nav__link">
+      <a href="../api/fsspeckit.storage_options.core/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.core
+    fsspeckit.storage_options.core
     
   </span>
   
@@ -1134,12 +1257,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.storage_options.git/" class="md-nav__link">
+      <a href="../api/fsspeckit.storage_options.git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.git
+    fsspeckit.storage_options.git
     
   </span>
   
@@ -1178,15 +1301,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="0">
             
   
   
   <span class="md-ellipsis">
-    Utilities
+    Helpers
     
   </span>
   
@@ -1194,10 +1317,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Utilities
+            Helpers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1208,12 +1331,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.datetime.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.datetime
+    fsspeckit.helpers.datetime
     
   </span>
   
@@ -1231,12 +1354,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.logging.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.logging
+    fsspeckit.helpers.logging
     
   </span>
   
@@ -1254,12 +1377,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.misc.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.misc
+    fsspeckit.helpers.misc
     
   </span>
   
@@ -1277,12 +1400,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.polars.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.polars
+    fsspeckit.helpers.polars
     
   </span>
   
@@ -1300,12 +1423,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.pyarrow.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.pyarrow
+    fsspeckit.helpers.pyarrow
     
   </span>
   
@@ -1323,12 +1446,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.sql.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.sql
+    fsspeckit.helpers.sql
     
   </span>
   
@@ -1346,12 +1469,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../api/fs_utils.utils.types.md" class="md-nav__link">
+      <a href="../api/fsspeckit.helpers.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.types
+    fsspeckit.helpers.types
     
   </span>
   
@@ -1397,12 +1520,12 @@
 
 
 <h1 id="advanced-usage">Advanced Usage<a class="headerlink" href="#advanced-usage" title="Permanent link">&para;</a></h1>
-<p><code>fs-utils</code> extends the capabilities of <code>fsspec</code> to provide a more robust and feature-rich experience for handling diverse file systems and data formats. This section delves into advanced features, configurations, and performance tips to help you get the most out of the library.</p>
+<p><code>fsspeckit</code> extends the capabilities of <code>fsspec</code> to provide a more robust and feature-rich experience for handling diverse file systems and data formats. This section delves into advanced features, configurations, and performance tips to help you get the most out of the library.</p>
 <h2 id="unified-filesystem-creation-with-filesystem">Unified Filesystem Creation with <code>filesystem</code><a class="headerlink" href="#unified-filesystem-creation-with-filesystem" title="Permanent link">&para;</a></h2>
-<p>The <code>fs_utils.core.filesystem</code> function offers a centralized and enhanced way to instantiate <code>fsspec</code> filesystem objects. It supports:</p>
+<p>The <code>fsspeckit.core.filesystem</code> function offers a centralized and enhanced way to instantiate <code>fsspec</code> filesystem objects. It supports:</p>
 <ul>
 <li><strong>Intelligent Caching</strong>: Automatically wraps filesystems with <code>MonitoredSimpleCacheFileSystem</code> for improved performance and verbose logging of cache operations.</li>
-<li><strong>Structured Storage Options</strong>: Integrates seamlessly with <code>fs_utils.storage_options</code> classes, allowing for type-safe and organized configuration of cloud and Git-based storage.</li>
+<li><strong>Structured Storage Options</strong>: Integrates seamlessly with <code>fsspeckit.storage_options</code> classes, allowing for type-safe and organized configuration of cloud and Git-based storage.</li>
 <li><strong>Protocol Inference</strong>: Can infer the filesystem protocol directly from a URI or path, reducing boilerplate.</li>
 </ul>
 <p><strong>Example: Cached S3 Filesystem with Structured Options</strong></p>
@@ -1426,8 +1549,8 @@
 <span class="normal"><a href="#__codelineno-0-18">18</a></span>
 <span class="normal"><a href="#__codelineno-0-19">19</a></span>
 <span class="normal"><a href="#__codelineno-0-20">20</a></span>
-<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Configure S3 options using the structured class</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">s3_opts</span> <span class="o">=</span> <span class="n">AwsStorageOptions</span><span class="p">(</span>
@@ -1449,9 +1572,9 @@
 <a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="nb">print</span><span class="p">(</span><span class="n">fs</span><span class="o">.</span><span class="n">ls</span><span class="p">(</span><span class="s2">&quot;s3://your-bucket/&quot;</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="detailed-caching-for-improved-performance">Detailed Caching for Improved Performance<a class="headerlink" href="#detailed-caching-for-improved-performance" title="Permanent link">&para;</a></h3>
-<p><code>fs-utils</code> provides an enhanced caching mechanism that improves performance for repeated file operations, especially useful for remote filesystems.</p>
+<p><code>fsspeckit</code> provides an enhanced caching mechanism that improves performance for repeated file operations, especially useful for remote filesystems.</p>
 <p>This example demonstrates how caching improves read performance. The first read populates the cache, while subsequent reads retrieve data directly from the cache, significantly reducing access time. It also shows that data can still be retrieved from the cache even if the original source becomes unavailable.</p>
-<p><strong>Caching in fs-utils</strong> is an enhanced mechanism that improves performance for repeated file operations, especially useful for remote filesystems where network latency can significantly impact performance.</p>
+<p><strong>Caching in fsspeckit</strong> is an enhanced mechanism that improves performance for repeated file operations, especially useful for remote filesystems where network latency can significantly impact performance.</p>
 <p>The <code>filesystem()</code> function provides several parameters for configuring caching:</p>
 <ul>
 <li><code>cached</code>: When set to <code>True</code>, enables caching for all read operations</li>
@@ -1481,7 +1604,7 @@
 <li>Environments with unreliable network connections</li>
 </ul>
 <h4 id="setup-and-first-read-populating-cache">Setup and First Read (Populating Cache)<a class="headerlink" href="#setup-and-first-read-populating-cache" title="Permanent link">&para;</a></h4>
-<p>In this step, we create a sample JSON file and initialize the <code>fs-utils</code> filesystem with caching enabled. The first read operation retrieves data from the source and populates the cache.</p>
+<p>In this step, we create a sample JSON file and initialize the <code>fsspeckit</code> filesystem with caching enabled. The first read operation retrieves data from the source and populates the cache.</p>
 <p><strong>Setup steps:</strong></p>
 <ol>
 <li>Create a temporary directory for our example</li>
@@ -1516,7 +1639,7 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="kn">from</span><span class="w"> </span><span class="nn">examples.caching.setup_data</span><span class="w"> </span><span class="kn">import</span> <span class="n">create_sample_data_file</span>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a>
 <a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">tmpdir</span> <span class="o">=</span> <span class="n">tempfile</span><span class="o">.</span><span class="n">mkdtemp</span><span class="p">()</span>
@@ -1593,7 +1716,7 @@
 </code></pre></div></td></tr></table></div>
 <p>This step proves that the cache acts as a persistent copy of the data, allowing access even if the original source is unavailable.</p>
 <h2 id="custom-filesystem-implementations">Custom Filesystem Implementations<a class="headerlink" href="#custom-filesystem-implementations" title="Permanent link">&para;</a></h2>
-<p><code>fs-utils</code> provides specialized filesystem implementations for unique use cases:</p>
+<p><code>fsspeckit</code> provides specialized filesystem implementations for unique use cases:</p>
 <h3 id="gitlab-filesystem-gitlabfilesystem">GitLab Filesystem (<code>GitLabFileSystem</code>)<a class="headerlink" href="#gitlab-filesystem-gitlabfilesystem" title="Permanent link">&para;</a></h3>
 <p>Access files directly from GitLab repositories. This is particularly useful for configuration files, datasets, or code stored in private or public GitLab instances.</p>
 <p><strong>Example: Reading from a GitLab Repository</strong></p>
@@ -1614,7 +1737,7 @@
 <span class="normal"><a href="#__codelineno-4-15">15</a></span>
 <span class="normal"><a href="#__codelineno-4-16">16</a></span>
 <span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># Instantiate a GitLab filesystem</span>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">gitlab_fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span>
@@ -1634,7 +1757,7 @@
 <a id="__codelineno-4-18" name="__codelineno-4-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">content</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span> <span class="c1"># Print first 200 characters</span>
 </code></pre></div></td></tr></table></div>
 <h2 id="advanced-data-reading-and-writing-read_files-write_files">Advanced Data Reading and Writing (<code>read_files</code>, <code>write_files</code>)<a class="headerlink" href="#advanced-data-reading-and-writing-read_files-write_files" title="Permanent link">&para;</a></h2>
-<p>The <code>fs_utils.core.ext</code> module (exposed via <code>AbstractFileSystem</code> extensions) provides powerful functions for reading and writing various data formats (JSON, CSV, Parquet) with advanced features like:</p>
+<p>The <code>fsspeckit.core.ext</code> module (exposed via <code>AbstractFileSystem</code> extensions) provides powerful functions for reading and writing various data formats (JSON, CSV, Parquet) with advanced features like:</p>
 <ul>
 <li><strong>Batch Processing</strong>: Efficiently handle large datasets by processing files in configurable batches.</li>
 <li><strong>Parallel Processing</strong>: Leverage multi-threading to speed up file I/O operations.</li>
@@ -1660,7 +1783,7 @@
 <span class="normal"><a href="#__codelineno-5-14">14</a></span>
 <span class="normal"><a href="#__codelineno-5-15">15</a></span>
 <span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a>
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c1"># Assuming you have multiple CSV files like &#39;data/part_0.csv&#39;, &#39;data/part_1.csv&#39;, etc.</span>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="c1"># on your local filesystem</span>
@@ -1679,7 +1802,7 @@
 <a id="__codelineno-5-17" name="__codelineno-5-17"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">batch_df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="reading-and-processing-multiple-files-pyarrow-tables-batch-processing">Reading and Processing Multiple Files (PyArrow Tables, Batch Processing)<a class="headerlink" href="#reading-and-processing-multiple-files-pyarrow-tables-batch-processing" title="Permanent link">&para;</a></h3>
-<p><code>fs-utils</code> simplifies reading multiple files of various formats (Parquet, CSV, JSON) from a folder into a single PyArrow Table or Polars DataFrame.</p>
+<p><code>fsspeckit</code> simplifies reading multiple files of various formats (Parquet, CSV, JSON) from a folder into a single PyArrow Table or Polars DataFrame.</p>
 <p><strong>Reading multiple files into a single table</strong> is a powerful feature that allows you to efficiently process data distributed across multiple files. This is particularly useful when dealing with large datasets that are split into smaller files for better organization or parallel processing.</p>
 <p><strong>Key concepts demonstrated:</strong></p>
 <ol>
@@ -1711,7 +1834,7 @@
 <p><strong>Verification</strong>: Finally, we verify that all three tables have the same number of rows, confirming that the data was correctly read and combined across all files and formats.</p>
 </li>
 </ol>
-<p>The flexibility of <code>fs-utils</code> allows you to use the same approach with different data sources, including remote filesystems like S3, GCS, or Azure Blob Storage, simply by changing the filesystem path.</p>
+<p>The flexibility of <code>fsspeckit</code> allows you to use the same approach with different data sources, including remote filesystems like S3, GCS, or Azure Blob Storage, simply by changing the filesystem path.</p>
 <h4 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h4>
 <p>First, we'll create a temporary directory with sample data in different formats.</p>
 <p><strong>Setup steps:</strong></p>
@@ -1753,7 +1876,7 @@
 <span class="normal"><a href="#__codelineno-7-6">6</a></span>
 <span class="normal"><a href="#__codelineno-7-7">7</a></span>
 <span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">=== Reading Parquet Files ===&quot;</span><span class="p">)</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="n">temp_dir</span><span class="p">)</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">parquet_table</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">read_parquet</span><span class="p">(</span><span class="s2">&quot;**/*.parquet&quot;</span><span class="p">,</span> <span class="n">concat</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully read Parquet files into PyArrow Table&quot;</span><span class="p">)</span>
@@ -1821,8 +1944,8 @@
 <a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Cleaned up temporary directory: </span><span class="si">{</span><span class="n">temp_dir</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>This final step confirms that our data reading and concatenation were successful.</p>
-<p>This example shows how to read various file formats from a directory, including subdirectories, into a unified PyArrow Table or Polars DataFrame. It highlights the flexibility of <code>fs-utils</code> in handling different data sources and formats.</p>
-<p><code>fs-utils</code> enables efficient batch processing of large datasets by reading files in smaller, manageable chunks. This is particularly useful for memory-constrained environments or when processing streaming data.</p>
+<p>This example shows how to read various file formats from a directory, including subdirectories, into a unified PyArrow Table or Polars DataFrame. It highlights the flexibility of <code>fsspeckit</code> in handling different data sources and formats.</p>
+<p><code>fsspeckit</code> enables efficient batch processing of large datasets by reading files in smaller, manageable chunks. This is particularly useful for memory-constrained environments or when processing streaming data.</p>
 <p><strong>Batch processing</strong> is a technique for handling large datasets by dividing them into smaller, manageable chunks. This is particularly important for:</p>
 <ol>
 <li><strong>Memory-constrained environments</strong>: When working with datasets that are too large to fit in memory, batch processing allows you to process the data incrementally.</li>
@@ -1868,7 +1991,7 @@
 <p>The <code>read_json</code> method is also used with <code>batch_size=2</code> to process JSON files in batches.</p>
 <p>This example illustrates how to read Parquet, CSV, and JSON files in batches using the <code>batch_size</code> parameter. This approach allows for processing of large datasets without loading the entire dataset into memory at once.</p>
 <h3 id="advanced-parquet-handling-and-delta-lake-integration">Advanced Parquet Handling and Delta Lake Integration<a class="headerlink" href="#advanced-parquet-handling-and-delta-lake-integration" title="Permanent link">&para;</a></h3>
-<p><code>fs-utils</code> enhances Parquet operations with deep integration with PyArrow, enabling efficient dataset management, partitioning, and delta lake capabilities.</p>
+<p><code>fsspeckit</code> enhances Parquet operations with deep integration with PyArrow, enabling efficient dataset management, partitioning, and delta lake capabilities.</p>
 <ul>
 <li><strong><code>pyarrow_dataset</code></strong>: Create PyArrow datasets for optimized querying, partitioning, and predicate pushdown.</li>
 <li><strong><code>pyarrow_parquet_dataset</code></strong>: Specialized for Parquet, handling <code>_metadata</code> files for overall dataset schemas.</li>
@@ -1900,7 +2023,7 @@
 <span class="normal"><a href="#__codelineno-12-24">24</a></span>
 <span class="normal"><a href="#__codelineno-12-25">25</a></span>
 <span class="normal"><a href="#__codelineno-12-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-12-3" name="__codelineno-12-3"></a>
 <a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">)</span>
 <a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">base_path</span> <span class="o">=</span> <span class="s2">&quot;output/my_partitioned_data&quot;</span>
@@ -2023,7 +2146,7 @@
 <span class="normal"><a href="#__codelineno-13-94">94</a></span>
 <span class="normal"><a href="#__codelineno-13-95">95</a></span>
 <span class="normal"><a href="#__codelineno-13-96">96</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">polars</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pl</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-13-3" name="__codelineno-13-3"></a>
 <a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">)</span>
 <a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="n">delta_path</span> <span class="o">=</span> <span class="s2">&quot;output/my_delta_table&quot;</span>
@@ -2066,9 +2189,9 @@
 <a id="__codelineno-13-42" name="__codelineno-13-42"></a><span class="c1"># Expected: id=1 Alicia version=2, id=2 Bob version=1, id=3 Charlie version=1</span>
 <a id="__codelineno-13-43" name="__codelineno-13-43"></a><span class="err">```</span><span class="o">--&gt;</span>
 <a id="__codelineno-13-44" name="__codelineno-13-44"></a>
-<a id="__codelineno-13-45" name="__codelineno-13-45"></a><span class="err">`</span><span class="n">fs</span><span class="o">-</span><span class="n">utils</span><span class="err">`</span> <span class="n">facilitates</span> <span class="n">integration</span> <span class="k">with</span> <span class="n">Delta</span> <span class="n">Lake</span> <span class="n">by</span> <span class="n">providing</span> <span class="err">`</span><span class="n">StorageOptions</span><span class="err">`</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">configure</span> <span class="err">`</span><span class="n">deltalake</span><span class="err">`</span><span class="s1">&#39;s `DeltaTable` for various storage backends.</span>
+<a id="__codelineno-13-45" name="__codelineno-13-45"></a><span class="err">`</span><span class="n">fsspeckit</span><span class="err">`</span> <span class="n">facilitates</span> <span class="n">integration</span> <span class="k">with</span> <span class="n">Delta</span> <span class="n">Lake</span> <span class="n">by</span> <span class="n">providing</span> <span class="err">`</span><span class="n">StorageOptions</span><span class="err">`</span> <span class="n">that</span> <span class="n">can</span> <span class="n">be</span> <span class="n">used</span> <span class="n">to</span> <span class="n">configure</span> <span class="err">`</span><span class="n">deltalake</span><span class="err">`</span><span class="s1">&#39;s `DeltaTable` for various storage backends.</span>
 <a id="__codelineno-13-46" name="__codelineno-13-46"></a>
-<a id="__codelineno-13-47" name="__codelineno-13-47"></a><span class="n">This</span> <span class="n">example</span> <span class="n">demonstrates</span> <span class="n">how</span> <span class="n">to</span> <span class="n">use</span> <span class="err">`</span><span class="n">LocalStorageOptions</span><span class="err">`</span> <span class="k">with</span> <span class="err">`</span><span class="n">deltalake</span><span class="err">`</span><span class="s1">&#39;s `DeltaTable`. It shows how to initialize a `DeltaTable` instance by passing the `fs-utils` storage options, enabling seamless interaction with Delta Lake tables across different storage types.</span>
+<a id="__codelineno-13-47" name="__codelineno-13-47"></a><span class="n">This</span> <span class="n">example</span> <span class="n">demonstrates</span> <span class="n">how</span> <span class="n">to</span> <span class="n">use</span> <span class="err">`</span><span class="n">LocalStorageOptions</span><span class="err">`</span> <span class="k">with</span> <span class="err">`</span><span class="n">deltalake</span><span class="err">`</span><span class="s1">&#39;s `DeltaTable`. It shows how to initialize a `DeltaTable` instance by passing the `fsspeckit` storage options, enabling seamless interaction with Delta Lake tables across different storage types.</span>
 <a id="__codelineno-13-48" name="__codelineno-13-48"></a>
 <a id="__codelineno-13-49" name="__codelineno-13-49"></a><span class="o">**</span><span class="n">Step</span><span class="o">-</span><span class="n">by</span><span class="o">-</span><span class="n">step</span> <span class="n">walkthrough</span><span class="p">:</span><span class="o">**</span>
 <a id="__codelineno-13-50" name="__codelineno-13-50"></a>
@@ -2085,7 +2208,7 @@
 <a id="__codelineno-13-61" name="__codelineno-13-61"></a>
 <a id="__codelineno-13-62" name="__codelineno-13-62"></a><span class="err">```</span><span class="n">python</span>
 <a id="__codelineno-13-63" name="__codelineno-13-63"></a><span class="kn">from</span><span class="w"> </span><span class="nn">deltalake</span><span class="w"> </span><span class="kn">import</span> <span class="n">DeltaTable</span>
-<a id="__codelineno-13-64" name="__codelineno-13-64"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalStorageOptions</span>
+<a id="__codelineno-13-64" name="__codelineno-13-64"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalStorageOptions</span>
 <a id="__codelineno-13-65" name="__codelineno-13-65"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
 <a id="__codelineno-13-66" name="__codelineno-13-66"></a><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
 <a id="__codelineno-13-67" name="__codelineno-13-67"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
@@ -2127,14 +2250,14 @@
 <li>Scalable metadata: Handles billions of files efficiently</li>
 <li>Unified analytics: Supports both batch and streaming workloads</li>
 </ul>
-<p><strong>Integrating fs-utils with Delta Lake:</strong></p>
-<p>The <code>fs-utils</code> <code>StorageOptions</code> classes can be used to configure <code>deltalake</code>'s <code>DeltaTable</code> for various storage backends. This integration allows you to:</p>
+<p><strong>Integrating fsspeckit with Delta Lake:</strong></p>
+<p>The <code>fsspeckit</code> <code>StorageOptions</code> classes can be used to configure <code>deltalake</code>'s <code>DeltaTable</code> for various storage backends. This integration allows you to:</p>
 <ol>
 <li>Use consistent configuration patterns across different storage systems</li>
 <li>Leverage the benefits of fsspec's unified filesystem interface</li>
 <li>Seamlessly switch between local and cloud storage without changing your Delta Lake code</li>
 </ol>
-<p><strong>The <code>to_object_store_kwargs()</code> method</strong> converts <code>fs-utils</code> storage options into a dictionary format that <code>deltalake</code> expects for its <code>storage_options</code> parameter. This is necessary because <code>deltalake</code> requires storage options as a dictionary, while <code>fs-utils</code> provides them as structured objects.</p>
+<p><strong>The <code>to_object_store_kwargs()</code> method</strong> converts <code>fsspeckit</code> storage options into a dictionary format that <code>deltalake</code> expects for its <code>storage_options</code> parameter. This is necessary because <code>deltalake</code> requires storage options as a dictionary, while <code>fsspeckit</code> provides them as structured objects.</p>
 <p><strong>Step-by-step walkthrough:</strong></p>
 <ol>
 <li>
@@ -2156,12 +2279,12 @@
 <p><strong>Verifying the DeltaTable</strong>: We check the version and files of our Delta table to confirm it was created correctly. Delta tables maintain version history, allowing you to track changes over time.</p>
 </li>
 <li>
-<p><strong>Reading data</strong>: Finally, we read the data from our Delta table back into a PyArrow Table, demonstrating that we can successfully interact with the Delta Lake table using the fs-utils configuration.</p>
+<p><strong>Reading data</strong>: Finally, we read the data from our Delta table back into a PyArrow Table, demonstrating that we can successfully interact with the Delta Lake table using the fsspeckit configuration.</p>
 </li>
 </ol>
 <p>This integration is particularly valuable when working with Delta Lake in cloud environments, as it allows you to use the same configuration approach for local development and production deployments across different cloud providers.</p>
 <h2 id="storage-options-management">Storage Options Management<a class="headerlink" href="#storage-options-management" title="Permanent link">&para;</a></h2>
-<p><code>fs-utils</code> provides a robust system for managing storage configurations, simplifying credential handling and environment setup.</p>
+<p><code>fsspeckit</code> provides a robust system for managing storage configurations, simplifying credential handling and environment setup.</p>
 <h3 id="loading-from-environment-variables">Loading from Environment Variables<a class="headerlink" href="#loading-from-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Instead of hardcoding credentials, you can load storage options directly from environment variables.</p>
 <p><strong>Example: Loading AWS S3 Configuration from Environment</strong></p>
@@ -2180,7 +2303,7 @@
 <span class="normal"><a href="#__codelineno-15-5">5</a></span>
 <span class="normal"><a href="#__codelineno-15-6">6</a></span>
 <span class="normal"><a href="#__codelineno-15-7">7</a></span>
-<span class="normal"><a href="#__codelineno-15-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
+<span class="normal"><a href="#__codelineno-15-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
 <a id="__codelineno-15-2" name="__codelineno-15-2"></a>
 <a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="c1"># Load AWS options directly from environment variables</span>
 <a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="n">aws_opts</span> <span class="o">=</span> <span class="n">AwsStorageOptions</span><span class="o">.</span><span class="n">from_env</span><span class="p">()</span>
@@ -2212,7 +2335,7 @@
 <span class="normal"><a href="#__codelineno-16-18">18</a></span>
 <span class="normal"><a href="#__codelineno-16-19">19</a></span>
 <span class="normal"><a href="#__codelineno-16-20">20</a></span>
-<span class="normal"><a href="#__codelineno-16-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span><span class="p">,</span> <span class="n">merge_storage_options</span>
+<span class="normal"><a href="#__codelineno-16-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span><span class="p">,</span> <span class="n">merge_storage_options</span>
 <a id="__codelineno-16-2" name="__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="c1"># Base configuration</span>
 <a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="n">base_opts</span> <span class="o">=</span> <span class="n">AwsStorageOptions</span><span class="p">(</span>
@@ -2235,7 +2358,7 @@
 <a id="__codelineno-16-21" name="__codelineno-16-21"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Allow HTTP: </span><span class="si">{</span><span class="n">merged_opts</span><span class="o">.</span><span class="n">allow_http</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span> <span class="c1"># True</span>
 </code></pre></div></td></tr></table></div>
 <h3 id="note-on-github-examples">Note on GitHub Examples<a class="headerlink" href="#note-on-github-examples" title="Permanent link">&para;</a></h3>
-<p>For a comprehensive collection of executable examples demonstrating various functionalities and advanced patterns of <code>fs-utils</code>, including those discussed in this document, please refer to the <a href="https://github.com/legout/fs-utils/tree/main/examples">examples directory on GitHub</a>. Each example is designed to be runnable and provides detailed insights into practical usage.</p>
+<p>For a comprehensive collection of executable examples demonstrating various functionalities and advanced patterns of <code>fsspeckit</code>, including those discussed in this document, please refer to the <a href="https://github.com/legout/fsspeckit/tree/main/examples">examples directory on GitHub</a>. Each example is designed to be runnable and provides detailed insights into practical usage.</p>
 <h2 id="performance-tips">Performance Tips<a class="headerlink" href="#performance-tips" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>Caching</strong>: Always consider using <code>cached=True</code> with the <code>filesystem</code> function, especially for remote filesystems, to minimize repeated downloads.</li>
@@ -2246,7 +2369,7 @@
 <li><strong>Compression</strong>: When writing Parquet files, choose an appropriate compression codec (e.g., <code>zstd</code>, <code>snappy</code>) to reduce file size and improve I/O performance. <code>zstd</code> often provides a good balance of compression ratio and speed.</li>
 </ul>
 <h2 id="flexible-storage-configuration">Flexible Storage Configuration<a class="headerlink" href="#flexible-storage-configuration" title="Permanent link">&para;</a></h2>
-<p><code>fs-utils</code> simplifies configuring connections to various storage systems, including local filesystems, AWS S3, Azure Storage, and Google Cloud Storage, using <code>StorageOptions</code> classes. These options can then be converted into <code>fsspec</code> filesystems.</p>
+<p><code>fsspeckit</code> simplifies configuring connections to various storage systems, including local filesystems, AWS S3, Azure Storage, and Google Cloud Storage, using <code>StorageOptions</code> classes. These options can then be converted into <code>fsspec</code> filesystems.</p>
 <h3 id="local-storage-example">Local Storage Example<a class="headerlink" href="#local-storage-example" title="Permanent link">&para;</a></h3>
 <p>This example demonstrates how to initialize <code>LocalStorageOptions</code> and use it to interact with the local filesystem.</p>
 <p><strong>Step-by-step walkthrough:</strong></p>
@@ -2288,7 +2411,7 @@
 <span class="normal"><a href="#__codelineno-17-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
 <a id="__codelineno-17-2" name="__codelineno-17-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
 <a id="__codelineno-17-3" name="__codelineno-17-3"></a><span class="kn">import</span><span class="w"> </span><span class="nn">shutil</span>
-<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalStorageOptions</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalStorageOptions</span>
 <a id="__codelineno-17-5" name="__codelineno-17-5"></a>
 <a id="__codelineno-17-6" name="__codelineno-17-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== LocalStorageOptions Example ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-17-7" name="__codelineno-17-7"></a>
@@ -2331,7 +2454,7 @@
 <span class="normal"><a href="#__codelineno-18-12">12</a></span>
 <span class="normal"><a href="#__codelineno-18-13">13</a></span>
 <span class="normal"><a href="#__codelineno-18-14">14</a></span>
-<span class="normal"><a href="#__codelineno-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
+<span class="normal"><a href="#__codelineno-18-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
 <a id="__codelineno-18-2" name="__codelineno-18-2"></a>
 <a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Conceptual AwsStorageOptions Example (using a dummy endpoint) ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-18-4" name="__codelineno-18-4"></a>
@@ -2360,7 +2483,7 @@
 <span class="normal"><a href="#__codelineno-19-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-19-10">10</a></span>
 <span class="normal"><a href="#__codelineno-19-11">11</a></span>
-<span class="normal"><a href="#__codelineno-19-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_utils.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AzureStorageOptions</span>
+<span class="normal"><a href="#__codelineno-19-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options</span><span class="w"> </span><span class="kn">import</span> <span class="n">AzureStorageOptions</span>
 <a id="__codelineno-19-2" name="__codelineno-19-2"></a>
 <a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;=== Conceptual AzureStorageOptions Example (using a dummy connection string) ===</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 <a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="n">azure_options</span> <span class="o">=</span> <span class="n">AzureStorageOptions</span><span class="p">(</span>
@@ -2385,7 +2508,7 @@
 </ol>
 <p>This approach allows you to understand the configuration pattern without needing actual cloud credentials. When using these examples in production, you would replace the dummy values with your real credentials and service endpoints.</p>
 <p>```python
-from fs_utils.storage_options import GcsStorageOptions</p>
+from fsspeckit.storage_options import GcsStorageOptions</p>
 <p>print("=== Conceptual GcsStorageOptions Example (using a dummy token path) ===\n")
 gcs_options = GcsStorageOptions(
     protocol="gs",

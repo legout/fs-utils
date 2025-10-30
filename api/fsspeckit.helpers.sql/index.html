@@ -6,13 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Enhanced utilities and extensions for fsspec filesystems.">
+        <meta name="description" content="Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support.">
       
       
       
-        <link rel="canonical" href="https://legout.github.com/fsspec-utils/api/fs_utils.helpers.misc/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.helpers.sql/">
       
       
+        <link rel="prev" href="../fsspeckit.helpers.pyarrow/">
+      
+      
+        <link rel="next" href="../fsspeckit.helpers.types/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>fs_helpers.helpers.misc API Reference - fsspec-utils</title>
+        <title>fsspeckit.helpers.sql - fsspeckit</title>
       
     
     
@@ -74,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fs_helpershelpersmisc-api-reference" class="md-skip">
+        <a href="#fsspeckithelperssql-api-reference" class="md-skip">
           Skip to content
         </a>
       
@@ -88,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="fsspec-utils" class="md-header__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-header__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            fsspec-utils
+            fsspeckit
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fs_helpers.helpers.misc API Reference
+              fsspeckit.helpers.sql
             
           </span>
         </div>
@@ -190,13 +194,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
       </div>
@@ -316,6 +320,63 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../helpers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Helpers Module
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../contributing/" class="md-tabs__link">
         
   
@@ -333,10 +394,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -373,23 +436,23 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="fsspec-utils" class="md-nav__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-nav__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    fsspec-utils
+    fsspeckit
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
     </div>
@@ -513,6 +576,72 @@
   
   
     <li class="md-nav__item">
+      <a href="../../helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helpers Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
         
   
@@ -532,26 +661,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -564,8 +698,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             API Reference
           </label>
@@ -583,7 +717,7 @@
   
   
   <span class="md-ellipsis">
-    fs-utils API Reference
+    fsspeckit API Reference
     
   </span>
   
@@ -607,17 +741,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="">
             
   
   
@@ -630,8 +767,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             Core
           </label>
@@ -644,12 +781,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.core.base/" class="md-nav__link">
+      <a href="../fsspeckit.core.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.base
+    fsspeckit.core.base
     
   </span>
   
@@ -667,12 +804,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.core.ext/" class="md-nav__link">
+      <a href="../fsspeckit.core.ext/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.ext
+    fsspeckit.core.ext
     
   </span>
   
@@ -704,17 +841,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="">
             
   
   
@@ -727,8 +867,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             Storage Options
           </label>
@@ -741,12 +881,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.base/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.base
+    fsspeckit.storage_options.base
     
   </span>
   
@@ -764,12 +904,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.cloud/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.cloud/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.cloud
+    fsspeckit.storage_options.cloud
     
   </span>
   
@@ -787,12 +927,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.core/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.core/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.core
+    fsspeckit.storage_options.core
     
   </span>
   
@@ -810,12 +950,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.git/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.git
+    fsspeckit.storage_options.git
     
   </span>
   
@@ -838,31 +978,36 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Utilities
+    Helpers
     
   </span>
   
@@ -870,10 +1015,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Utilities
+            Helpers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -884,12 +1029,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.datetime.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.datetime
+    fsspeckit.helpers.datetime
     
   </span>
   
@@ -907,12 +1052,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.logging.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.logging
+    fsspeckit.helpers.logging
     
   </span>
   
@@ -930,12 +1075,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.misc.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.misc
+    fsspeckit.helpers.misc
     
   </span>
   
@@ -953,12 +1098,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.polars.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.polars
+    fsspeckit.helpers.polars
     
   </span>
   
@@ -976,12 +1121,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.pyarrow.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.pyarrow
+    fsspeckit.helpers.pyarrow
     
   </span>
   
@@ -996,20 +1141,89 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../fs_utils.utils.sql.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    fsspeckit.helpers.sql
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.sql
+    fsspeckit.helpers.sql
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sql2pyarrow_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      sql2pyarrow_filter()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sql2polars_filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      sql2polars_filter()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#get_table_names" class="md-nav__link">
+    <span class="md-ellipsis">
+      get_table_names()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1022,12 +1236,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.types.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.types
+    fsspeckit.helpers.types
     
   </span>
   
@@ -1072,10 +1286,9 @@
   
 
 
-<h1 id="fs_helpershelpersmisc-api-reference"><code>fs_helpers.helpers.misc</code> API Reference<a class="headerlink" href="#fs_helpershelpersmisc-api-reference" title="Permanent link">&para;</a></h1>
-<h2 id="run_parallel"><code>run_parallel()</code><a class="headerlink" href="#run_parallel" title="Permanent link">&para;</a></h2>
-<p>Run a function for a list of parameters in parallel.</p>
-<p>Provides parallel execution with progress tracking and flexible argument handling.</p>
+<h1 id="fsspeckithelperssql-api-reference"><code>fsspeckit.helpers.sql</code> API Reference<a class="headerlink" href="#fsspeckithelperssql-api-reference" title="Permanent link">&para;</a></h1>
+<h2 id="sql2pyarrow_filter"><code>sql2pyarrow_filter()</code><a class="headerlink" href="#sql2pyarrow_filter" title="Permanent link">&para;</a></h2>
+<p>Generates a filter expression for PyArrow based on a given string and schema.</p>
 <p><strong>Parameters:</strong></p>
 <table>
 <thead>
@@ -1087,46 +1300,73 @@
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;"><code>func</code></td>
-<td style="text-align: left;"><code>Callable</code></td>
-<td style="text-align: left;">The function to be executed in parallel.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>*args</code></td>
-<td style="text-align: left;"><code>Any</code></td>
-<td style="text-align: left;">Positional arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>n_jobs</code></td>
-<td style="text-align: left;"><code>int</code></td>
-<td style="text-align: left;">The number of CPU cores to use. -1 means all available cores.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>backend</code></td>
+<td style="text-align: left;"><code>string</code></td>
 <td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The backend to use for parallel processing. Options include 'loky', 'threading', 'multiprocessing', and 'sequential'.</td>
+<td style="text-align: left;">The string containing the filter expression.</td>
 </tr>
 <tr>
-<td style="text-align: left;"><code>verbose</code></td>
-<td style="text-align: left;"><code>bool</code></td>
-<td style="text-align: left;">If True, a progress bar will be displayed during execution.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>**kwargs</code></td>
-<td style="text-align: left;"><code>Any</code></td>
-<td style="text-align: left;">Keyword arguments to pass to <code>func</code>. If an iterable, <code>func</code> will be called for each item.</td>
+<td style="text-align: left;"><code>schema</code></td>
+<td style="text-align: left;"><code>pyarrow.Schema</code></td>
+<td style="text-align: left;">The PyArrow schema used to validate the filter expression.</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>list</code>: List of function outputs in the same order as inputs.</li>
+<li><code>pyarrow.compute.Expression</code>: The generated filter expression.</li>
 </ul>
 <p><strong>Raises:</strong></p>
 <ul>
-<li><code>ValueError</code>: If no iterable arguments provided or length mismatch.</li>
+<li><code>ValueError</code>: If the input string is invalid or contains unsupported operations.</li>
 </ul>
-<p><strong>Examples:</strong>
+<h2 id="sql2polars_filter"><code>sql2polars_filter()</code><a class="headerlink" href="#sql2polars_filter" title="Permanent link">&para;</a></h2>
+<p>Generates a filter expression for Polars based on a given string and schema.</p>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| <code>string</code> | <code>str</code> | The string containing the filter expression. |
+| <code>schema</code> | <code>polars.Schema</code> | The Polars schema used to validate the filter expression. |</p>
+<p><strong>Returns:</strong></p>
+<ul>
+<li><code>polars.Expr</code>: The generated filter expression.</li>
+</ul>
+<p><strong>Raises:</strong></p>
+<ul>
+<li><code>ValueError</code>: If the input string is invalid or contains unsupported operations.</li>
+</ul>
+<h2 id="get_table_names"><code>get_table_names()</code><a class="headerlink" href="#get_table_names" title="Permanent link">&para;</a></h2>
+<p><strong>Parameters:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Type</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><code>sql_query</code></td>
+<td style="text-align: left;"><code>str</code></td>
+<td style="text-align: left;">The SQL query string to parse.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example:</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
@@ -1136,136 +1376,22 @@
 <span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1"># Single iterable argument</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">upper</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;world&quot;</span><span class="p">])</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="c1"># Multiple iterables in args and kwargs</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">offset</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="o">+</span> <span class="n">offset</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">run_parallel</span><span class="p">(</span><span class="n">add</span><span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="n">offset</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="c1"># Fixed and iterable arguments</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="n">run_parallel</span><span class="p">(</span><span class="nb">pow</span><span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span> <span class="n">exp</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="get_partitions_from_path"><code>get_partitions_from_path()</code><a class="headerlink" href="#get_partitions_from_path" title="Permanent link">&para;</a></h2>
-<p>Extract dataset partitions from a file path.</p>
-<p>Parses file paths to extract partition information based on different partitioning schemes.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>path</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The file path from which to extract partition information.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>partitioning</code></td>
-<td style="text-align: left;"><code>str</code> or <code>list[str]</code> or <code>None</code></td>
-<td style="text-align: left;">The partitioning scheme to use. Can be "hive" for Hive-style, a string for a single partition column, a list of strings for multiple partition columns, or None for no specific partitioning.</td>
-</tr>
-</tbody>
-</table>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.helpers.sql</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_table_names</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">query</span> <span class="o">=</span> <span class="s2">&quot;SELECT a FROM my_table WHERE b &gt; 10&quot;</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">tables</span> <span class="o">=</span> <span class="n">get_table_names</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="c1"># Expected: [&#39;my_table&#39;]</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">query_join</span> <span class="o">=</span> <span class="s2">&quot;SELECT t1.a, t2.b FROM table1 AS t1 JOIN table2 AS t2 ON t1.id = t2.id&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="n">tables_join</span> <span class="o">=</span> <span class="n">get_table_names</span><span class="p">(</span><span class="n">query_join</span><span class="p">)</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="nb">print</span><span class="p">(</span><span class="n">tables_join</span><span class="p">)</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="c1"># Expected: [&#39;table1&#39;, &#39;table2&#39;]</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Returns:</strong></p>
 <ul>
-<li><code>list[tuple[str, str]]</code>: List of tuples containing (column, value) pairs.</li>
-</ul>
-<p><strong>Examples:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span>
-<span class="normal"><a href="#__codelineno-1-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1"># Hive-style partitioning</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/year=2023/month=01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;hive&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Single partition column</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="s2">&quot;year&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="c1"># Multiple partition columns</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">get_partitions_from_path</span><span class="p">(</span><span class="s2">&quot;data/2023/01/file.parquet&quot;</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">,</span> <span class="s2">&quot;month&quot;</span><span class="p">])</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="path_to_glob"><code>path_to_glob()</code><a class="headerlink" href="#path_to_glob" title="Permanent link">&para;</a></h2>
-<p>Convert a path to a glob pattern for file matching.</p>
-<p>Intelligently converts paths to glob patterns that match files of the specified format, handling various directory and wildcard patterns.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>path</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The file or directory path to convert into a glob pattern.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>format</code></td>
-<td style="text-align: left;"><code>str</code> or <code>None</code></td>
-<td style="text-align: left;">The desired file format or extension to match (e.g., "parquet", "csv", "json"). If None, the format is inferred from the path.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Returns:</strong></p>
-<ul>
-<li><code>str</code>: Glob pattern for matching files</li>
-</ul>
-<p><strong>Example:</strong>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1"># Directory to parquet files glob</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/&quot;</span><span class="p">,</span> <span class="s2">&quot;parquet&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1"># Already a glob pattern</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/*.csv&quot;</span><span class="p">)</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="c1"># Specific file</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">path_to_glob</span><span class="p">(</span><span class="s2">&quot;data/file.json&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div></p>
-<h2 id="check_optional_dependency"><code>check_optional_dependency()</code><a class="headerlink" href="#check_optional_dependency" title="Permanent link">&para;</a></h2>
-<p>Check if an optional dependency is available.</p>
-<p><strong>Parameters:</strong></p>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Name</th>
-<th style="text-align: left;">Type</th>
-<th style="text-align: left;">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;"><code>package_name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">The name of the optional package to check for availability.</td>
-</tr>
-<tr>
-<td style="text-align: left;"><code>feature_name</code></td>
-<td style="text-align: left;"><code>str</code></td>
-<td style="text-align: left;">A descriptive name of the feature that requires this package.</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Raises:</strong></p>
-<ul>
-<li><code>ImportError</code>: If the package is not available</li>
+<li><code>None</code></li>
 </ul>
 
 

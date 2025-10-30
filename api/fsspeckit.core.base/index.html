@@ -6,17 +6,17 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="Enhanced utilities and extensions for fsspec filesystems.">
+        <meta name="description" content="Enhanced utilities and extensions for fsspec, storage_options and obstore with multi-format I/O support.">
       
       
       
-        <link rel="canonical" href="https://legout.github.com/fsspec-utils/api/fs_utils.core.base/">
+        <link rel="canonical" href="https://legout.github.io/fsspeckit/api/fsspeckit.core.base/">
       
       
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../fs_utils.core.ext/">
+        <link rel="next" href="../fsspeckit.core.ext/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
     
     
       
-        <title>fs_utils.core.base - fsspec-utils</title>
+        <title>fsspeckit.core.base - fsspeckit</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#fs_helperscorebase-api-documentation" class="md-skip">
+        <a href="#fsspeckitcorebase-api-documentation" class="md-skip">
           Skip to content
         </a>
       
@@ -92,7 +92,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="fsspec-utils" class="md-header__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-header__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -106,13 +106,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            fsspec-utils
+            fsspeckit
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fs_utils.core.base
+              fsspeckit.core.base
             
           </span>
         </div>
@@ -194,13 +194,13 @@
     
     
       <div class="md-header__source">
-        <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+        <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
       </div>
@@ -320,6 +320,63 @@
   
   
     <li class="md-tabs__item">
+      <a href="../../helpers/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Helpers Module
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../examples/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Examples
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../api-guide/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  API Guide
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
       <a href="../../contributing/" class="md-tabs__link">
         
   
@@ -379,23 +436,23 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="fsspec-utils" class="md-nav__button md-logo" aria-label="fsspec-utils" data-md-component="logo">
+    <a href="../.." title="fsspeckit" class="md-nav__button md-logo" aria-label="fsspeckit" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    fsspec-utils
+    fsspeckit
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/legout/fsspec-utils" title="Go to repository" class="md-source" data-md-component="source">
+      <a href="https://github.com/legout/fsspeckit" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
   </div>
   <div class="md-source__repository">
-    legout/fsspec-utils
+    legout/fsspeckit
   </div>
 </a>
     </div>
@@ -519,6 +576,72 @@
   
   
     <li class="md-nav__item">
+      <a href="../../helpers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Helpers Module
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Examples
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    API Guide
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../contributing/" class="md-nav__link">
         
   
@@ -559,10 +682,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
             
   
   
@@ -575,8 +698,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
             <span class="md-nav__icon md-icon"></span>
             API Reference
           </label>
@@ -594,7 +717,7 @@
   
   
   <span class="md-ellipsis">
-    fs-utils API Reference
+    fsspeckit API Reference
     
   </span>
   
@@ -630,10 +753,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10_2" id="__nav_10_2_label" tabindex="">
             
   
   
@@ -646,8 +769,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_7_2">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10_2">
             <span class="md-nav__icon md-icon"></span>
             Core
           </label>
@@ -674,7 +797,7 @@
   
   
   <span class="md-ellipsis">
-    fs_utils.core.base
+    fsspeckit.core.base
     
   </span>
   
@@ -687,7 +810,7 @@
   
   
   <span class="md-ellipsis">
-    fs_utils.core.base
+    fsspeckit.core.base
     
   </span>
   
@@ -896,12 +1019,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.core.ext/" class="md-nav__link">
+      <a href="../fsspeckit.core.ext/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.core.ext
+    fsspeckit.core.ext
     
   </span>
   
@@ -943,10 +1066,10 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10_3" id="__nav_10_3_label" tabindex="">
             
   
   
@@ -959,8 +1082,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_3">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_3">
             <span class="md-nav__icon md-icon"></span>
             Storage Options
           </label>
@@ -973,12 +1096,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.base/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.base
+    fsspeckit.storage_options.base
     
   </span>
   
@@ -996,12 +1119,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.cloud/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.cloud/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.cloud
+    fsspeckit.storage_options.cloud
     
   </span>
   
@@ -1019,12 +1142,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.core/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.core/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.core
+    fsspeckit.storage_options.core
     
   </span>
   
@@ -1042,12 +1165,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.storage_options.git/" class="md-nav__link">
+      <a href="../fsspeckit.storage_options.git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.storage_options.git
+    fsspeckit.storage_options.git
     
   </span>
   
@@ -1089,15 +1212,15 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
+          <label class="md-nav__link" for="__nav_10_4" id="__nav_10_4_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
-    Utilities
+    Helpers
     
   </span>
   
@@ -1105,10 +1228,10 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_7_4">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_10_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10_4">
             <span class="md-nav__icon md-icon"></span>
-            Utilities
+            Helpers
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1119,12 +1242,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.datetime.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.datetime/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.datetime
+    fsspeckit.helpers.datetime
     
   </span>
   
@@ -1142,12 +1265,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.logging.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.logging/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.logging
+    fsspeckit.helpers.logging
     
   </span>
   
@@ -1165,12 +1288,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.misc.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.misc/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.misc
+    fsspeckit.helpers.misc
     
   </span>
   
@@ -1188,12 +1311,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.polars.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.polars/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.polars
+    fsspeckit.helpers.polars
     
   </span>
   
@@ -1211,12 +1334,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.pyarrow.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.pyarrow/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.pyarrow
+    fsspeckit.helpers.pyarrow
     
   </span>
   
@@ -1234,12 +1357,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.sql.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.sql/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.sql
+    fsspeckit.helpers.sql
     
   </span>
   
@@ -1257,12 +1380,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fs_utils.utils.types.md" class="md-nav__link">
+      <a href="../fsspeckit.helpers.types/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fs_utils.utils.types
+    fsspeckit.helpers.types
     
   </span>
   
@@ -1307,7 +1430,7 @@
   
 
 
-<h1 id="fs_helperscorebase-api-documentation"><code>fs_helpers.core.base</code> API Documentation<a class="headerlink" href="#fs_helperscorebase-api-documentation" title="Permanent link">&para;</a></h1>
+<h1 id="fsspeckitcorebase-api-documentation"><code>fsspeckit.core.base</code> API Documentation<a class="headerlink" href="#fsspeckitcorebase-api-documentation" title="Permanent link">&para;</a></h1>
 <p>This module provides core filesystem functionalities and utilities, including custom cache mappers, enhanced cached filesystems, and a GitLab filesystem implementation.</p>
 <hr />
 <h2 id="filenamecachemapper"><code>FileNameCacheMapper</code><a class="headerlink" href="#filenamecachemapper" title="Permanent link">&para;</a></h2>
@@ -1325,7 +1448,7 @@
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
 <span class="normal"><a href="#__codelineno-0-6">6</a></span>
 <span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileNameCacheMapper</span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileNameCacheMapper</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># Create cache mapper for S3 files</span>
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">mapper</span> <span class="o">=</span> <span class="n">FileNameCacheMapper</span><span class="p">(</span><span class="s2">&quot;/tmp/cache&quot;</span><span class="p">)</span>
@@ -1392,7 +1515,7 @@
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileNameCacheMapper</span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">FileNameCacheMapper</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2"></a>
 <a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">mapper</span> <span class="o">=</span> <span class="n">FileNameCacheMapper</span><span class="p">(</span><span class="s2">&quot;/tmp/cache&quot;</span><span class="p">)</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="c1"># Maps maintain directory structure</span>
@@ -1427,7 +1550,7 @@
 <span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-2-10">10</a></span>
 <span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">s3_fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">)</span>
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">cached_fs</span> <span class="o">=</span> <span class="n">MonitoredSimpleCacheFileSystem</span><span class="p">(</span>
@@ -1530,7 +1653,7 @@
 <span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
 <a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-4-3" name="__codelineno-4-3"></a>
 <a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="n">cached_fs</span> <span class="o">=</span> <span class="n">MonitoredSimpleCacheFileSystem</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">),</span> <span class="n">cache_storage</span><span class="o">=</span><span class="s2">&quot;/tmp/cache&quot;</span><span class="p">)</span>
@@ -1582,7 +1705,7 @@
 <span class="normal"><a href="#__codelineno-5-4">4</a></span>
 <span class="normal"><a href="#__codelineno-5-5">5</a></span>
 <span class="normal"><a href="#__codelineno-5-6">6</a></span>
-<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">MonitoredSimpleCacheFileSystem</span>
 <a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspec</span><span class="w"> </span><span class="kn">import</span> <span class="n">filesystem</span>
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="n">cached_fs</span> <span class="o">=</span> <span class="n">MonitoredSimpleCacheFileSystem</span><span class="p">(</span><span class="n">fs</span><span class="o">=</span><span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">),</span> <span class="n">cache_storage</span><span class="o">=</span><span class="s2">&quot;/tmp/cache&quot;</span><span class="p">)</span>
@@ -1715,7 +1838,7 @@
 <span class="normal"><a href="#__codelineno-7-13">13</a></span>
 <span class="normal"><a href="#__codelineno-7-14">14</a></span>
 <span class="normal"><a href="#__codelineno-7-15">15</a></span>
-<span class="normal"><a href="#__codelineno-7-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">GitLabFileSystem</span>
+<span class="normal"><a href="#__codelineno-7-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">GitLabFileSystem</span>
 <a id="__codelineno-7-2" name="__codelineno-7-2"></a>
 <a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Access a public repository</span>
 <a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="n">fs_public</span> <span class="o">=</span> <span class="n">GitLabFileSystem</span><span class="p">(</span>
@@ -1771,7 +1894,7 @@
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
-<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">GitLabFileSystem</span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.core.base</span><span class="w"> </span><span class="kn">import</span> <span class="n">GitLabFileSystem</span>
 <a id="__codelineno-8-2" name="__codelineno-8-2"></a>
 <a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">GitLabFileSystem</span><span class="p">(</span><span class="n">project_name</span><span class="o">=</span><span class="s2">&quot;gitlab-org/gitlab&quot;</span><span class="p">)</span>
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">content</span> <span class="o">=</span> <span class="n">fs</span><span class="o">.</span><span class="n">cat</span><span class="p">(</span><span class="s2">&quot;README.md&quot;</span><span class="p">)</span>
@@ -2123,7 +2246,7 @@
 <a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">)</span>
 <a id="__codelineno-9-3" name="__codelineno-9-3"></a>
 <a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="c1"># S3 with storage options</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.storage_options.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
 <a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">opts</span> <span class="o">=</span> <span class="n">AwsStorageOptions</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span><span class="p">)</span>
 <a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">filesystem</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">opts</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-9-8" name="__codelineno-9-8"></a>
@@ -2221,7 +2344,7 @@
 <a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">get_filesystem</span><span class="p">(</span><span class="s2">&quot;file&quot;</span><span class="p">)</span>
 <a id="__codelineno-10-3" name="__codelineno-10-3"></a>
 <a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1"># S3 with storage options</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fs_helpers.storage_options.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">fsspeckit.storage_options.cloud</span><span class="w"> </span><span class="kn">import</span> <span class="n">AwsStorageOptions</span>
 <a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">opts</span> <span class="o">=</span> <span class="n">AwsStorageOptions</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;us-west-2&quot;</span><span class="p">)</span>
 <a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">fs</span> <span class="o">=</span> <span class="n">get_filesystem</span><span class="p">(</span><span class="s2">&quot;s3&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="n">opts</span><span class="p">,</span> <span class="n">cached</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <a id="__codelineno-10-8" name="__codelineno-10-8"></a>
