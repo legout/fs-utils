@@ -5,7 +5,7 @@ import polars as pl
 import pyarrow as pa
 from datetime import datetime, timezone
 
-from fsspec_utils.utils.polars import (
+from fs_utils.utils.polars import (
     opt_dtype,
     unnest_all,
     explode_all,
@@ -26,12 +26,14 @@ class TestOptDtype:
 
     def test_basic_type_inference(self):
         """Test basic data type inference."""
-        df = pl.DataFrame({
-            "int_col": ["1", "2", "3", "4"],
-            "float_col": ["1.5", "2.5", "3.5", "4.5"],
-            "bool_col": ["true", "false", "yes", "no"],
-            "str_col": ["a", "b", "c", "d"],
-        })
+        df = pl.DataFrame(
+            {
+                "int_col": ["1", "2", "3", "4"],
+                "float_col": ["1.5", "2.5", "3.5", "4.5"],
+                "bool_col": ["true", "false", "yes", "no"],
+                "str_col": ["a", "b", "c", "d"],
+            }
+        )
 
         result = opt_dtype(df)
 
@@ -42,28 +44,36 @@ class TestOptDtype:
 
     def test_datetime_parsing(self):
         """Test datetime parsing with various formats."""
-        df = pl.DataFrame({
-            "iso_datetime": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
-            "us_date": ["12/31/2023", "01/01/2024"],
-            "german_date": ["31.12.2023", "01.01.2024"],
-            "compact": ["20231231", "20240101"],
-            "with_tz": ["2023-12-31T23:59:59+01:00", "2024-01-01T00:00:00Z"],
-        })
+        df = pl.DataFrame(
+            {
+                "iso_datetime": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
+                "us_date": ["12/31/2023", "01/01/2024"],
+                "german_date": ["31.12.2023", "01.01.2024"],
+                "compact": ["20231231", "20240101"],
+                "with_tz": ["2023-12-31T23:59:59+01:00", "2024-01-01T00:00:00Z"],
+            }
+        )
 
         result = opt_dtype(df)
 
-        assert result.schema["iso_datetime"] == pl.Datetime(time_unit="us", time_zone=None)
+        assert result.schema["iso_datetime"] == pl.Datetime(
+            time_unit="us", time_zone=None
+        )
         assert result.schema["us_date"] == pl.Datetime(time_unit="us", time_zone=None)
-        assert result.schema["german_date"] == pl.Datetime(time_unit="us", time_zone=None)
+        assert result.schema["german_date"] == pl.Datetime(
+            time_unit="us", time_zone=None
+        )
         assert result.schema["compact"] == pl.Datetime(time_unit="us", time_zone=None)
         assert result.schema["with_tz"] == pl.Datetime(time_unit="us", time_zone=None)
 
     def test_timezone_handling(self):
         """Test timezone parameter handling."""
-        df = pl.DataFrame({
-            "datetime": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
-            "datetime_tz": ["2023-12-31T23:59:59+01:00", "2024-01-01T00:00:00Z"],
-        })
+        df = pl.DataFrame(
+            {
+                "datetime": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
+                "datetime_tz": ["2023-12-31T23:59:59+01:00", "2024-01-01T00:00:00Z"],
+            }
+        )
 
         # Test time_zone hint
         result = opt_dtype(df, time_zone="UTC")
@@ -75,11 +85,13 @@ class TestOptDtype:
 
     def test_include_exclude_columns(self):
         """Test include and exclude parameters."""
-        df = pl.DataFrame({
-            "col1": ["1", "2", "3"],
-            "col2": ["1.5", "2.5", "3.5"],
-            "col3": ["a", "b", "c"],
-        })
+        df = pl.DataFrame(
+            {
+                "col1": ["1", "2", "3"],
+                "col2": ["1.5", "2.5", "3.5"],
+                "col3": ["a", "b", "c"],
+            }
+        )
 
         # Test include
         result = opt_dtype(df, include=["col1", "col2"])
@@ -95,11 +107,13 @@ class TestOptDtype:
 
     def test_shrink_numerics(self):
         """Test numeric shrinking functionality."""
-        df = pl.DataFrame({
-            "small_int": ["1", "2", "3", "4", "5"],
-            "large_int": ["100000", "200000", "300000"],
-            "small_float": ["1.1", "2.2", "3.3"],
-        })
+        df = pl.DataFrame(
+            {
+                "small_int": ["1", "2", "3", "4", "5"],
+                "large_int": ["100000", "200000", "300000"],
+                "small_float": ["1.1", "2.2", "3.3"],
+            }
+        )
 
         # With shrinking
         result = opt_dtype(df, shrink_numerics=True)
@@ -115,10 +129,12 @@ class TestOptDtype:
 
     def test_allow_unsigned(self):
         """Test unsigned integer type allowance."""
-        df = pl.DataFrame({
-            "positive": ["1", "2", "3"],
-            "mixed": ["-1", "0", "1"],
-        })
+        df = pl.DataFrame(
+            {
+                "positive": ["1", "2", "3"],
+                "mixed": ["-1", "0", "1"],
+            }
+        )
 
         # Allow unsigned
         result = opt_dtype(df, allow_unsigned=True)
@@ -131,11 +147,13 @@ class TestOptDtype:
 
     def test_null_handling(self):
         """Test null-like value handling."""
-        df = pl.DataFrame({
-            "all_null": ["", "None", "null", "NaN"],
-            "mixed_null": ["1", "", "2", "null"],
-            "no_null": ["1", "2", "3", "4"],
-        })
+        df = pl.DataFrame(
+            {
+                "all_null": ["", "None", "null", "NaN"],
+                "mixed_null": ["1", "", "2", "null"],
+                "no_null": ["1", "2", "3", "4"],
+            }
+        )
 
         result = opt_dtype(df, allow_null=True)
         assert result.schema["all_null"] == pl.Null
@@ -148,10 +166,12 @@ class TestOptDtype:
 
     def test_strict_mode(self):
         """Test strict error handling."""
-        df = pl.DataFrame({
-            "valid": ["1", "2", "3"],
-            "invalid": ["1", "2", "invalid"],
-        })
+        df = pl.DataFrame(
+            {
+                "valid": ["1", "2", "3"],
+                "invalid": ["1", "2", "invalid"],
+            }
+        )
 
         # Non-strict mode (default)
         result = opt_dtype(df, strict=False)
@@ -164,10 +184,12 @@ class TestOptDtype:
 
     def test_lazy_frame(self):
         """Test opt_dtype with LazyFrame."""
-        df = pl.DataFrame({
-            "int_col": ["1", "2", "3"],
-            "float_col": ["1.5", "2.5", "3.5"],
-        })
+        df = pl.DataFrame(
+            {
+                "int_col": ["1", "2", "3"],
+                "float_col": ["1.5", "2.5", "3.5"],
+            }
+        )
 
         lazy_df = df.lazy()
         result = opt_dtype(lazy_df)
@@ -183,10 +205,12 @@ class TestExtensionMethods:
 
     def test_unnest_all(self):
         """Test unnest_all method."""
-        df = pl.DataFrame({
-            "id": [1, 2],
-            "data": [{"a": 1, "b": 2}, {"a": 3, "b": 4}],
-        })
+        df = pl.DataFrame(
+            {
+                "id": [1, 2],
+                "data": [{"a": 1, "b": 2}, {"a": 3, "b": 4}],
+            }
+        )
 
         result = df.unnest_all()
         assert "data_a" in result.columns
@@ -194,20 +218,24 @@ class TestExtensionMethods:
 
     def test_explode_all(self):
         """Test explode_all method."""
-        df = pl.DataFrame({
-            "id": [1, 2],
-            "items": [[1, 2], [3, 4, 5]],
-        })
+        df = pl.DataFrame(
+            {
+                "id": [1, 2],
+                "items": [[1, 2], [3, 4, 5]],
+            }
+        )
 
         result = df.explode_all()
         assert result.shape[0] == 5  # 2 + 3 exploded rows
 
     def test_with_row_count_ext(self):
         """Test with_row_count_ext method."""
-        df = pl.DataFrame({
-            "group": ["a", "a", "b", "b"],
-            "value": [1, 2, 3, 4],
-        })
+        df = pl.DataFrame(
+            {
+                "group": ["a", "a", "b", "b"],
+                "value": [1, 2, 3, 4],
+            }
+        )
 
         # Without over
         result = df.with_row_count_ext()
@@ -220,11 +248,11 @@ class TestExtensionMethods:
 
     def test_with_datepart_columns(self):
         """Test with_datepart_columns method."""
-        df = pl.DataFrame({
-            "timestamp": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
-        }).with_columns(
-            pl.col("timestamp").str.to_datetime()
-        )
+        df = pl.DataFrame(
+            {
+                "timestamp": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
+            }
+        ).with_columns(pl.col("timestamp").str.to_datetime())
 
         result = df.with_datepart_columns(
             timestamp_column="timestamp",
@@ -241,11 +269,11 @@ class TestExtensionMethods:
 
     def test_with_strftime_columns(self):
         """Test with_strftime_columns method."""
-        df = pl.DataFrame({
-            "timestamp": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
-        }).with_columns(
-            pl.col("timestamp").str.to_datetime()
-        )
+        df = pl.DataFrame(
+            {
+                "timestamp": ["2023-12-31T23:59:59", "2024-01-01T00:00:00"],
+            }
+        ).with_columns(pl.col("timestamp").str.to_datetime())
 
         result = df.with_strftime_columns(
             timestamp_column="timestamp",
@@ -258,16 +286,20 @@ class TestExtensionMethods:
 
     def test_cast_relaxed(self):
         """Test cast_relaxed method."""
-        df1 = pl.DataFrame({
-            "a": [1, 2],
-            "b": ["x", "y"],
-        })
+        df1 = pl.DataFrame(
+            {
+                "a": [1, 2],
+                "b": ["x", "y"],
+            }
+        )
 
-        schema = pl.Schema({
-            "a": pl.Int64,
-            "b": pl.Utf8,
-            "c": pl.Float64,
-        })
+        schema = pl.Schema(
+            {
+                "a": pl.Int64,
+                "b": pl.Utf8,
+                "c": pl.Float64,
+            }
+        )
 
         result = df1.cast_relaxed(schema)
         assert "c" in result.columns
@@ -275,15 +307,19 @@ class TestExtensionMethods:
 
     def test_delta(self):
         """Test delta method."""
-        df1 = pl.DataFrame({
-            "id": [1, 2, 3],
-            "value": ["a", "b", "c"],
-        })
+        df1 = pl.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "value": ["a", "b", "c"],
+            }
+        )
 
-        df2 = pl.DataFrame({
-            "id": [2, 3, 4],
-            "value": ["b", "c", "d"],
-        })
+        df2 = pl.DataFrame(
+            {
+                "id": [2, 3, 4],
+                "value": ["b", "c", "d"],
+            }
+        )
 
         result = df1.delta(df2)
         # Should contain only id=1 (not in df2)
@@ -292,10 +328,12 @@ class TestExtensionMethods:
 
     def test_drop_null_columns(self):
         """Test drop_null_columns method."""
-        df = pl.DataFrame({
-            "keep": [1, 2, 3],
-            "drop": [None, None, None],
-        })
+        df = pl.DataFrame(
+            {
+                "keep": [1, 2, 3],
+                "drop": [None, None, None],
+            }
+        )
 
         result = df.drop_null_columns()
         assert "keep" in result.columns
@@ -303,15 +341,19 @@ class TestExtensionMethods:
 
     def test_unify_schemas(self):
         """Test unify_schemas function."""
-        df1 = pl.DataFrame({
-            "a": [1, 2],
-            "b": ["x", "y"],
-        })
+        df1 = pl.DataFrame(
+            {
+                "a": [1, 2],
+                "b": ["x", "y"],
+            }
+        )
 
-        df2 = pl.DataFrame({
-            "a": [3, 4],
-            "c": [True, False],
-        })
+        df2 = pl.DataFrame(
+            {
+                "a": [3, 4],
+                "c": [True, False],
+            }
+        )
 
         schema = unify_schemas([df1, df2])
         assert "a" in schema.names()
@@ -330,10 +372,12 @@ class TestEdgeCases:
 
     def test_all_null_columns(self):
         """Test DataFrame with all null columns."""
-        df = pl.DataFrame({
-            "all_null": [None, None, None],
-            "mixed": [1, None, 3],
-        })
+        df = pl.DataFrame(
+            {
+                "all_null": [None, None, None],
+                "mixed": [1, None, 3],
+            }
+        )
 
         result = opt_dtype(df)
         assert result.schema["all_null"] == pl.Null
@@ -341,32 +385,38 @@ class TestEdgeCases:
 
     def test_mixed_datetime_formats(self):
         """Test mixed datetime formats in same column."""
-        df = pl.DataFrame({
-            "mixed_dates": [
-                "2023-12-31",
-                "12/31/2023",
-                "31.12.2023",
-                "20231231",
-            ],
-        })
+        df = pl.DataFrame(
+            {
+                "mixed_dates": [
+                    "2023-12-31",
+                    "12/31/2023",
+                    "31.12.2023",
+                    "20231231",
+                ],
+            }
+        )
 
         result = opt_dtype(df)
         assert result.schema["mixed_dates"] == pl.Datetime
 
     def test_special_float_values(self):
         """Test special float values (inf, nan)."""
-        df = pl.DataFrame({
-            "floats": ["1.5", "inf", "-inf", "nan"],
-        })
+        df = pl.DataFrame(
+            {
+                "floats": ["1.5", "inf", "-inf", "nan"],
+            }
+        )
 
         result = opt_dtype(df)
         assert result.schema["floats"] == pl.Float64
 
     def test_unicode_strings(self):
         """Test unicode string handling."""
-        df = pl.DataFrame({
-            "unicode": ["café", "naïve", "résumé"],
-        })
+        df = pl.DataFrame(
+            {
+                "unicode": ["café", "naïve", "résumé"],
+            }
+        )
 
         result = opt_dtype(df)
         assert result.schema["unicode"] == pl.Utf8

@@ -5,7 +5,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 from datetime import datetime, timezone
 
-from fsspec_utils.utils.sql import sql2pyarrow_filter
+from fs_utils.utils.sql import sql2pyarrow_filter
 
 
 class TestSql2PyarrowFilter:
@@ -14,58 +14,68 @@ class TestSql2PyarrowFilter:
     @pytest.fixture
     def sample_schema(self):
         """Create a sample schema for testing."""
-        return pa.schema([
-            pa.field("id", pa.int64()),
-            pa.field("name", pa.string()),
-            pa.field("age", pa.int64()),
-            pa.field("score", pa.float64()),
-            pa.field("active", pa.bool_()),
-            pa.field("created_at", pa.timestamp("us", "UTC")),
-            pa.field("birth_date", pa.date32()),
-            pa.field("login_time", pa.time64("us")),
-            pa.field("category", pa.string()),
-            pa.field("tags", pa.list_(pa.string())),
-        ])
+        return pa.schema(
+            [
+                pa.field("id", pa.int64()),
+                pa.field("name", pa.string()),
+                pa.field("age", pa.int64()),
+                pa.field("score", pa.float64()),
+                pa.field("active", pa.bool_()),
+                pa.field("created_at", pa.timestamp("us", "UTC")),
+                pa.field("birth_date", pa.date32()),
+                pa.field("login_time", pa.time64("us")),
+                pa.field("category", pa.string()),
+                pa.field("tags", pa.list_(pa.string())),
+            ]
+        )
 
     @pytest.fixture
     def sample_table(self, sample_schema):
         """Create a sample table for testing."""
-        return pa.Table.from_arrays([
-            pa.array([1, 2, 3, 4, 5]),
-            pa.array(["Alice", "Bob", "Charlie", "David", "Eve"]),
-            pa.array([25, 30, 35, 40, 45]),
-            pa.array([85.5, 90.2, 78.9, 92.1, 88.7]),
-            pa.array([True, False, True, False, True]),
-            pa.array([
-                "2023-01-01T10:00:00",
-                "2023-02-15T14:30:00",
-                "2023-03-20T09:15:00",
-                "2023-04-25T16:45:00",
-                "2023-05-30T11:20:00"
-            ], type=pa.timestamp("us", "UTC")),
-            pa.array([
-                "1998-01-15",
-                "1993-05-20",
-                "1988-11-30",
-                "1983-07-10",
-                "1978-03-25"
-            ], type=pa.date32()),
-            pa.array([
-                "09:00:00",
-                "14:30:00",
-                "08:15:00",
-                "16:45:00",
-                "11:20:00"
-            ], type=pa.time64("us")),
-            pa.array(["A", "B", "A", "C", "B"]),
-            pa.array([
-                ["tag1", "tag2"],
-                ["tag2"],
-                ["tag1", "tag3"],
-                ["tag3"],
-                ["tag2", "tag3"]
-            ]),
-        ], schema=sample_schema)
+        return pa.Table.from_arrays(
+            [
+                pa.array([1, 2, 3, 4, 5]),
+                pa.array(["Alice", "Bob", "Charlie", "David", "Eve"]),
+                pa.array([25, 30, 35, 40, 45]),
+                pa.array([85.5, 90.2, 78.9, 92.1, 88.7]),
+                pa.array([True, False, True, False, True]),
+                pa.array(
+                    [
+                        "2023-01-01T10:00:00",
+                        "2023-02-15T14:30:00",
+                        "2023-03-20T09:15:00",
+                        "2023-04-25T16:45:00",
+                        "2023-05-30T11:20:00",
+                    ],
+                    type=pa.timestamp("us", "UTC"),
+                ),
+                pa.array(
+                    [
+                        "1998-01-15",
+                        "1993-05-20",
+                        "1988-11-30",
+                        "1983-07-10",
+                        "1978-03-25",
+                    ],
+                    type=pa.date32(),
+                ),
+                pa.array(
+                    ["09:00:00", "14:30:00", "08:15:00", "16:45:00", "11:20:00"],
+                    type=pa.time64("us"),
+                ),
+                pa.array(["A", "B", "A", "C", "B"]),
+                pa.array(
+                    [
+                        ["tag1", "tag2"],
+                        ["tag2"],
+                        ["tag1", "tag3"],
+                        ["tag3"],
+                        ["tag2", "tag3"],
+                    ]
+                ),
+            ],
+            schema=sample_schema,
+        )
 
     def test_basic_comparisons(self, sample_schema):
         """Test basic comparison operators."""
@@ -128,7 +138,9 @@ class TestSql2PyarrowFilter:
         assert isinstance(expr, pc.Expression)
 
         # Complex logical expression
-        expr = sql2pyarrow_filter("(age > 30 AND score > 85) OR category = 'A'", sample_schema)
+        expr = sql2pyarrow_filter(
+            "(age > 30 AND score > 85) OR category = 'A'", sample_schema
+        )
         assert isinstance(expr, pc.Expression)
 
     def test_boolean_values(self, sample_schema):
@@ -183,7 +195,7 @@ class TestSql2PyarrowFilter:
         """Test complex nested expressions."""
         expr = sql2pyarrow_filter(
             "(age > 30 AND score > 85) OR (category IN ('A', 'C') AND active = true)",
-            sample_schema
+            sample_schema,
         )
         assert isinstance(expr, pc.Expression)
 
@@ -234,7 +246,9 @@ class TestSql2PyarrowFilter:
     def test_timezone_handling(self, sample_schema):
         """Test timezone-aware datetime handling."""
         # Timezone-aware timestamp
-        expr = sql2pyarrow_filter("created_at > '2023-01-01T12:00:00+00:00'", sample_schema)
+        expr = sql2pyarrow_filter(
+            "created_at > '2023-01-01T12:00:00+00:00'", sample_schema
+        )
         assert isinstance(expr, pc.Expression)
 
     def test_list_column_handling(self, sample_schema):
@@ -283,15 +297,16 @@ class TestSql2PyarrowFilter:
 
         # Test complex filter
         expr = sql2pyarrow_filter(
-            "age > 30 AND (score > 85 OR category = 'A') AND active = true",
-            schema
+            "age > 30 AND (score > 85 OR category = 'A') AND active = true", schema
         )
         result = sample_table.filter(expr)
 
         # Verify the filter works correctly
         for i in range(result.num_rows):
             assert result["age"][i].as_py() > 30
-            assert result["score"][i].as_py() > 85 or result["category"][i].as_py() == "A"
+            assert (
+                result["score"][i].as_py() > 85 or result["category"][i].as_py() == "A"
+            )
             assert result["active"][i].as_py() is True
 
     def test_performance_with_large_schema(self):

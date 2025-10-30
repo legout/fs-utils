@@ -6,12 +6,12 @@ import pyarrow as pa
 import pandas as pd
 from datetime import datetime
 
-from fsspec_utils.utils.types import dict_to_dataframe, to_pyarrow_table
-from fsspec_utils.utils.polars import opt_dtype as opt_dtype_pl
-from fsspec_utils.utils.pyarrow import opt_dtype as opt_dtype_pa
-from fsspec_utils.utils.sql import sql2pyarrow_filter
-from fsspec_utils.utils.misc import run_parallel
-from fsspec_utils.utils.datetime import get_timestamp_column
+from fs_utils.utils.types import dict_to_dataframe, to_pyarrow_table
+from fs_utils.utils.polars import opt_dtype as opt_dtype_pl
+from fs_utils.utils.pyarrow import opt_dtype as opt_dtype_pa
+from fs_utils.utils.sql import sql2pyarrow_filter
+from fs_utils.utils.misc import run_parallel
+from fs_utils.utils.datetime import get_timestamp_column
 
 
 class TestCrossModuleIntegration:
@@ -69,17 +69,11 @@ class TestCrossModuleIntegration:
         """Test parallel processing of opt_dtype on multiple datasets."""
         # Create multiple datasets
         datasets = [
-            pl.DataFrame(large_test_data).sample(fraction=0.1)
-            for _ in range(5)
+            pl.DataFrame(large_test_data).sample(fraction=0.1) for _ in range(5)
         ]
 
         # Process in parallel
-        results = run_parallel(
-            opt_dtype_pl,
-            datasets,
-            n_jobs=2,
-            verbose=False
-        )
+        results = run_parallel(opt_dtype_pl, datasets, n_jobs=2, verbose=False)
 
         # Verify all were processed
         assert len(results) == 5
@@ -106,7 +100,12 @@ class TestCrossModuleIntegration:
         """Test a complex pipeline using multiple utilities."""
         # Start with raw data
         raw_data = [
-            {"id": i, "value": i * 1.5, "category": f"cat_{i % 3}", "date": f"2023-01-{i+1:02d}"}
+            {
+                "id": i,
+                "value": i * 1.5,
+                "category": f"cat_{i % 3}",
+                "date": f"2023-01-{i + 1:02d}",
+            }
             for i in range(100)
         ]
 
@@ -115,18 +114,19 @@ class TestCrossModuleIntegration:
         optimized_df = opt_dtype_pl(df)
 
         # Add derived columns
-        result_df = optimized_df.with_columns([
-            (pl.col("value") * 2).alias("doubled_value"),
-            pl.col("category").str.to_uppercase().alias("category_upper"),
-        ])
+        result_df = optimized_df.with_columns(
+            [
+                (pl.col("value") * 2).alias("doubled_value"),
+                pl.col("category").str.to_uppercase().alias("category_upper"),
+            ]
+        )
 
         # Convert to PyArrow for filtering
         table = to_pyarrow_table(result_df)
 
         # Apply complex SQL filter
         filter_expr = sql2pyarrow_filter(
-            "value > 10 AND category IN ('cat_1', 'cat_2')",
-            table.schema
+            "value > 10 AND category IN ('cat_1', 'cat_2')", table.schema
         )
         filtered_table = table.filter(filter_expr)
 
@@ -144,14 +144,16 @@ class TestRealWorldScenarios:
         # Simulate log data
         log_data = []
         for i in range(1000):
-            log_data.append({
-                "timestamp": f"2023-12-{i%28+1:02d}T{i%24:02d}:{i%60:02d}:{i%60:02d}",
-                "level": ["INFO", "WARNING", "ERROR"][i % 3],
-                "message": f"Log message {i}",
-                "user_id": str(i % 100),
-                "duration_ms": str(i * 10),
-                "success": str(i % 2 == 0),
-            })
+            log_data.append(
+                {
+                    "timestamp": f"2023-12-{i % 28 + 1:02d}T{i % 24:02d}:{i % 60:02d}:{i % 60:02d}",
+                    "level": ["INFO", "WARNING", "ERROR"][i % 3],
+                    "message": f"Log message {i}",
+                    "user_id": str(i % 100),
+                    "duration_ms": str(i * 10),
+                    "success": str(i % 2 == 0),
+                }
+            )
 
         # Convert and optimize
         df = dict_to_dataframe(log_data)
@@ -171,39 +173,50 @@ class TestRealWorldScenarios:
         """Test processing sensor IoT data."""
         # Generate sensor data
         import random
+
         sensor_data = []
         base_time = datetime(2023, 1, 1)
 
         for i in range(500):
-            sensor_data.append({
-                "sensor_id": f"sensor_{i % 10}",
-                "timestamp": (base_time + pd.Timedelta(minutes=i)).isoformat(),
-                "temperature": f"{20 + random.uniform(-5, 5):.2f}",
-                "humidity": f"{50 + random.uniform(-10, 10):.2f}",
-                "pressure": f"{1013 + random.uniform(-5, 5):.2f}",
-                "status": random.choice(["OK", "WARNING", "ERROR"]),
-                "battery": f"{random.uniform(3.0, 4.2):.2f}",
-            })
+            sensor_data.append(
+                {
+                    "sensor_id": f"sensor_{i % 10}",
+                    "timestamp": (base_time + pd.Timedelta(minutes=i)).isoformat(),
+                    "temperature": f"{20 + random.uniform(-5, 5):.2f}",
+                    "humidity": f"{50 + random.uniform(-10, 10):.2f}",
+                    "pressure": f"{1013 + random.uniform(-5, 5):.2f}",
+                    "status": random.choice(["OK", "WARNING", "ERROR"]),
+                    "battery": f"{random.uniform(3.0, 4.2):.2f}",
+                }
+            )
 
         # Process with Polars
         df = dict_to_dataframe(sensor_data)
         optimized_df = opt_dtype_pl(df)
 
         # Add time-based aggregations
-        result_df = optimized_df.with_columns([
-            pl.col("timestamp").str.to_datetime().alias("datetime"),
-            (pl.col("temperature").cast(pl.Float32) * 9/5 + 32).alias("temperature_f"),
-        ]).with_columns([
-            pl.col("datetime").dt.hour().alias("hour"),
-            pl.col("datetime").dt.date().alias("date"),
-        ])
+        result_df = optimized_df.with_columns(
+            [
+                pl.col("timestamp").str.to_datetime().alias("datetime"),
+                (pl.col("temperature").cast(pl.Float32) * 9 / 5 + 32).alias(
+                    "temperature_f"
+                ),
+            ]
+        ).with_columns(
+            [
+                pl.col("datetime").dt.hour().alias("hour"),
+                pl.col("datetime").dt.date().alias("date"),
+            ]
+        )
 
         # Group by sensor and calculate statistics
-        stats = result_df.groupby("sensor_id").agg([
-            pl.col("temperature").mean().alias("avg_temp"),
-            pl.col("humidity").mean().alias("avg_humidity"),
-            pl.col("pressure").std().alias("pressure_std"),
-        ])
+        stats = result_df.groupby("sensor_id").agg(
+            [
+                pl.col("temperature").mean().alias("avg_temp"),
+                pl.col("humidity").mean().alias("avg_humidity"),
+                pl.col("pressure").std().alias("pressure_std"),
+            ]
+        )
 
         # Verify results
         assert stats.height == 10  # 10 unique sensors
@@ -217,33 +230,41 @@ class TestRealWorldScenarios:
         products = [f"prod_{i:03d}" for i in range(50)]
 
         for i in range(1000):
-            ecommerce_data.append({
-                "order_id": f"ORD-{2023}-{i:06d}",
-                "customer_id": random.choice(customers),
-                "product_id": random.choice(products),
-                "quantity": random.randint(1, 10),
-                "unit_price": f"{random.uniform(10, 100):.2f}",
-                "order_date": f"2023-{random.randint(1, 12):02d}-{random.randint(1, 28):02d}",
-                "status": random.choice(["pending", "shipped", "delivered", "cancelled"]),
-                "priority": random.choice(["low", "medium", "high"]),
-            })
+            ecommerce_data.append(
+                {
+                    "order_id": f"ORD-{2023}-{i:06d}",
+                    "customer_id": random.choice(customers),
+                    "product_id": random.choice(products),
+                    "quantity": random.randint(1, 10),
+                    "unit_price": f"{random.uniform(10, 100):.2f}",
+                    "order_date": f"2023-{random.randint(1, 12):02d}-{random.randint(1, 28):02d}",
+                    "status": random.choice(
+                        ["pending", "shipped", "delivered", "cancelled"]
+                    ),
+                    "priority": random.choice(["low", "medium", "high"]),
+                }
+            )
 
         # Process data
         df = dict_to_dataframe(ecommerce_data)
         optimized_df = opt_dtype_pl(df)
 
         # Calculate total amount
-        result_df = optimized_df.with_columns([
-            (pl.col("quantity") * pl.col("unit_price")).alias("total_amount"),
-            pl.col("order_date").str.to_datetime().alias("order_datetime"),
-        ])
+        result_df = optimized_df.with_columns(
+            [
+                (pl.col("quantity") * pl.col("unit_price")).alias("total_amount"),
+                pl.col("order_date").str.to_datetime().alias("order_datetime"),
+            ]
+        )
 
         # Analyze by status
-        status_analysis = result_df.groupby("status").agg([
-            pl.count().alias("order_count"),
-            pl.col("total_amount").sum().alias("total_revenue"),
-            pl.col("total_amount").mean().alias("avg_order_value"),
-        ])
+        status_analysis = result_df.groupby("status").agg(
+            [
+                pl.count().alias("order_count"),
+                pl.col("total_amount").sum().alias("total_revenue"),
+                pl.col("total_amount").mean().alias("avg_order_value"),
+            ]
+        )
 
         # Verify results
         assert status_analysis.height == 4  # 4 statuses
@@ -259,15 +280,17 @@ class TestRealWorldScenarios:
         for i in range(252):  # Trading days in a year
             for symbol in symbols:
                 price = 100 + i * 0.1 + random.uniform(-5, 5)
-                financial_data.append({
-                    "symbol": symbol,
-                    "date": (base_date + pd.Timedelta(days=i)).strftime("%Y-%m-%d"),
-                    "open": f"{price:.2f}",
-                    "high": f"{price * 1.02:.2f}",
-                    "low": f"{price * 0.98:.2f}",
-                    "close": f"{price * 1.01:.2f}",
-                    "volume": f"{random.randint(1000000, 10000000)}",
-                })
+                financial_data.append(
+                    {
+                        "symbol": symbol,
+                        "date": (base_date + pd.Timedelta(days=i)).strftime("%Y-%m-%d"),
+                        "open": f"{price:.2f}",
+                        "high": f"{price * 1.02:.2f}",
+                        "low": f"{price * 0.98:.2f}",
+                        "close": f"{price * 1.01:.2f}",
+                        "volume": f"{random.randint(1000000, 10000000)}",
+                    }
+                )
 
         # Process with PyArrow for better performance with large data
         df = dict_to_dataframe(financial_data)
@@ -276,9 +299,7 @@ class TestRealWorldScenarios:
 
         # Calculate daily returns
         # Note: This would require window functions, simplified for example
-        returns_table = optimized_table.filter(
-            pc.field("close") > 0
-        )
+        returns_table = optimized_table.filter(pc.field("close") > 0)
 
         # Verify data integrity
         assert returns_table.num_rows > 0
@@ -319,7 +340,13 @@ class TestErrorHandlingIntegration:
         data = {
             "id": [1, 2, 3, 4, 5],
             "value": ["10", "20", "invalid", "40", "50"],
-            "date": ["2023-01-01", "invalid_date", "2023-01-03", "2023-01-04", "2023-01-05"],
+            "date": [
+                "2023-01-01",
+                "invalid_date",
+                "2023-01-03",
+                "2023-01-04",
+                "2023-01-05",
+            ],
         }
 
         # Should handle gracefully with strict=False
@@ -345,9 +372,9 @@ class TestErrorHandlingIntegration:
 
         for i in range(0, 10000, chunk_size):
             chunk_data = {
-                "id": large_data["id"][i:i+chunk_size],
-                "value": large_data["value"][i:i+chunk_size],
-                "category": large_data["category"][i:i+chunk_size],
+                "id": large_data["id"][i : i + chunk_size],
+                "value": large_data["value"][i : i + chunk_size],
+                "category": large_data["category"][i : i + chunk_size],
             }
 
             df = dict_to_dataframe(chunk_data)

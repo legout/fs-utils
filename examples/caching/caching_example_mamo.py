@@ -14,7 +14,8 @@ def __():
     import json
 
     # Import fsspec-utils filesystem function
-    from fsspec_utils import filesystem
+    from fs_utils import filesystem
+
     return filesystem, json, os, tempfile, time
 
 
@@ -29,11 +30,13 @@ def __(filesystem, json, os, tempfile, time):
     sample_data = {
         "name": "fsspec-utils caching example",
         "timestamp": time.time(),
-        "items": [{"id": i, "value": f"item_{i}"} for i in range(1000)]  # Larger dataset for better demo
+        "items": [
+            {"id": i, "value": f"item_{i}"} for i in range(1000)
+        ],  # Larger dataset for better demo
     }
 
     # Write the sample data to our file
-    with open(sample_file, 'w') as f:
+    with open(sample_file, "w") as f:
         json.dump(sample_data, f)
 
     print(f"Created sample file: {sample_file}")
@@ -51,9 +54,9 @@ def __(cache_dir, filesystem):
         protocol_or_path="file",
         cached=True,
         cache_storage=cache_dir,
-        verbose=True  # Enable verbose logging to see cache operations
+        verbose=True,  # Enable verbose logging to see cache operations
     )
-    return fs,
+    return (fs,)
 
 
 @app.cell
@@ -81,7 +84,7 @@ def __(cache_dir, os):
         print(f"  - {file}")
     if len(cache_files) > 5:
         print(f"  ... and {len(cache_files) - 5} more files")
-    return cache_files,
+    return (cache_files,)
 
 
 @app.cell
@@ -120,11 +123,11 @@ def __(data1, fs, sample_file, time):
         third_read_time = time.time() - start_time
         print(f"Third read completed in {third_read_time:.4f} seconds")
         print(f"Data keys: {list(data3.keys())}")
-        
+
         # Verify data is still the same
         assert data1 == data3, "Data from cache should be identical to original"
         print("✓ Successfully read from cache even after original file was removed")
-        
+
     except Exception as e:
         print(f"Error reading from cache: {e}")
         data3 = None
@@ -145,17 +148,20 @@ def __(first_read_time, second_read_time, third_read_time):
         print(f"Cache improvement: {improvement:.1f}% faster")
     else:
         improvement = 0
-        print("Note: Cache read wasn't faster in this small example, but would be with larger files or remote storage")
-    return improvement,
+        print(
+            "Note: Cache read wasn't faster in this small example, but would be with larger files or remote storage"
+        )
+    return (improvement,)
 
 
 @app.cell
 def __(os, tmpdir):
     # Clean up temporary directory
     import shutil
+
     shutil.rmtree(tmpdir)
     print(f"\nCleaned up temporary directory: {tmpdir}")
-    return shutil,
+    return (shutil,)
 
 
 if __name__ == "__main__":

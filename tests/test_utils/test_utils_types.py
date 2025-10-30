@@ -6,7 +6,7 @@ import pyarrow as pa
 import pandas as pd
 from datetime import datetime
 
-from fsspec_utils.utils.types import dict_to_dataframe, to_pyarrow_table
+from fs_utils.utils.types import dict_to_dataframe, to_pyarrow_table
 
 
 class TestDictToDataFrame:
@@ -160,10 +160,12 @@ class TestToPyarrowTable:
 
     def test_from_polars_dataframe(self):
         """Test conversion from Polars DataFrame."""
-        df = pl.DataFrame({
-            "a": [1, 2, 3],
-            "b": ["x", "y", "z"],
-        })
+        df = pl.DataFrame(
+            {
+                "a": [1, 2, 3],
+                "b": ["x", "y", "z"],
+            }
+        )
 
         result = to_pyarrow_table(df)
 
@@ -175,10 +177,12 @@ class TestToPyarrowTable:
 
     def test_from_polars_lazyframe(self):
         """Test conversion from Polars LazyFrame."""
-        df = pl.DataFrame({
-            "a": [1, 2, 3],
-            "b": ["x", "y", "z"],
-        }).lazy()
+        df = pl.DataFrame(
+            {
+                "a": [1, 2, 3],
+                "b": ["x", "y", "z"],
+            }
+        ).lazy()
 
         result = to_pyarrow_table(df)
 
@@ -188,10 +192,12 @@ class TestToPyarrowTable:
 
     def test_from_pandas_dataframe(self):
         """Test conversion from Pandas DataFrame."""
-        df = pd.DataFrame({
-            "a": [1, 2, 3],
-            "b": ["x", "y", "z"],
-        })
+        df = pd.DataFrame(
+            {
+                "a": [1, 2, 3],
+                "b": ["x", "y", "z"],
+            }
+        )
 
         result = to_pyarrow_table(df)
 
@@ -201,10 +207,12 @@ class TestToPyarrowTable:
 
     def test_from_pyarrow_table(self):
         """Test identity conversion from PyArrow Table."""
-        table = pa.Table.from_pydict({
-            "a": [1, 2, 3],
-            "b": ["x", "y", "z"],
-        })
+        table = pa.Table.from_pydict(
+            {
+                "a": [1, 2, 3],
+                "b": ["x", "y", "z"],
+            }
+        )
 
         result = to_pyarrow_table(table)
 
@@ -246,13 +254,14 @@ class TestToPyarrowTable:
 
     def test_preserve_schema(self):
         """Test schema preservation."""
-        schema = pa.schema([
-            pa.field("a", pa.int32()),
-            pa.field("b", pa.string()),
-        ])
+        schema = pa.schema(
+            [
+                pa.field("a", pa.int32()),
+                pa.field("b", pa.string()),
+            ]
+        )
         table = pa.Table.from_pydict(
-            {"a": [1, 2, 3], "b": ["x", "y", "z"]},
-            schema=schema
+            {"a": [1, 2, 3], "b": ["x", "y", "z"]}, schema=schema
         )
 
         result = to_pyarrow_table(table)
@@ -300,7 +309,7 @@ class TestTypeConversionIntegration:
                 {"name": "Alice", "age": 30, "scores": [85, 90, 95]},
                 {"name": "Bob", "age": 25, "scores": [70, 80, 90]},
             ],
-            "metadata": {"total": 2, "active": True}
+            "metadata": {"total": 2, "active": True},
         }
 
         # This should handle nested structures appropriately

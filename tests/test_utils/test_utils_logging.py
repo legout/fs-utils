@@ -6,7 +6,7 @@ import os
 from unittest.mock import patch
 from pathlib import Path
 
-from fsspec_utils.utils.logging import setup_logging, get_logger
+from fs_utils.utils.logging import setup_logging, get_logger
 
 
 class TestSetupLogging:
@@ -34,23 +34,19 @@ class TestSetupLogging:
     def test_custom_format(self):
         """Test custom format string."""
         custom_format = "{time} | {level} | {message}"
-        setup_logging(
-            level="INFO",
-            disable=False,
-            format_string=custom_format
-        )
+        setup_logging(level="INFO", disable=False, format_string=custom_format)
 
         # Test passes if no exception is raised
 
     def test_environment_variable(self):
         """Test environment variable usage."""
-        os.environ["FSSPEC_UTILS_LOG_LEVEL"] = "DEBUG"
+        os.environ["fs_utils_LOG_LEVEL"] = "DEBUG"
 
         try:
             setup_logging(disable=False)
             # Should use DEBUG from environment
         finally:
-            os.environ.pop("FSSPEC_UTILS_LOG_LEVEL", None)
+            os.environ.pop("fs_utils_LOG_LEVEL", None)
 
     def test_multiple_calls(self):
         """Test multiple calls to setup_logging."""
@@ -113,13 +109,10 @@ class TestLoggingIntegration:
             # Should not raise exception
             logger.exception("An error occurred")
 
-    @patch('loguru.logger.add')
+    @patch("loguru.logger.add")
     def test_loguru_integration(self, mock_add):
         """Test Loguru integration."""
-        setup_logging(
-            level="INFO",
-            disable=False
-        )
+        setup_logging(level="INFO", disable=False)
         mock_add.assert_called()
 
     def test_log_filtering(self):

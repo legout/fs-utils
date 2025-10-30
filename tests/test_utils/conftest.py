@@ -10,22 +10,30 @@ from datetime import datetime, timezone
 @pytest.fixture
 def sample_polars_df():
     """Create a sample Polars DataFrame for testing."""
-    return pl.DataFrame({
-        "id": [1, 2, 3, 4, 5],
-        "name": ["Alice", "Bob", "Charlie", "David", "Eve"],
-        "age": [25, 30, 35, 40, 45],
-        "score": [85.5, 90.2, 78.9, 92.1, 88.7],
-        "active": [True, False, True, False, True],
-        "join_date": ["2023-01-01", "2023-02-15", "2023-03-20", "2023-04-25", "2023-05-30"],
-        "category": ["A", "B", "A", "C", "B"],
-        "int_string": ["1", "2", "3", "4", "5"],
-        "float_string": ["85.5", "90.2", "78.9", "92.1", "88.7"],
-        "bool_string": ["true", "false", "yes", "no", "1"],
-        "mixed_string": ["1", "2.5", "true", "invalid", "null"],
-        "nulls": [None, "value", None, "value", None],
-        "empty_strings": ["", "non-empty", "", "non-empty", ""],
-        "null_like": ["NULL", "value", "None", "value", "NaN"],
-    })
+    return pl.DataFrame(
+        {
+            "id": [1, 2, 3, 4, 5],
+            "name": ["Alice", "Bob", "Charlie", "David", "Eve"],
+            "age": [25, 30, 35, 40, 45],
+            "score": [85.5, 90.2, 78.9, 92.1, 88.7],
+            "active": [True, False, True, False, True],
+            "join_date": [
+                "2023-01-01",
+                "2023-02-15",
+                "2023-03-20",
+                "2023-04-25",
+                "2023-05-30",
+            ],
+            "category": ["A", "B", "A", "C", "B"],
+            "int_string": ["1", "2", "3", "4", "5"],
+            "float_string": ["85.5", "90.2", "78.9", "92.1", "88.7"],
+            "bool_string": ["true", "false", "yes", "no", "1"],
+            "mixed_string": ["1", "2.5", "true", "invalid", "null"],
+            "nulls": [None, "value", None, "value", None],
+            "empty_strings": ["", "non-empty", "", "non-empty", ""],
+            "null_like": ["NULL", "value", "None", "value", "NaN"],
+        }
+    )
 
 
 @pytest.fixture
@@ -61,21 +69,27 @@ def datetime_test_data():
 def schema_test_data():
     """Create test data for schema operations."""
     return [
-        pa.schema([
-            pa.field("id", pa.int64()),
-            pa.field("name", pa.string()),
-            pa.field("value", pa.float64()),
-        ]),
-        pa.schema([
-            pa.field("id", pa.int32()),
-            pa.field("name", pa.large_string()),
-            pa.field("extra", pa.bool_()),
-        ]),
-        pa.schema([
-            pa.field("id", pa.uint64()),
-            pa.field("name", pa.string()),
-            pa.field("value", pa.float32()),
-        ]),
+        pa.schema(
+            [
+                pa.field("id", pa.int64()),
+                pa.field("name", pa.string()),
+                pa.field("value", pa.float64()),
+            ]
+        ),
+        pa.schema(
+            [
+                pa.field("id", pa.int32()),
+                pa.field("name", pa.large_string()),
+                pa.field("extra", pa.bool_()),
+            ]
+        ),
+        pa.schema(
+            [
+                pa.field("id", pa.uint64()),
+                pa.field("name", pa.string()),
+                pa.field("value", pa.float32()),
+            ]
+        ),
     ]
 
 
@@ -98,13 +112,45 @@ def edge_case_data():
     return {
         "all_nulls": [None, None, None, None, None],
         "mixed_types": [1, "string", 3.14, True, None],
-        "special_strings": ["", " ", "NULL", "null", "None", "NaN", "N/A", "n/a", "-", "∅"],
-        "large_integers": [9223372036854775807, -9223372036854775808, 0],  # int64 max/min
+        "special_strings": [
+            "",
+            " ",
+            "NULL",
+            "null",
+            "None",
+            "NaN",
+            "N/A",
+            "n/a",
+            "-",
+            "∅",
+        ],
+        "large_integers": [
+            9223372036854775807,
+            -9223372036854775808,
+            0,
+        ],  # int64 max/min
         "unicode_strings": ["café", "naïve", "résumé", "México", "Zürich"],
         "bool_variations": [
-            "true", "false", "TRUE", "FALSE", "True", "False",
-            "1", "0", "yes", "no", "YES", "NO", "y", "n", "Y", "N",
-            "ok", "nok", "OK", "NOK"
+            "true",
+            "false",
+            "TRUE",
+            "FALSE",
+            "True",
+            "False",
+            "1",
+            "0",
+            "yes",
+            "no",
+            "YES",
+            "NO",
+            "y",
+            "n",
+            "Y",
+            "N",
+            "ok",
+            "nok",
+            "OK",
+            "NOK",
         ],
     }
 
@@ -139,13 +185,17 @@ def timezone_test_data():
 def performance_data():
     """Create large dataset for performance testing."""
     size = 10000
-    return pa.table({
-        "id": pa.array(range(size)),
-        "value": pa.array([float(i) for i in range(size)]),
-        "text": pa.array([f"text_{i}" for i in range(size)]),
-        "date": pa.array([datetime(2023, 1, 1) + pd.Timedelta(days=i % 365) for i in range(size)]),
-        "category": pa.array([f"cat_{i % 100}" for i in range(size)]),
-    })
+    return pa.table(
+        {
+            "id": pa.array(range(size)),
+            "value": pa.array([float(i) for i in range(size)]),
+            "text": pa.array([f"text_{i}" for i in range(size)]),
+            "date": pa.array(
+                [datetime(2023, 1, 1) + pd.Timedelta(days=i % 365) for i in range(size)]
+            ),
+            "category": pa.array([f"cat_{i % 100}" for i in range(size)]),
+        }
+    )
 
 
 # Custom markers for test categorization
@@ -154,15 +204,9 @@ def pytest_configure(config):
     config.addinivalue_line(
         "markers", "slow: marks tests as slow (deselect with '-m \"not slow\"')"
     )
-    config.addinivalue_line(
-        "markers", "integration: marks tests as integration tests"
-    )
-    config.addinivalue_line(
-        "markers", "performance: marks tests as performance tests"
-    )
-    config.addinivalue_line(
-        "markers", "edge_case: marks tests as testing edge cases"
-    )
+    config.addinivalue_line("markers", "integration: marks tests as integration tests")
+    config.addinivalue_line("markers", "performance: marks tests as performance tests")
+    config.addinivalue_line("markers", "edge_case: marks tests as testing edge cases")
 
 
 # Parametrize fixtures for common test scenarios
@@ -188,6 +232,7 @@ def boolean_param(request):
 def generate_test_data(rows=100, columns=5, include_nulls=True):
     """Generate test data with specified dimensions."""
     import random
+
     data = {}
     for i in range(columns):
         col_type = random.choice(["int", "float", "string", "bool"])
@@ -218,7 +263,7 @@ def create_temp_file(content="test content", suffix=".txt"):
 
     fd, path = tempfile.mkstemp(suffix=suffix)
     try:
-        with os.fdopen(fd, 'w') as f:
+        with os.fdopen(fd, "w") as f:
             f.write(content)
         return path
     except:
@@ -229,4 +274,5 @@ def create_temp_file(content="test content", suffix=".txt"):
 def create_temp_directory():
     """Create a temporary directory."""
     import tempfile
+
     return tempfile.mkdtemp()

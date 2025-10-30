@@ -7,7 +7,7 @@ import polars as pl
 import pyarrow as pa
 import pandas as pd
 
-from fsspec_utils.utils.datetime import (
+from fs_utils.utils.datetime import (
     get_timestamp_column,
     get_timedelta_str,
     timestamp_from_string,
@@ -19,42 +19,69 @@ class TestGetTimestampColumn:
 
     def test_polars_dataframe(self):
         """Test with Polars DataFrame."""
-        df = pl.DataFrame({
-            "id": [1, 2, 3],
-            "created_at": [datetime(2023, 1, 1), datetime(2023, 1, 2), datetime(2023, 1, 3)],
-            "updated_at": [datetime(2023, 1, 4, 12, 0), datetime(2023, 1, 5, 12, 0), datetime(2023, 1, 6, 12, 0)],
-            "name": ["a", "b", "c"],
-        })
+        df = pl.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "created_at": [
+                    datetime(2023, 1, 1),
+                    datetime(2023, 1, 2),
+                    datetime(2023, 1, 3),
+                ],
+                "updated_at": [
+                    datetime(2023, 1, 4, 12, 0),
+                    datetime(2023, 1, 5, 12, 0),
+                    datetime(2023, 1, 6, 12, 0),
+                ],
+                "name": ["a", "b", "c"],
+            }
+        )
 
         result = get_timestamp_column(df)
         assert sorted(result) == ["created_at", "updated_at"]
 
     def test_polars_lazyframe(self):
         """Test with Polars LazyFrame."""
-        df = pl.DataFrame({
-            "id": [1, 2, 3],
-            "created_at": [datetime(2023, 1, 1), datetime(2023, 1, 2), datetime(2023, 1, 3)],
-        }).lazy()
+        df = pl.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "created_at": [
+                    datetime(2023, 1, 1),
+                    datetime(2023, 1, 2),
+                    datetime(2023, 1, 3),
+                ],
+            }
+        ).lazy()
 
         result = get_timestamp_column(df)
         assert result == ["created_at"]
 
     def test_pyarrow_table(self):
         """Test with PyArrow Table."""
-        table = pa.table({
-            "id": [1, 2, 3],
-            "timestamp_col": pa.array([datetime(2023, 1, 1, 12, 0), datetime(2023, 1, 2, 12, 0), datetime(2023, 1, 3, 12, 0)], type=pa.timestamp('ns')),
-        })
+        table = pa.table(
+            {
+                "id": [1, 2, 3],
+                "timestamp_col": pa.array(
+                    [
+                        datetime(2023, 1, 1, 12, 0),
+                        datetime(2023, 1, 2, 12, 0),
+                        datetime(2023, 1, 3, 12, 0),
+                    ],
+                    type=pa.timestamp("ns"),
+                ),
+            }
+        )
 
         result = get_timestamp_column(table)
         assert result == ["timestamp_col"]
 
     def test_pandas_dataframe(self):
         """Test with Pandas DataFrame."""
-        df = pd.DataFrame({
-            "id": [1, 2, 3],
-            "date": pd.date_range("2023-01-01", periods=3),
-        })
+        df = pd.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "date": pd.date_range("2023-01-01", periods=3),
+            }
+        )
 
         result = get_timestamp_column(df)
         assert len(result) >= 1
@@ -62,20 +89,28 @@ class TestGetTimestampColumn:
 
     def test_no_timestamp_columns(self):
         """Test with no timestamp columns."""
-        df = pl.DataFrame({
-            "id": [1, 2, 3],
-            "name": ["a", "b", "c"],
-        })
+        df = pl.DataFrame(
+            {
+                "id": [1, 2, 3],
+                "name": ["a", "b", "c"],
+            }
+        )
 
         result = get_timestamp_column(df)
         assert result == []
 
     def test_case_sensitivity(self):
         """Test case sensitivity in column names."""
-        df = pl.DataFrame({
-            "ID": [1, 2, 3],
-            "TIMESTAMP": [datetime(2023, 1, 1, 12, 0), datetime(2023, 1, 2, 12, 0), datetime(2023, 1, 3, 12, 0)],
-        })
+        df = pl.DataFrame(
+            {
+                "ID": [1, 2, 3],
+                "TIMESTAMP": [
+                    datetime(2023, 1, 1, 12, 0),
+                    datetime(2023, 1, 2, 12, 0),
+                    datetime(2023, 1, 3, 12, 0),
+                ],
+            }
+        )
 
         result = get_timestamp_column(df)
         assert "TIMESTAMP" in result

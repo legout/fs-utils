@@ -6,7 +6,7 @@ import pyarrow.compute as pc
 import polars as pl
 from datetime import datetime
 
-from fsspec_utils.utils.pyarrow import (
+from fs_utils.utils.pyarrow import (
     opt_dtype,
     unify_schemas,
     cast_schema,
@@ -160,9 +160,7 @@ class TestOptDtype:
         table = pa.Table.from_pydict(data)
 
         # Convert to large string first
-        large_table = table.cast(pa.schema([
-            pa.field("str_col", pa.large_string())
-        ]))
+        large_table = table.cast(pa.schema([pa.field("str_col", pa.large_string())]))
 
         # Without use_large_dtypes (default)
         result = opt_dtype(large_table, use_large_dtypes=False)
@@ -183,7 +181,9 @@ class TestOptDtype:
         # Non-strict mode (default)
         result = opt_dtype(table, strict=False)
         assert result.schema.field("valid").type == pa.int64()
-        assert result.schema.field("invalid").type == pa.string()  # Falls back to string
+        assert (
+            result.schema.field("invalid").type == pa.string()
+        )  # Falls back to string
 
         # Strict mode
         with pytest.raises(Exception):
@@ -195,14 +195,18 @@ class TestSchemaFunctions:
 
     def test_unify_schemas(self):
         """Test schema unification."""
-        schema1 = pa.schema([
-            pa.field("a", pa.int64()),
-            pa.field("b", pa.string()),
-        ])
-        schema2 = pa.schema([
-            pa.field("a", pa.int32()),
-            pa.field("c", pa.float64()),
-        ])
+        schema1 = pa.schema(
+            [
+                pa.field("a", pa.int64()),
+                pa.field("b", pa.string()),
+            ]
+        )
+        schema2 = pa.schema(
+            [
+                pa.field("a", pa.int32()),
+                pa.field("c", pa.float64()),
+            ]
+        )
 
         unified = unify_schemas([schema1, schema2])
         assert "a" in unified.names
@@ -214,11 +218,13 @@ class TestSchemaFunctions:
         data = {"a": [1, 2, 3], "b": ["x", "y", "z"]}
         table = pa.Table.from_pydict(data)
 
-        target_schema = pa.schema([
-            pa.field("a", pa.float64()),
-            pa.field("b", pa.string()),
-            pa.field("c", pa.int32()),
-        ])
+        target_schema = pa.schema(
+            [
+                pa.field("a", pa.float64()),
+                pa.field("b", pa.string()),
+                pa.field("c", pa.int32()),
+            ]
+        )
 
         result = cast_schema(table, target_schema)
         assert result.schema.field("a").type == pa.float64()
@@ -226,11 +232,13 @@ class TestSchemaFunctions:
 
     def test_convert_large_types_to_normal(self):
         """Test large type conversion."""
-        schema = pa.schema([
-            pa.field("str_col", pa.large_string()),
-            pa.field("bin_col", pa.large_binary()),
-            pa.field("list_col", pa.large_list(pa.int64())),
-        ])
+        schema = pa.schema(
+            [
+                pa.field("str_col", pa.large_string()),
+                pa.field("bin_col", pa.large_binary()),
+                pa.field("list_col", pa.large_list(pa.int64())),
+            ]
+        )
 
         converted = convert_large_types_to_normal(schema)
 
@@ -240,26 +248,34 @@ class TestSchemaFunctions:
 
     def test_dominant_timezone_per_column(self):
         """Test dominant timezone detection."""
-        schema1 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "UTC")),
-        ])
-        schema2 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "America/New_York")),
-        ])
-        schema3 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "UTC")),
-        ])
+        schema1 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "UTC")),
+            ]
+        )
+        schema2 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "America/New_York")),
+            ]
+        )
+        schema3 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "UTC")),
+            ]
+        )
 
         dominant = dominant_timezone_per_column([schema1, schema2, schema3])
         assert dominant["ts"] == ("us", "UTC")
 
     def test_standardize_schema_timezones(self):
         """Test timezone standardization."""
-        schema = pa.schema([
-            pa.field("ts1", pa.timestamp("us", "UTC")),
-            pa.field("ts2", pa.timestamp("us", "America/New_York")),
-            pa.field("ts3", pa.timestamp("us", None)),
-        ])
+        schema = pa.schema(
+            [
+                pa.field("ts1", pa.timestamp("us", "UTC")),
+                pa.field("ts2", pa.timestamp("us", "America/New_York")),
+                pa.field("ts3", pa.timestamp("us", None)),
+            ]
+        )
 
         # Standardize to UTC
         standardized = standardize_schema_timezones(schema, "UTC")
@@ -275,17 +291,25 @@ class TestSchemaFunctions:
 
     def test_standardize_schema_timezones_by_majority(self):
         """Test timezone standardization by majority."""
-        schema1 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "UTC")),
-        ])
-        schema2 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "UTC")),
-        ])
-        schema3 = pa.schema([
-            pa.field("ts", pa.timestamp("us", "America/New_York")),
-        ])
+        schema1 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "UTC")),
+            ]
+        )
+        schema2 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "UTC")),
+            ]
+        )
+        schema3 = pa.schema(
+            [
+                pa.field("ts", pa.timestamp("us", "America/New_York")),
+            ]
+        )
 
-        standardized = standardize_schema_timezones_by_majority([schema1, schema2, schema3])
+        standardized = standardize_schema_timezones_by_majority(
+            [schema1, schema2, schema3]
+        )
         for field in standardized:
             if pa.types.is_timestamp(field.type):
                 assert field.type.tz == "UTC"
@@ -395,4 +419,6 @@ class TestEdgeCases:
             data = {"col": values}
             table = pa.Table.from_pydict(data)
             result = opt_dtype(table, shrink_numerics=True)
-            assert result.schema.field("col").type == expected_type, f"Failed for {values}"
+            assert result.schema.field("col").type == expected_type, (
+                f"Failed for {values}"
+            )
