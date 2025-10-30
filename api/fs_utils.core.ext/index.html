@@ -13,6 +13,10 @@
         <link rel="canonical" href="https://legout.github.com/fsspec-utils/api/fs_utils.core.ext/">
       
       
+        <link rel="prev" href="../fs_utils.core.base/">
+      
+      
+        <link rel="next" href="../fs_utils.storage_options.base/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -20,7 +24,7 @@
     
     
       
-        <title>fs_helpers.core.ext API Documentation - fsspec-utils</title>
+        <title>fs_utils.core.ext - fsspec-utils</title>
       
     
     
@@ -108,7 +112,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              fs_helpers.core.ext API Documentation
+              fs_utils.core.ext
             
           </span>
         </div>
@@ -333,10 +337,12 @@
   
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../" class="md-tabs__link">
           
   
@@ -532,26 +538,31 @@
       
   
   
+    
   
   
+  
     
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   
@@ -564,7 +575,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             API Reference
@@ -598,26 +609,31 @@
                 
   
   
+    
   
   
+  
     
     
     
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" >
         
           
-          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="">
             
   
   
@@ -630,7 +646,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_2">
             <span class="md-nav__icon md-icon"></span>
             Core
@@ -644,12 +660,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.core.base.md" class="md-nav__link">
+      <a href="../fs_utils.core.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.core.base
+    fs_utils.core.base
     
   </span>
   
@@ -664,20 +680,152 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../fsspec_utils.core.ext.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    fs_utils.core.ext
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.core.ext
+    fs_utils.core.ext
     
   </span>
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#path_to_glob" class="md-nav__link">
+    <span class="md-ellipsis">
+      path_to_glob()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_json_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json_file()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_json" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_json()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_csv_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_csv_file()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_csv" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_csv()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_parquet_file" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_parquet_file()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_parquet" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_parquet()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#read_files" class="md-nav__link">
+    <span class="md-ellipsis">
+      read_files()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyarrow_dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      pyarrow_dataset()
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pyarrow_parquet_dataset" class="md-nav__link">
+    <span class="md-ellipsis">
+      pyarrow_parquet_dataset()
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -704,17 +852,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_3" >
         
           
-          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="">
             
   
   
@@ -741,12 +892,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.storage_options.base.md" class="md-nav__link">
+      <a href="../fs_utils.storage_options.base/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.storage_options.base
+    fs_utils.storage_options.base
     
   </span>
   
@@ -764,12 +915,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.storage_options.cloud.md" class="md-nav__link">
+      <a href="../fs_utils.storage_options.cloud/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.storage_options.cloud
+    fs_utils.storage_options.cloud
     
   </span>
   
@@ -787,12 +938,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.storage_options.core.md" class="md-nav__link">
+      <a href="../fs_utils.storage_options.core/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.storage_options.core
+    fs_utils.storage_options.core
     
   </span>
   
@@ -810,12 +961,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.storage_options.git.md" class="md-nav__link">
+      <a href="../fs_utils.storage_options.git/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.storage_options.git
+    fs_utils.storage_options.git
     
   </span>
   
@@ -847,17 +998,20 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_4" >
         
           
-          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="">
             
   
   
@@ -884,12 +1038,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.datetime.md" class="md-nav__link">
+      <a href="../fs_utils.utils.datetime.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.datetime
+    fs_utils.utils.datetime
     
   </span>
   
@@ -907,12 +1061,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.logging.md" class="md-nav__link">
+      <a href="../fs_utils.utils.logging.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.logging
+    fs_utils.utils.logging
     
   </span>
   
@@ -930,12 +1084,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.misc.md" class="md-nav__link">
+      <a href="../fs_utils.utils.misc.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.misc
+    fs_utils.utils.misc
     
   </span>
   
@@ -953,12 +1107,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.polars.md" class="md-nav__link">
+      <a href="../fs_utils.utils.polars.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.polars
+    fs_utils.utils.polars
     
   </span>
   
@@ -976,12 +1130,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.pyarrow.md" class="md-nav__link">
+      <a href="../fs_utils.utils.pyarrow.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.pyarrow
+    fs_utils.utils.pyarrow
     
   </span>
   
@@ -999,12 +1153,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.sql.md" class="md-nav__link">
+      <a href="../fs_utils.utils.sql.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.sql
+    fs_utils.utils.sql
     
   </span>
   
@@ -1022,12 +1176,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../fsspec_utils.utils.types.md" class="md-nav__link">
+      <a href="../fs_utils.utils.types.md" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    fsspec_utils.utils.types
+    fs_utils.utils.types
     
   </span>
   
