@@ -10,7 +10,7 @@ including:
 
 import importlib.metadata
 
-__version__ = importlib.metadata.version("fs-utils")
+__version__ = importlib.metadata.version("fsspeckit")
 
 
 from .core import AbstractFileSystem, DirFileSystem, filesystem, get_filesystem
