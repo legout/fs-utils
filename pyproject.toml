@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "fs-utils"
-version = "0.3.0"
-description = ""
+version = "0.3.1"
+description = "Enhanced utilities and extensions for fsspec, storate_options and obstore with multi-format I/O support."
 readme = "README.md"
 license = "MIT"
 authors = [{ name = "legout", email = "ligno.blades@gmail.com" }]
