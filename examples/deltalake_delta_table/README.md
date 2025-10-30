@@ -35,9 +35,9 @@ Or run the Marimo notebook:
 marimo run deltalake_delta_table_example_mamo.py
 ```
 
-## fs_utils Components Used
+## fsspeckit Components Used
 
-This example uses the following fs_utils components:
+This example uses the following fsspeckit components:
 
 - `AwsStorageOptions`: A StorageOptions subclass for configuring AWS S3 connections with support for profiles and certificate settings
 - `to_object_store_kwargs()`: A method that converts StorageOptions to a dictionary compatible with object store libraries like deltalake

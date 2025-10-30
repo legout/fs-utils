@@ -18,11 +18,11 @@ setup_logging()
 setup_logging(level="DEBUG", format_string="{time} | {level} | {message}")
 
 # Control logging via environment variable
-# export FS_UTILS_LOG_LEVEL=DEBUG
+# export fsspeckit_LOG_LEVEL=DEBUG
 ```
 
 **Environment Variables:**
-- `FS_UTILS_LOG_LEVEL` - Set the logging level (default: INFO)
+- `fsspeckit_LOG_LEVEL` - Set the logging level (default: INFO)
 
 ## Parallel Processing
 

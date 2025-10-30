@@ -731,7 +731,7 @@ def filesystem(
         >>> fs = filesystem("file")
         >>>
         >>> # S3 with storage options
-        >>> from fs_utils.storage import AwsStorageOptions
+        >>> from fsspeckit.storage import AwsStorageOptions
         >>> opts = AwsStorageOptions(region="us-west-2")
         >>> fs = filesystem("s3", storage_options=opts, cached=True)
         >>>
@@ -962,7 +962,7 @@ def get_filesystem(
         >>> fs = get_filesystem("file")
         >>>
         >>> # S3 with storage options
-        >>> from fs_utils.storage import AwsStorageOptions
+        >>> from fsspeckit.storage import AwsStorageOptions
         >>> opts = AwsStorageOptions(region="us-west-2")
         >>> fs = get_filesystem("s3", storage_options=opts, cached=True)
         >>>

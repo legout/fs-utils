@@ -40,13 +40,13 @@ class TestSetupLogging:
 
     def test_environment_variable(self):
         """Test environment variable usage."""
-        os.environ["fs_utils_LOG_LEVEL"] = "DEBUG"
+        os.environ["fsspeckit_LOG_LEVEL"] = "DEBUG"
 
         try:
             setup_logging(disable=False)
             # Should use DEBUG from environment
         finally:
-            os.environ.pop("fs_utils_LOG_LEVEL", None)
+            os.environ.pop("fsspeckit_LOG_LEVEL", None)
 
     def test_multiple_calls(self):
         """Test multiple calls to setup_logging."""

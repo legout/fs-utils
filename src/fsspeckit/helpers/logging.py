@@ -19,7 +19,7 @@ def setup_logging(
 
     Args:
         level: Log level (DEBUG, INFO, WARNING, ERROR, CRITICAL).
-               If None, uses fs_utils_LOG_LEVEL environment variable
+               If None, uses fsspeckit_LOG_LEVEL environment variable
                or defaults to "INFO".
         disable: Whether to disable logging for fsspec-utils package.
         format_string: Custom format string for log messages.
@@ -37,7 +37,7 @@ def setup_logging(
     """
     # Determine log level
     if level is None:
-        level = os.getenv("fs_utils_LOG_LEVEL", "INFO")
+        level = os.getenv("fsspeckit_LOG_LEVEL", "INFO")
 
     # Default format if none provided
     if format_string is None:
@@ -60,10 +60,10 @@ def setup_logging(
 
     # Optionally disable logging for this package
     if disable:
-        logger.disable("fs_utils")
+        logger.disable("fsspeckit")
 
 
-def get_logger(name: str = "fs_utils"):
+def get_logger(name: str = "fsspeckit"):
     """Get a logger instance for the given name.
 
     Args:
