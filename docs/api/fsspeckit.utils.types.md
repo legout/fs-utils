@@ -1,4 +1,4 @@
-# `fsspeckit.helpers.types` API Reference
+# `fsspeckit.utils.types` API Reference
 
 ## `dict_to_dataframe()`
 
@@ -51,7 +51,7 @@ Handles conversion from Polars DataFrames, Pandas DataFrames, dictionaries, and 
 ```python
 import polars as pl
 import pyarrow as pa
-from fsspeckit.helpers.types import to_pyarrow_table
+from fsspeckit.utils.types import to_pyarrow_table
 
 # Convert Polars DataFrame to PyArrow Table
 df = pl.DataFrame({"a": [1, 2], "b": [3, 4]})

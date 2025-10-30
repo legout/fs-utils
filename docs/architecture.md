@@ -22,9 +22,9 @@ This module contains the fundamental extensions to `fsspec`. It includes the `fi
 
 This module is dedicated to managing storage configurations for different backends. It defines various `StorageOptions` classes (e.g., `AwsStorageOptions`, `GcsStorageOptions`, `AzureStorageOptions`, `GitHubStorageOptions`, `GitLabStorageOptions`) that encapsulate the necessary parameters for connecting to specific storage services. It also includes utility functions for inferring protocols from URIs and merging storage options.
 
-### `helpers`
+### `utils`
 
-The `helpers` module provides a collection of general-purpose utility functions that support various operations within `fsspeckit`. These include:
+The `utils` module provides a collection of general-purpose utility functions that support various operations within `fsspeckit`. These include:
 
 - **Parallel Processing**: Functions like `run_parallel` for executing tasks concurrently.
 - **Type Conversion**: Utilities such as `dict_to_dataframe` and `to_pyarrow_table` for data manipulation.
@@ -40,7 +40,7 @@ The `helpers` module provides a collection of general-purpose utility functions 
 graph TD
     A[fsspeckit] --> B(Core Module)
     A --> C(Storage Options Module)
-    A --> D(Helpers Module)
+    A --> D(Utils Module)
     B --> E[Extends fsspec]
     C --> F{Cloud Providers}
     C --> G{Git Platforms}

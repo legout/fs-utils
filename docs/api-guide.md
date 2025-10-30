@@ -308,7 +308,7 @@ fs.sync_cache()
 ### Parallel Processing
 
 ```python
-from fsspeckit.helpers import run_parallel
+from fsspeckit.utils import run_parallel
 
 def process(item):
     return len(item)
@@ -324,7 +324,7 @@ results = run_parallel(
 ### Type Conversions
 
 ```python
-from fsspeckit.helpers import (
+from fsspeckit.utils import (
     dict_to_dataframe,
     to_pyarrow_table
 )
@@ -340,7 +340,7 @@ table = to_pyarrow_table(df)
 
 ```python
 import polars as pl
-from fsspeckit.helpers import opt_dtype_pl
+from fsspeckit.utils import opt_dtype_pl
 
 # Optimize DataFrame
 df = pl.read_csv("data.csv")
@@ -353,7 +353,7 @@ df_opt = df.opt_dtype
 ### SQL Filtering
 
 ```python
-from fsspeckit.helpers import sql2pyarrow_filter
+from fsspeckit.utils import sql2pyarrow_filter
 import pyarrow as pa
 
 schema = pa.schema([("age", pa.int32()), ("name", pa.string())])
@@ -364,7 +364,7 @@ filtered_table = dataset.to_table(filter=expr)
 ### File Synchronization
 
 ```python
-from fsspeckit.helpers import sync_dir
+from fsspeckit.utils import sync_dir
 
 # Sync directories
 sync_dir(
@@ -475,7 +475,7 @@ except Exception as e:
     print(f"Error: {e}")
 
 # Check optional dependencies
-from fsspeckit.helpers import check_optional_dependency
+from fsspeckit.utils import check_optional_dependency
 try:
     check_optional_dependency("deltalake")
 except ImportError:
@@ -494,6 +494,6 @@ except ImportError:
 ## See Also
 
 - [Advanced Usage](advanced.md) - In-depth guides and patterns
-- [Helpers Module](helpers.md) - Utility functions reference
+- [Utils Module](utils.md) - Utility functions reference
 - [Examples](examples.md) - Runnable example scripts
 - [Architecture](architecture.md) - Design and implementation details

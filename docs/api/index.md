@@ -18,18 +18,18 @@ Welcome to the `fsspeckit` API reference documentation. This section provides de
 
 *   [`fsspeckit.storage_options.git`](fsspeckit.storage_options.git.md)
 
-## Helpers
+## Utils
 
-*   [`fsspeckit.helpers.datetime`](fsspeckit.helpers.datetime.md)
+*   [`fsspeckit.utils.datetime`](fsspeckit.utils.datetime.md)
 
-*   [`fsspeckit.helpers.logging`](fsspeckit.helpers.logging.md)
+*   [`fsspeckit.utils.logging`](fsspeckit.utils.logging.md)
 
-*   [`fsspeckit.helpers.misc`](fsspeckit.helpers.misc.md)
+*   [`fsspeckit.utils.misc`](fsspeckit.utils.misc.md)
 
-*   [`fsspeckit.helpers.polars`](fsspeckit.helpers.polars.md)
+*   [`fsspeckit.utils.polars`](fsspeckit.utils.polars.md)
 
-*   [`fsspeckit.helpers.pyarrow`](fsspeckit.helpers.pyarrow.md)
+*   [`fsspeckit.utils.pyarrow`](fsspeckit.utils.pyarrow.md)
 
-*   [`fsspeckit.helpers.sql`](fsspeckit.helpers.sql.md)
+*   [`fsspeckit.utils.sql`](fsspeckit.utils.sql.md)
 
-*   [`fsspeckit.helpers.types`](fsspeckit.helpers.types.md)
+*   [`fsspeckit.utils.types`](fsspeckit.utils.types.md)

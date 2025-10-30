@@ -11,7 +11,7 @@ nav:
   - Quickstart: quickstart.md
   - Architecture: architecture.md
   - Advanced Usage: advanced.md
-  - Helpers Module: helpers.md
+  - Utils Module: utils.md
   - Examples: examples.md
   - API Guide: api-guide.md
   - Contributing: contributing.md
@@ -25,14 +25,14 @@ nav:
           - fsspeckit.storage_options.cloud: api/fsspeckit.storage_options.cloud.md
           - fsspeckit.storage_options.core: api/fsspeckit.storage_options.core.md
           - fsspeckit.storage_options.git: api/fsspeckit.storage_options.git.md
-      - Helpers:
-          - fsspeckit.helpers.datetime: api/fsspeckit.helpers.datetime.md
-          - fsspeckit.helpers.logging: api/fsspeckit.helpers.logging.md
-          - fsspeckit.helpers.misc: api/fsspeckit.helpers.misc.md
-          - fsspeckit.helpers.polars: api/fsspeckit.helpers.polars.md
-          - fsspeckit.helpers.pyarrow: api/fsspeckit.helpers.pyarrow.md
-          - fsspeckit.helpers.sql: api/fsspeckit.helpers.sql.md
-          - fsspeckit.helpers.types: api/fsspeckit.helpers.types.md
+      - Utils:
+          - fsspeckit.utils.datetime: api/fsspeckit.utils.datetime.md
+          - fsspeckit.utils.logging: api/fsspeckit.utils.logging.md
+          - fsspeckit.utils.misc: api/fsspeckit.utils.misc.md
+          - fsspeckit.utils.polars: api/fsspeckit.utils.polars.md
+          - fsspeckit.utils.pyarrow: api/fsspeckit.utils.pyarrow.md
+          - fsspeckit.utils.sql: api/fsspeckit.utils.sql.md
+          - fsspeckit.utils.types: api/fsspeckit.utils.types.md
 
 theme:
   name: material

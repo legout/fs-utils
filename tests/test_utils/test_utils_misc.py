@@ -6,7 +6,7 @@ import tempfile
 from pathlib import Path
 from unittest.mock import patch, MagicMock
 
-from fsspeckit.helpers.misc import run_parallel, get_partitions_from_path
+from fsspeckit.utils.misc import run_parallel, get_partitions_from_path
 
 
 class TestRunParallel:
@@ -73,13 +73,13 @@ class TestRunParallel:
             return x * 2
 
         # With verbose=True (should show progress bar)
-        with patch("fsspeckit.helpers.misc.Progress") as mock_progress:
+        with patch("fsspeckit.utils.misc.Progress") as mock_progress:
             result = run_parallel(slow_function, [1, 2, 3], verbose=True)
             mock_progress.assert_called_once()
         assert result == [2, 4, 6]
 
         # With verbose=False (should not show progress bar)
-        with patch("fsspeckit.helpers.misc.Progress") as mock_progress:
+        with patch("fsspeckit.utils.misc.Progress") as mock_progress:
             result = run_parallel(slow_function, [1, 2, 3], verbose=False)
             mock_progress.assert_not_called()
         assert result == [2, 4, 6]

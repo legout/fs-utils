@@ -6,12 +6,12 @@ import pyarrow as pa
 import pandas as pd
 from datetime import datetime
 
-from fsspeckit.helpers.types import dict_to_dataframe, to_pyarrow_table
-from fsspeckit.helpers.polars import opt_dtype as opt_dtype_pl
-from fsspeckit.helpers.pyarrow import opt_dtype as opt_dtype_pa
-from fsspeckit.helpers.sql import sql2pyarrow_filter
-from fsspeckit.helpers.misc import run_parallel
-from fsspeckit.helpers.datetime import get_timestamp_column
+from fsspeckit.utils.types import dict_to_dataframe, to_pyarrow_table
+from fsspeckit.utils.polars import opt_dtype as opt_dtype_pl
+from fsspeckit.utils.pyarrow import opt_dtype as opt_dtype_pa
+from fsspeckit.utils.sql import sql2pyarrow_filter
+from fsspeckit.utils.misc import run_parallel
+from fsspeckit.utils.datetime import get_timestamp_column
 
 
 class TestCrossModuleIntegration:

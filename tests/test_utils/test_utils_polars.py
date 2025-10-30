@@ -5,7 +5,7 @@ import polars as pl
 import pyarrow as pa
 from datetime import datetime, timezone
 
-from fsspeckit.helpers.polars import (
+from fsspeckit.utils.polars import (
     opt_dtype,
     unnest_all,
     explode_all,

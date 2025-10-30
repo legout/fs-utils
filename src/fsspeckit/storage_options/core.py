@@ -11,7 +11,7 @@ import msgspec
 import yaml
 from fsspec import AbstractFileSystem
 from fsspec import filesystem as fsspec_filesystem
-from fsspec.helpers import infer_storage_options
+from fsspec.utils import infer_storage_options
 
 from .base import BaseStorageOptions
 from .cloud import AwsStorageOptions, AzureStorageOptions, GcsStorageOptions

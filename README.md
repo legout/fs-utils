@@ -215,7 +215,7 @@ data = fs.cat("deep/nested/path/file.txt")
 ### Parallel Processing
 
 ```python
-from fsspeckit.helpers import run_parallel
+from fsspeckit.utils import run_parallel
 
 # Run function in parallel
 def process_file(path, multiplier=1):
@@ -233,7 +233,7 @@ results = run_parallel(
 ### Type Conversion
 
 ```python
-from fsspeckit.helpers import dict_to_dataframe, to_pyarrow_table
+from fsspeckit.utils import dict_to_dataframe, to_pyarrow_table
 
 # Convert dict to DataFrame
 data = {"col1": [1, 2, 3], "col2": [4, 5, 6]}
@@ -246,7 +246,7 @@ table = to_pyarrow_table(df)
 ### Logging
 
 ```python
-from fsspeckit.helpers import setup_logging
+from fsspeckit.utils import setup_logging
 
 # Configure logging
 setup_logging(level="DEBUG", format_string="{time} | {level} | {message}")

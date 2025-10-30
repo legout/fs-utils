@@ -21,9 +21,9 @@ from fsspec.registry import known_implementations
 
 from ..storage_options.base import BaseStorageOptions
 from ..storage_options.core import from_dict as storage_options_from_dict
-from ..helpers.logging import get_logger
+from ..utils.logging import get_logger
 
-# from fsspec.helpers import infer_storage_options
+# from fsspec.utils import infer_storage_options
 from .ext import AbstractFileSystem
 
 logger = get_logger(__name__)

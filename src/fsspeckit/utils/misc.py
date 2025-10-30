@@ -10,7 +10,7 @@ from rich.progress import BarColumn, Progress, TextColumn, TimeElapsedColumn, tr
 
 from fsspec import AbstractFileSystem
 from fsspec.implementations.dirfs import DirFileSystem
-# from ..helpers.logging import get_logger
+# from ..utils.logging import get_logger
 
 # logger = get_logger(__name__)
 

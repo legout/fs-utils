@@ -1,4 +1,4 @@
-# `fsspeckit.helpers.misc` API Reference
+# `fsspeckit.utils.misc` API Reference
 
 ## `run_parallel()`
 
