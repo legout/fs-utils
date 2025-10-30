@@ -6,12 +6,12 @@ import pyarrow as pa
 import pandas as pd
 from datetime import datetime
 
-from fs_utils.utils.types import dict_to_dataframe, to_pyarrow_table
-from fs_utils.utils.polars import opt_dtype as opt_dtype_pl
-from fs_utils.utils.pyarrow import opt_dtype as opt_dtype_pa
-from fs_utils.utils.sql import sql2pyarrow_filter
-from fs_utils.utils.misc import run_parallel
-from fs_utils.utils.datetime import get_timestamp_column
+from fs_utils.helpers.types import dict_to_dataframe, to_pyarrow_table
+from fs_utils.helpers.polars import opt_dtype as opt_dtype_pl
+from fs_utils.helpers.pyarrow import opt_dtype as opt_dtype_pa
+from fs_utils.helpers.sql import sql2pyarrow_filter
+from fs_utils.helpers.misc import run_parallel
+from fs_utils.helpers.datetime import get_timestamp_column
 
 
 class TestCrossModuleIntegration:

@@ -1,4 +1,4 @@
-# `fsspec_utils.utils.pyarrow` API Reference
+# `fs_helpers.helpers.pyarrow` API Reference
 
 ## `dominant_timezone_per_column()`
 
@@ -16,7 +16,7 @@ If None and a timezone are tied, prefer the timezone. Returns a dict: {column_na
 
 ```python
 import pyarrow as pa
-from fsspec_utils.utils.pyarrow import dominant_timezone_per_column
+from fs_helpers.helpers.pyarrow import dominant_timezone_per_column
 
 schema1 = pa.schema([("ts", pa.timestamp("ns", tz="UTC"))])
 schema2 = pa.schema([("ts", pa.timestamp("ns", tz="Europe/Berlin"))])
@@ -46,7 +46,7 @@ For each timestamp column (by name) across all schemas, set the timezone to the 
 
 ```python
 import pyarrow as pa
-from fsspec_utils.utils.pyarrow import standardize_schema_timezones_by_majority
+from fs_helpers.helpers.pyarrow import standardize_schema_timezones_by_majority
 
 schema1 = pa.schema([("ts", pa.timestamp("ns", tz="UTC"))])
 schema2 = pa.schema([("ts", pa.timestamp("ns", tz="Europe/Berlin"))])
@@ -77,7 +77,7 @@ Standardize timezone info for all timestamp columns in a list of PyArrow schemas
 
 ```python
 import pyarrow as pa
-from fsspec_utils.utils.pyarrow import standardize_schema_timezones
+from fs_helpers.helpers.pyarrow import standardize_schema_timezones
 
 schema1 = pa.schema([("ts", pa.timestamp("ns", tz="UTC"))])
 schema2 = pa.schema([("ts", pa.timestamp("ns"))]) # naive

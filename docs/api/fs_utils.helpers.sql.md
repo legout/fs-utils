@@ -1,4 +1,4 @@
-# `fsspec_utils.utils.sql` API Reference
+# `fs_helpers.helpers.sql` API Reference
 
 ## `sql2pyarrow_filter()`
 
@@ -50,7 +50,7 @@ Generates a filter expression for Polars based on a given string and schema.
 **Example:**
 
 ```python
-from fsspec_utils.utils.sql import get_table_names
+from fs_helpers.helpers.sql import get_table_names
 
 query = "SELECT a FROM my_table WHERE b > 10"
 tables = get_table_names(query)

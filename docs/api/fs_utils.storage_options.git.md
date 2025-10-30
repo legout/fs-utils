@@ -1,4 +1,4 @@
-# `fsspec_utils.storage_options.git` API Reference
+# `fs_helpers.storage_options.git` API Reference
 
 ## `GitHubStorageOptions`
 

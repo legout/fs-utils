@@ -1,20 +1,20 @@
 # Advanced Usage
 
-`fsspec-utils` extends the capabilities of `fsspec` to provide a more robust and feature-rich experience for handling diverse file systems and data formats. This section delves into advanced features, configurations, and performance tips to help you get the most out of the library.
+`fs-utils` extends the capabilities of `fsspec` to provide a more robust and feature-rich experience for handling diverse file systems and data formats. This section delves into advanced features, configurations, and performance tips to help you get the most out of the library.
 
 ## Unified Filesystem Creation with `filesystem`
 
-The `fsspec_utils.core.filesystem` function offers a centralized and enhanced way to instantiate `fsspec` filesystem objects. It supports:
+The `fs_utils.core.filesystem` function offers a centralized and enhanced way to instantiate `fsspec` filesystem objects. It supports:
 
 -   **Intelligent Caching**: Automatically wraps filesystems with `MonitoredSimpleCacheFileSystem` for improved performance and verbose logging of cache operations.
--   **Structured Storage Options**: Integrates seamlessly with `fsspec_utils.storage_options` classes, allowing for type-safe and organized configuration of cloud and Git-based storage.
+-   **Structured Storage Options**: Integrates seamlessly with `fs_utils.storage_options` classes, allowing for type-safe and organized configuration of cloud and Git-based storage.
 -   **Protocol Inference**: Can infer the filesystem protocol directly from a URI or path, reducing boilerplate.
 
 **Example: Cached S3 Filesystem with Structured Options**
 
 ```python
-from fsspec_utils.core import filesystem
-from fsspec_utils.storage_options import AwsStorageOptions
+from fs_utils.core import filesystem
+from fs_utils.storage_options import AwsStorageOptions
 
 # Configure S3 options using the structured class
 s3_opts = AwsStorageOptions(
@@ -38,11 +38,11 @@ print(fs.ls("s3://your-bucket/"))
 
 ### Detailed Caching for Improved Performance
 
-`fsspec-utils` provides an enhanced caching mechanism that improves performance for repeated file operations, especially useful for remote filesystems.
+`fs-utils` provides an enhanced caching mechanism that improves performance for repeated file operations, especially useful for remote filesystems.
 
 This example demonstrates how caching improves read performance. The first read populates the cache, while subsequent reads retrieve data directly from the cache, significantly reducing access time. It also shows that data can still be retrieved from the cache even if the original source becomes unavailable.
 
-**Caching in fsspec-utils** is an enhanced mechanism that improves performance for repeated file operations, especially useful for remote filesystems where network latency can significantly impact performance.
+**Caching in fs-utils** is an enhanced mechanism that improves performance for repeated file operations, especially useful for remote filesystems where network latency can significantly impact performance.
 
 The `filesystem()` function provides several parameters for configuring caching:
 
@@ -69,7 +69,7 @@ This caching mechanism is particularly valuable when working with:
 
 #### Setup and First Read (Populating Cache)
 
-In this step, we create a sample JSON file and initialize the `fsspec-utils` filesystem with caching enabled. The first read operation retrieves data from the source and populates the cache.
+In this step, we create a sample JSON file and initialize the `fs-utils` filesystem with caching enabled. The first read operation retrieves data from the source and populates the cache.
 
 **Setup steps:**
 
@@ -82,7 +82,7 @@ import tempfile
 import time
 import os
 import shutil
-from fsspec_utils import filesystem
+from fs_utils import filesystem
 from examples.caching.setup_data import create_sample_data_file
 
 tmpdir = tempfile.mkdtemp()
@@ -150,7 +150,7 @@ This step proves that the cache acts as a persistent copy of the data, allowing 
 
 ## Custom Filesystem Implementations
 
-`fsspec-utils` provides specialized filesystem implementations for unique use cases:
+`fs-utils` provides specialized filesystem implementations for unique use cases:
 
 ### GitLab Filesystem (`GitLabFileSystem`)
 
@@ -159,7 +159,7 @@ Access files directly from GitLab repositories. This is particularly useful for 
 **Example: Reading from a GitLab Repository**
 
 ```python
-from fsspec_utils.core import filesystem
+from fs_utils.core import filesystem
 
 # Instantiate a GitLab filesystem
 gitlab_fs = filesystem(
@@ -181,7 +181,7 @@ print(content[:200]) # Print first 200 characters
 
 ## Advanced Data Reading and Writing (`read_files`, `write_files`)
 
-The `fsspec_utils.core.ext` module (exposed via `AbstractFileSystem` extensions) provides powerful functions for reading and writing various data formats (JSON, CSV, Parquet) with advanced features like:
+The `fs_utils.core.ext` module (exposed via `AbstractFileSystem` extensions) provides powerful functions for reading and writing various data formats (JSON, CSV, Parquet) with advanced features like:
 
 -   **Batch Processing**: Efficiently handle large datasets by processing files in configurable batches.
 -   **Parallel Processing**: Leverage multi-threading to speed up file I/O operations.
@@ -195,7 +195,7 @@ The `read_files` function acts as a universal reader, delegating to format-speci
 **Example: Reading CSVs in Batches with Parallelism**
 
 ```python
-from fsspec_utils.core import filesystem
+from fs_utils.core import filesystem
 
 # Assuming you have multiple CSV files like 'data/part_0.csv', 'data/part_1.csv', etc.
 # on your local filesystem
@@ -216,7 +216,7 @@ for batch_df in fs.read_files(
 
 ### Reading and Processing Multiple Files (PyArrow Tables, Batch Processing)
 
-`fsspec-utils` simplifies reading multiple files of various formats (Parquet, CSV, JSON) from a folder into a single PyArrow Table or Polars DataFrame.
+`fs-utils` simplifies reading multiple files of various formats (Parquet, CSV, JSON) from a folder into a single PyArrow Table or Polars DataFrame.
 
 **Reading multiple files into a single table** is a powerful feature that allows you to efficiently process data distributed across multiple files. This is particularly useful when dealing with large datasets that are split into smaller files for better organization or parallel processing.
 
@@ -240,7 +240,7 @@ for batch_df in fs.read_files(
 
 5.  **Verification**: Finally, we verify that all three tables have the same number of rows, confirming that the data was correctly read and combined across all files and formats.
 
-The flexibility of `fsspec-utils` allows you to use the same approach with different data sources, including remote filesystems like S3, GCS, or Azure Blob Storage, simply by changing the filesystem path.
+The flexibility of `fs-utils` allows you to use the same approach with different data sources, including remote filesystems like S3, GCS, or Azure Blob Storage, simply by changing the filesystem path.
 
 #### Setup
 
@@ -276,7 +276,7 @@ Now, let's read all the Parquet files from the directory and its subdirectories 
 
 ```python
 print("\n=== Reading Parquet Files ===")
-from fsspec_utils import filesystem
+from fs_utils import filesystem
 fs = filesystem(temp_dir)
 parquet_table = fs.read_parquet("**/*.parquet", concat=True)
 print(f"Successfully read Parquet files into PyArrow Table")
@@ -345,9 +345,9 @@ print(f"\nCleaned up temporary directory: {temp_dir}")
 
 This final step confirms that our data reading and concatenation were successful.
 
-This example shows how to read various file formats from a directory, including subdirectories, into a unified PyArrow Table or Polars DataFrame. It highlights the flexibility of `fsspec-utils` in handling different data sources and formats.
+This example shows how to read various file formats from a directory, including subdirectories, into a unified PyArrow Table or Polars DataFrame. It highlights the flexibility of `fs-utils` in handling different data sources and formats.
 
-`fsspec-utils` enables efficient batch processing of large datasets by reading files in smaller, manageable chunks. This is particularly useful for memory-constrained environments or when processing streaming data.
+`fs-utils` enables efficient batch processing of large datasets by reading files in smaller, manageable chunks. This is particularly useful for memory-constrained environments or when processing streaming data.
 
 **Batch processing** is a technique for handling large datasets by dividing them into smaller, manageable chunks. This is particularly important for:
 
@@ -385,7 +385,7 @@ This example illustrates how to read Parquet, CSV, and JSON files in batches usi
 
 ### Advanced Parquet Handling and Delta Lake Integration
 
-`fsspec-utils` enhances Parquet operations with deep integration with PyArrow, enabling efficient dataset management, partitioning, and delta lake capabilities.
+`fs-utils` enhances Parquet operations with deep integration with PyArrow, enabling efficient dataset management, partitioning, and delta lake capabilities.
 
 -   **`pyarrow_dataset`**: Create PyArrow datasets for optimized querying, partitioning, and predicate pushdown.
 -   **`pyarrow_parquet_dataset`**: Specialized for Parquet, handling `_metadata` files for overall dataset schemas.
@@ -394,7 +394,7 @@ This example illustrates how to read Parquet, CSV, and JSON files in batches usi
 
 ```python
 import polars as pl
-from fsspec_utils.core import filesystem
+from fs_utils.core import filesystem
 
 fs = filesystem("file")
 base_path = "output/my_partitioned_data"
@@ -425,7 +425,7 @@ print(f"Data written to {base_path} partitioned by year/month.")
 
 ```python
 import polars as pl
-from fsspec_utils.core import filesystem
+from fs_utils.core import filesystem
 
 fs = filesystem("file")
 delta_path = "output/my_delta_table"
@@ -468,9 +468,9 @@ print(updated_df)
 # Expected: id=1 Alicia version=2, id=2 Bob version=1, id=3 Charlie version=1
 ```-->
 
-`fsspec-utils` facilitates integration with Delta Lake by providing `StorageOptions` that can be used to configure `deltalake`'s `DeltaTable` for various storage backends.
+`fs-utils` facilitates integration with Delta Lake by providing `StorageOptions` that can be used to configure `deltalake`'s `DeltaTable` for various storage backends.
 
-This example demonstrates how to use `LocalStorageOptions` with `deltalake`'s `DeltaTable`. It shows how to initialize a `DeltaTable` instance by passing the `fsspec-utils` storage options, enabling seamless interaction with Delta Lake tables across different storage types.
+This example demonstrates how to use `LocalStorageOptions` with `deltalake`'s `DeltaTable`. It shows how to initialize a `DeltaTable` instance by passing the `fs-utils` storage options, enabling seamless interaction with Delta Lake tables across different storage types.
 
 **Step-by-step walkthrough:**
 
@@ -487,7 +487,7 @@ This example demonstrates how to use `LocalStorageOptions` with `deltalake`'s `D
 
 ```python
 from deltalake import DeltaTable
-from fsspec_utils.storage_options import LocalStorageOptions
+from fs_utils.storage_options import LocalStorageOptions
 import tempfile
 import shutil
 import os
@@ -530,15 +530,15 @@ print(f"Cleaned up temporary directory: {temp_dir}")
 - Scalable metadata: Handles billions of files efficiently
 - Unified analytics: Supports both batch and streaming workloads
 
-**Integrating fsspec-utils with Delta Lake:**
+**Integrating fs-utils with Delta Lake:**
 
-The `fsspec-utils` `StorageOptions` classes can be used to configure `deltalake`'s `DeltaTable` for various storage backends. This integration allows you to:
+The `fs-utils` `StorageOptions` classes can be used to configure `deltalake`'s `DeltaTable` for various storage backends. This integration allows you to:
 
 1.  Use consistent configuration patterns across different storage systems
 2.  Leverage the benefits of fsspec's unified filesystem interface
 3.  Seamlessly switch between local and cloud storage without changing your Delta Lake code
 
-**The `to_object_store_kwargs()` method** converts `fsspec-utils` storage options into a dictionary format that `deltalake` expects for its `storage_options` parameter. This is necessary because `deltalake` requires storage options as a dictionary, while `fsspec-utils` provides them as structured objects.
+**The `to_object_store_kwargs()` method** converts `fs-utils` storage options into a dictionary format that `deltalake` expects for its `storage_options` parameter. This is necessary because `deltalake` requires storage options as a dictionary, while `fs-utils` provides them as structured objects.
 
 **Step-by-step walkthrough:**
 
@@ -554,13 +554,13 @@ The `fsspec-utils` `StorageOptions` classes can be used to configure `deltalake`
 
 6.  **Verifying the DeltaTable**: We check the version and files of our Delta table to confirm it was created correctly. Delta tables maintain version history, allowing you to track changes over time.
 
-7.  **Reading data**: Finally, we read the data from our Delta table back into a PyArrow Table, demonstrating that we can successfully interact with the Delta Lake table using the fsspec-utils configuration.
+7.  **Reading data**: Finally, we read the data from our Delta table back into a PyArrow Table, demonstrating that we can successfully interact with the Delta Lake table using the fs-utils configuration.
 
 This integration is particularly valuable when working with Delta Lake in cloud environments, as it allows you to use the same configuration approach for local development and production deployments across different cloud providers.
 
 ## Storage Options Management
 
-`fsspec-utils` provides a robust system for managing storage configurations, simplifying credential handling and environment setup.
+`fs-utils` provides a robust system for managing storage configurations, simplifying credential handling and environment setup.
 
 ### Loading from Environment Variables
 
@@ -577,7 +577,7 @@ export AWS_DEFAULT_REGION="us-west-2"
 
 Then in Python:
 ```python
-from fsspec_utils.storage_options import AwsStorageOptions
+from fs_utils.storage_options import AwsStorageOptions
 
 # Load AWS options directly from environment variables
 aws_opts = AwsStorageOptions.from_env()
@@ -594,7 +594,7 @@ Combine multiple storage option configurations, useful for layering default sett
 **Example: Merging S3 Options**
 
 ```python
-from fsspec_utils.storage_options import AwsStorageOptions, merge_storage_options
+from fs_utils.storage_options import AwsStorageOptions, merge_storage_options
 
 # Base configuration
 base_opts = AwsStorageOptions(
@@ -619,7 +619,7 @@ print(f"Allow HTTP: {merged_opts.allow_http}") # True
 
 ### Note on GitHub Examples
 
-For a comprehensive collection of executable examples demonstrating various functionalities and advanced patterns of `fsspec-utils`, including those discussed in this document, please refer to the [examples directory on GitHub](https://github.com/legout/fsspec-utils/tree/main/examples). Each example is designed to be runnable and provides detailed insights into practical usage.
+For a comprehensive collection of executable examples demonstrating various functionalities and advanced patterns of `fs-utils`, including those discussed in this document, please refer to the [examples directory on GitHub](https://github.com/legout/fs-utils/tree/main/examples). Each example is designed to be runnable and provides detailed insights into practical usage.
 
 ## Performance Tips
 
@@ -632,7 +632,7 @@ For a comprehensive collection of executable examples demonstrating various func
 
 ## Flexible Storage Configuration
 
-`fsspec-utils` simplifies configuring connections to various storage systems, including local filesystems, AWS S3, Azure Storage, and Google Cloud Storage, using `StorageOptions` classes. These options can then be converted into `fsspec` filesystems.
+`fs-utils` simplifies configuring connections to various storage systems, including local filesystems, AWS S3, Azure Storage, and Google Cloud Storage, using `StorageOptions` classes. These options can then be converted into `fsspec` filesystems.
 
 ### Local Storage Example
 
@@ -652,7 +652,7 @@ This example demonstrates how to initialize `LocalStorageOptions` and use it to 
 import os
 import tempfile
 import shutil
-from fsspec_utils.storage_options import LocalStorageOptions
+from fs_utils.storage_options import LocalStorageOptions
 
 print("=== LocalStorageOptions Example ===\n")
 
@@ -687,7 +687,7 @@ This example demonstrates the configuration pattern for `AwsStorageOptions`. It 
 
 **Note:** The `to_filesystem()` method converts StorageOptions into fsspec-compatible objects, allowing seamless integration with any fsspec-compatible library.
 ```python
-from fsspec_utils.storage_options import AwsStorageOptions
+from fs_utils.storage_options import AwsStorageOptions
 
 print("=== Conceptual AwsStorageOptions Example (using a dummy endpoint) ===\n")
 
@@ -712,7 +712,7 @@ This example shows how to configure `AzureStorageOptions`.  It is expected to fa
 
 
 ```python
-from fsspec_utils.storage_options import AzureStorageOptions
+from fs_utils.storage_options import AzureStorageOptions
 
 print("=== Conceptual AzureStorageOptions Example (using a dummy connection string) ===\n")
 azure_options = AzureStorageOptions(
@@ -745,7 +745,7 @@ The `to_filesystem()` method converts these options into `fsspec` compatible obj
 This approach allows you to understand the configuration pattern without needing actual cloud credentials. When using these examples in production, you would replace the dummy values with your real credentials and service endpoints.
 
 ```python
-from fsspec_utils.storage_options import GcsStorageOptions
+from fs_utils.storage_options import GcsStorageOptions
 
 print("=== Conceptual GcsStorageOptions Example (using a dummy token path) ===\n")
 gcs_options = GcsStorageOptions(

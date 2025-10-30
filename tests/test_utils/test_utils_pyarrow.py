@@ -6,7 +6,7 @@ import pyarrow.compute as pc
 import polars as pl
 from datetime import datetime
 
-from fs_utils.utils.pyarrow import (
+from fs_utils.helpers.pyarrow import (
     opt_dtype,
     unify_schemas,
     cast_schema,

@@ -5,7 +5,7 @@ import pyarrow as pa
 import pyarrow.compute as pc
 from datetime import datetime, timezone
 
-from fs_utils.utils.sql import sql2pyarrow_filter
+from fs_utils.helpers.sql import sql2pyarrow_filter
 
 
 class TestSql2PyarrowFilter:

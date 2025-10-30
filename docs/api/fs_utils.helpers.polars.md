@@ -1,4 +1,4 @@
-# `fsspec_utils.utils.polars` API Reference
+# `fs_helpers.helpers.polars` API Reference
 
 ## `opt_dtype()`
 
@@ -23,7 +23,7 @@ This function analyzes each column and converts it to the most appropriate data 
 
 ```python
 import polars as pl
-from fsspec_utils.utils.polars import opt_dtype
+from fs_helpers.helpers.polars import opt_dtype
 
 df = pl.DataFrame({
     "col_int": ["1", "2", "3"],
@@ -64,7 +64,7 @@ print(optimized_df.schema)
 
 ```python
 import polars as pl
-from fsspec_utils.utils.polars import explode_all
+from fs_helpers.helpers.polars import explode_all
 
 df = pl.DataFrame({
     "id": [1, 2],
@@ -86,7 +86,7 @@ print(exploded_df)
 
 ```python
 import polars as pl
-from fsspec_utils.utils.polars import unnest_all
+from fs_helpers.helpers.polars import unnest_all
 
 df = pl.DataFrame({
     "id": [1, 2],
@@ -124,7 +124,7 @@ print(unnested_df)
 
 ```python
 import polars as pl
-from fsspec_utils.utils.polars import drop_null_columns
+from fs_helpers.helpers.polars import drop_null_columns
 
 df = pl.DataFrame({
     "col1": [1, 2, 3],

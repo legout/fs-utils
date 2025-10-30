@@ -1,8 +1,8 @@
-# `fsspec_utils.utils.logging` API Reference
+# `fs_helpers.helpers.logging` API Reference
 
 ## `setup_logging()`
 
-Configure the Loguru logger for fsspec-utils.
+Configure the Loguru logger for fsspec-helpers.
 
 Removes the default handler and adds a new one targeting stderr with customizable level and format.
 

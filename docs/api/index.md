@@ -1,35 +1,35 @@
-# `fsspec-utils` API Reference
+# `fs-utils` API Reference
 
-Welcome to the `fsspec-utils` API reference documentation. This section provides detailed information on the various modules, classes, and functions available in the library.
+Welcome to the `fs-utils` API reference documentation. This section provides detailed information on the various modules, classes, and functions available in the library.
 
 ## Core Modules
 
-*   [`fsspec_utils.core.base`](fsspec_utils.core.base.md)
+*   [`fs_helpers.core.base`](fs_helpers.core.base.md)
 
-*   [`fsspec_utils.core.ext`](fsspec_utils.core.ext.md)
+*   [`fs_helpers.core.ext`](fs_helpers.core.ext.md)
 
 ## Storage Options
 
-*   [`fsspec_utils.storage_options.base`](fsspec_utils.storage_options.base.md)
+*   [`fs_helpers.storage_options.base`](fs_helpers.storage_options.base.md)
 
-*   [`fsspec_utils.storage_options.cloud`](fsspec_utils.storage_options.cloud.md)
+*   [`fs_helpers.storage_options.cloud`](fs_helpers.storage_options.cloud.md)
 
-*   [`fsspec_utils.storage_options.core`](fsspec_utils.storage_options.core.md)
+*   [`fs_helpers.storage_options.core`](fs_helpers.storage_options.core.md)
 
-*   [`fsspec_utils.storage_options.git`](fsspec_utils.storage_options.git.md)
+*   [`fs_helpers.storage_options.git`](fs_helpers.storage_options.git.md)
 
-## Utilities
+## Helpers
 
-*   [`fsspec_utils.utils.datetime`](fsspec_utils.utils.datetime.md)
+*   [`fs_helpers.helpers.datetime`](fs_helpers.helpers.datetime.md)
 
-*   [`fsspec_utils.utils.logging`](fsspec_utils.utils.logging.md)
+*   [`fs_helpers.helpers.logging`](fs_helpers.helpers.logging.md)
 
-*   [`fsspec_utils.utils.misc`](fsspec_utils.utils.misc.md)
+*   [`fs_helpers.helpers.misc`](fs_helpers.helpers.misc.md)
 
-*   [`fsspec_utils.utils.polars`](fsspec_utils.utils.polars.md)
+*   [`fs_helpers.helpers.polars`](fs_helpers.helpers.polars.md)
 
-*   [`fsspec_utils.utils.pyarrow`](fsspec_utils.utils.pyarrow.md)
+*   [`fs_helpers.helpers.pyarrow`](fs_helpers.helpers.pyarrow.md)
 
-*   [`fsspec_utils.utils.sql`](fsspec_utils.utils.sql.md)
+*   [`fs_helpers.helpers.sql`](fs_helpers.helpers.sql.md)
 
-*   [`fsspec_utils.utils.types`](fsspec_utils.utils.types.md)
+*   [`fs_helpers.helpers.types`](fs_helpers.helpers.types.md)

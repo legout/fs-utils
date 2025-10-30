@@ -1,4 +1,4 @@
-# `fsspec_utils.core.ext` API Documentation
+# `fs_helpers.core.ext` API Documentation
 
 This module provides extended functionalities for `fsspec.AbstractFileSystem`, including methods for reading and writing various file formats (JSON, CSV, Parquet) with advanced options like batch processing, parallelization, and data type optimization. It also includes functions for creating PyArrow datasets.
 

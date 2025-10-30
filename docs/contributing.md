@@ -6,7 +6,7 @@ We welcome contributions to `fsspec-utils`! Your help makes this project better.
 
 ### Reporting Issues
 
-If you encounter any bugs, unexpected behavior, or have suggestions for new features, please open an issue on our [GitHub Issues page](https://github.com/fsspec/fsspec-utils/issues).
+If you encounter any bugs, unexpected behavior, or have suggestions for new features, please open an issue on our [GitHub Issues page](https://github.com/legout/fs-utils/issues).
 
 When reporting an issue, please include:
 - A clear and concise description of the problem.
@@ -19,11 +19,11 @@ When reporting an issue, please include:
 
 We gladly accept pull requests for bug fixes, new features, and improvements. To submit a pull request:
 
-1.  **Fork the Repository**: Start by forking the `fsspec-utils` repository on GitHub.
+1.  **Fork the Repository**: Start by forking the `fs-utils` repository on GitHub.
 2.  **Clone Your Fork**: Clone your forked repository to your local machine.
     ```bash
-    git clone https://github.com/your-username/fsspec-utils.git
-    cd fsspec-utils
+    git clone https://github.com/your-username/fs-utils.git
+    cd fs-utils
     ```
 3.  **Create a New Branch**: Create a new branch for your changes.
     ```bash
@@ -58,11 +58,11 @@ To set up your development environment, follow these steps:
 
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/fsspec/fsspec-utils.git
-    cd fsspec-utils
+    git clone https://github.com/legout/fs-utils.git
+    cd fs-utils
     ```
 2.  **Install `uv`**:
-    `fsspec-utils` uses `uv` for dependency management and running commands. If you don't have `uv` installed, you can install it via `pip`:
+    `fs-utils` uses `uv` for dependency management and running commands. If you don't have `uv` installed, you can install it via `pip`:
     ```bash
     pip install uv
     ```
